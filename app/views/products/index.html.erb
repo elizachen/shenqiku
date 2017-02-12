@@ -82,7 +82,7 @@
 
                         <li>
                             <a href="/">
-                                <img src="https://ww2.sinaimg.cn/large/006y8lVajw1fcmzco8dh3j30hs0b4tb3.jpg" alt="I am MUJI.">
+                                <img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcnsgixnjyj30hs0b4mz5.jpg" alt="I am MUJI.">
                                 <span class="title">科技众筹产品</span>
                             </a>
                         </li>
@@ -105,21 +105,66 @@
 
                 <div class="wrap">
                     <ul>
-                      <% @products.each do |product| %>
+
+
                         <li>
-                          <%= link_to product_path(product) do %>
-                            <% if product.image.present? %>
-                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                            <% else %>
-                              <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=No Pic", width="50") %>
-                              </span>
-                            <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <span class="name">￥<%=product.price%></span>
-                          <% end %>
+                            <a href="/">
+                                <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcnkk4l849j30b40b440a.jpg" width="50"></span>
+                                <span class="name">Aeron椅子</span>
+                                <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
+                                <span class="name">💰8000</span>
+
+                            </a>
                         </li>
-                      <% end %>
+
+                        <li>
+                            <a href="/">
+                                <span class="thumb"><img src="https://ww3.sinaimg.cn/large/006tNc79jw1fcnu2mwb9cj30dw0dwjtb.jpg" width="50"></span>
+                                <span class="name">Dell超大屏</span>
+                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
+                                <span class="name">💰100</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnulsrb7wj30dw0dwdg4.jpg" width="50"></span>
+                                <span class="name">显示器支架</span>
+                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
+                                <span class="name">💰100</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnkoxydy4j30b40b4wey.jpg" width="50"></span>
+                                <span class="name">心流耳机</span>
+                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
+                                <span class="name">💰100</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnsls7l5ej30b40b4wfo.jpg" width="50"></span>
+                                <span class="name">Cherry无影手</span>
+                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
+                                <span class="name">💰100</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcntc1wy7rj30ci0cijse.jpg" width="50"></span>
+                                <span class="name">醒神</span>
+                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
+                                <span class="name">💰100</span>
+                            </a>
+                        </li>
+
+
+
+
                     </ul>
                 </div>
             </section>
@@ -147,8 +192,9 @@
 
                         <li>
                             <a href="/">
-                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnkoxydy4j30b40b4wey.jpg" width="50"></span>
-                                <span class="name">心流耳机</span>
+
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcntawzeiwj30go0gogph.jpg" width="50"></span>
+                                <span class="name">战斧牛排</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
                                 <span class="name">￥100</span>
                             </a>
