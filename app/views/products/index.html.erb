@@ -106,13 +106,14 @@
 
                 <div class="wrap">
                     <ul>
+                       <% if @products.present? %>
                         <% @products.each do |product| %>
                         <li>
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                             <% else %>
-                            <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=NoPic", width="50") %>
+                            <span class="thumb"><%= image_tag("http://placehold.it/200x200&text=NoPic", width="50") %>
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>
@@ -121,6 +122,7 @@
                                 <%=product.price%></span>
                             <% end %>
                         </li>
+                        <% end %>
                         <% end %>
                     </ul>
                 </div>
