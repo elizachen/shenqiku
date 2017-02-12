@@ -97,7 +97,34 @@
 
             </section>
 
+            <section id="newItem">
+                <h1>新到商品</h1>
 
+                <div class="more">
+                    <a href="/">更多</a>
+                </div>
+
+                <div class="wrap">
+                    <ul>
+                        <% @products.each do |product| %>
+                        <li>
+                            <%= link_to product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                            <% else %>
+                            <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=NoPic", width="50") %>
+                            </span>
+                            <% end %>
+                            <span class="name"><%=product.title%></span>
+                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <span class="name">￥
+                                <%=product.price%></span>
+                            <% end %>
+                        </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </section>
 
             <section id="newItem">
                 <h1>神器</h1>
