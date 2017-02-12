@@ -105,34 +105,21 @@
 
                 <div class="wrap">
                     <ul>
-
+                      <% @products.each do |product| %>
                         <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738598435_400.jpg" width="50"></span>
-                                <span class="name">Aron椅子</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰8000</span>
-
-                            </a>
+                          <%= link_to product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                            <% else %>
+                              <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=No Pic", width="50") %>
+                              </span>
+                            <% end %>
+                            <span class="name"><%=product.title%></span>
+                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <span class="name">💰 <%=product.price%></span>
+                          <% end %>
                         </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738557876_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738915324_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰100</span>
-                            </a>
-                        </li>
+                      <% end %>
                     </ul>
                 </div>
             </section>
