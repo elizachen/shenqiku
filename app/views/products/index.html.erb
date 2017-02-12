@@ -105,70 +105,25 @@
 
                 <div class="wrap">
                     <ul>
-
-
+                        <% @products.each do |product| %>
                         <li>
-                            <a href="/">
-                                <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcnkk4l849j30b40b440a.jpg" width="50"></span>
-                                <span class="name">Aeron椅子</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰8000</span>
-
-                            </a>
+                            <%= link_to product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                        <% else %>
+                            <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=No Pic", width="50") %>
+                            </span>
+                            <% end %>
+                            <span class="name"><%=product.title%></span>
+                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <span class="name">￥
+                                <%=product.price%></span>
+                            <% end %>
                         </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="https://ww3.sinaimg.cn/large/006tNc79jw1fcnu2mwb9cj30dw0dwjtb.jpg" width="50"></span>
-                                <span class="name">Dell超大屏</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnulsrb7wj30dw0dwdg4.jpg" width="50"></span>
-                                <span class="name">显示器支架</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnkoxydy4j30b40b4wey.jpg" width="50"></span>
-                                <span class="name">心流耳机</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnsls7l5ej30b40b4wfo.jpg" width="50"></span>
-                                <span class="name">Cherry无影手</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcntc1wy7rj30ci0cijse.jpg" width="50"></span>
-                                <span class="name">醒神</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">💰100</span>
-                            </a>
-                        </li>
-
-
-
-
+                        <% end %>
                     </ul>
                 </div>
             </section>
-
 
             <section id="newItem">
                 <h1>神器</h1>
@@ -179,7 +134,6 @@
 
                 <div class="wrap">
                     <ul>
-
                         <li>
                             <a href="/">
                                 <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcnkk4l849j30b40b440a.jpg" width="50"></span>
@@ -192,54 +146,52 @@
 
                         <li>
                             <a href="/">
-
-                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcntawzeiwj30go0gogph.jpg" width="50"></span>
-                                <span class="name">战斧牛排</span>
+                                <span class="thumb"><img src="https://ww3.sinaimg.cn/large/006tNc79jw1fcnu2mwb9cj30dw0dwjtb.jpg" width="50"></span>
+                                <span class="name">Dell超大屏</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥8199</span>
                             </a>
                         </li>
 
                         <li>
                             <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738503521_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnulsrb7wj30dw0dwdg4.jpg" width="50"></span>
+                                <span class="name">显示器支架</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥599</span>
                             </a>
                         </li>
 
                         <li>
                             <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738915324_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnkoxydy4j30b40b4wey.jpg" width="50"></span>
+                                <span class="name">心流耳机</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥2888</span>
                             </a>
                         </li>
 
                         <li>
                             <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4934761479927_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnsls7l5ej30b40b4wfo.jpg" width="50"></span>
+                                <span class="name">Cherry无影手</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥699</span>
                             </a>
                         </li>
 
                         <li>
                             <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738689126_400.jpg" width="50"></span>
-                                <span class="name">牛蒡鸡肉饭煮饭酱</span>
+                                <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcntc1wy7rj30ci0cijse.jpg" width="50"></span>
+                                <span class="name">泡茶神器</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥298</span>
                             </a>
                         </li>
 
                     </ul>
                 </div>
             </section>
-
 
             <section id="newItem">
                 <h1>生物科技美食</h1>
@@ -256,53 +208,18 @@
                                 <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnkl66x1nj30b40b4dge.jpg" width="50"></span>
                                 <span class="name">防弹咖啡</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥899</span>
 
                             </a>
                         </li>
 
                         <li>
                             <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738557876_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
-                            </a>
-                        </li>
 
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738503521_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
+                                <span class="thumb"><img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcntawzeiwj30go0gogph.jpg" width="50"></span>
+                                <span class="name">战斧牛排</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738915324_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4934761479927_400.jpg" width="50"></span>
-                                <span class="name">牛排</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738689126_400.jpg" width="50"></span>
-                                <span class="name">牛蒡鸡肉饭煮饭酱</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥199</span>
                             </a>
                         </li>
 
@@ -321,7 +238,7 @@
                                 <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcnkswqsvnj30b40b43z1.jpg" width="50"></span>
                                 <span class="name">黑科技白鞋</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥149</span>
                             </a>
                         </li>
 
@@ -330,7 +247,7 @@
                                 <span class="thumb"><img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcnkpuu7kej30b40b40u4.jpg" width="50"></span>
                                 <span class="name">智能运动耳机</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥699</span>
                             </a>
                         </li>
 
@@ -339,34 +256,7 @@
                                 <span class="thumb"><img src="http://img.muji.com.cn/img/item/4548718920136_400.jpg" width="50"></span>
                                 <span class="name">超声波香薰机 直径约80×高140mm / 白色</span>
                                 <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738265597_400.jpg" width="50"></span>
-                                <span class="name">美利奴羊毛混双面大衣</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4547315844449_400.jpg" width="50"></span>
-                                <span class="name">携带用睫毛夹 全长约58mm</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <span class="thumb"><img src="http://img.muji.com.cn/img/item/4549738664512_400.jpg" width="50"></span>
-                                <span class="name">草莓牛奶巧克力</span>
-                                <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                                <span class="name">￥100</span>
+                                <span class="name">￥299</span>
                             </a>
                         </li>
 
@@ -426,11 +316,8 @@
 
                 </ul>
 
-
             </div>
         </aside>
-
-
 
         <script src="/cn/store/js/lib/modernizr.custom.47384.js"></script>
         <script src="/cn/store/js/lib/cssua.js"></script>
