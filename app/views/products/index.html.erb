@@ -113,7 +113,7 @@
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                             <% else %>
-                            <span class="thumb"><%= image_tag("http://placehold.it/200x200&text=NoPic", width="50") %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>
@@ -145,7 +145,7 @@
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                         <% else %>
-                            <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=No Pic", width="50") %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>
@@ -178,7 +178,7 @@
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                         <% else %>
-                            <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=No Pic", width="50") %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>
@@ -207,7 +207,7 @@
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                         <% else %>
-                            <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=No Pic", width="50") %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>

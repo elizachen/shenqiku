@@ -31,6 +31,11 @@
    <%= f.input :image, as: :file %>
  </div>
 
+ <% if @product.image_url.present? %>
+  <span>目前商品链接</span> <br>
+  <%= f.input :image_url %>
+<% end %>
+
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
