@@ -1,339 +1,418 @@
-<!-- <div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥<%= product.price %>
-    </div>
-  <% end %>
-</div> -->
 
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta property="og:url" content="http://www.muji.com/cn/">
-        <meta property="og:image" content="http://www.muji.com/cn/img/ogimage.png">
-        <meta name="description" content="在神器库，我们精心搜集了，那些流行于硅谷的生物黑科技食品、神器、科技众筹产品，以帮助您，提工作效率和生活品质。">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="robots" content="noydir,noodp">
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Coffee Box"><meta name="description" content="Coffee Box">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Coffee Box 连咖啡</title>
+    <link rel="stylesheet" href="css/lrtk.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.devrama.slider.js"></script>
+    <script type="text/javascript" src="js/jquery.soChange.js"></script>
+   <script type="text/javascript" src="js/super_slider.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
 
-        <title>神器库</title>
-        <link rel="stylesheet" href="/cn/store/css/normalize.css">
-        <link rel="stylesheet" href="/cn/store/css/muji.2.1.css">
-        <link rel="stylesheet" href="/cn/store/css/muji_cn.css">
-        <link rel="stylesheet" href="/cn/store/css/muji_cn.2.0.css">
-        <link rel="stylesheet" href="/cn/store/css/portal.1.0.css">
-        <link rel="stylesheet" href="/cn/store/css/portal_cn.css">
-        <link rel="stylesheet" href="/cn/store/css/marker.css">
-        <link rel="stylesheet" href="/cn/store/css/self_marker.css">
-
-        <script src="/cn/store/js/lib/jquery.min.1.11.0.js"></script>
-
-        <!--[if lt IE 9]> <script src="/cn/store/js/lib/html5.js"></script> <script src="/cn/store/js/lib/respond.js"></script> <![endif]-->
-        <script src="//assets.adobedtm.com/a6e9b8b912d51aecbc12256558ef49a48670b2e5/satelliteLib-9fa8fa56b87f6d219078e5bd7ee860df5977511f.js"></script>
-        <meta name="google-site-verification" content="uuJ36II6toGyemYG32iDkK7S5iwki-LVe0XJytvliUA"/>
-        <meta name="baidu-site-verification" content="IzCrHv6BWr"/>
-
-    </head>
-
-    <body>
-
-        <div id="main">
-
-            <section id="mainCampaign">
-                <div class="wrap">
-                    <div class="mainPanel">
-                        <a href="/">
-                            <img src="https://ww2.sinaimg.cn/large/006tNc79jw1fcnx5f8hkej30sg0hstcb.jpg" alt="科技改变生活" class="pc">
-                            <img src="https://ww2.sinaimg.cn/large/006tNc79gy1fcngb89sraj30qo0xc4qp.jpg" alt="科技改变生活" class="mobile">
-                            <span class="title">防弹咖啡——硅谷盛行的生物科技饮</span>
-
-                        </a>
-                    </div>
-
-                    <ul class="fourPanels">
-
-                        <li>
-                            <a href="/">
-                                <img src="/images/panel/sale_640.png" alt="SALE">
-                                <span class="title"></span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <img src="https://ww3.sinaimg.cn/large/006y8lVajw1fcmyzcyp7ej30hs0b4q44.jpg" alt="Compact  Life  in  CHINA">
-                                <span class="title">生物黑科技食品</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <img src="https://ww3.sinaimg.cn/large/006y8lVajw1fcmz7xi0otj30hs0b4gn6.jpg" alt="Aging skincare">
-                                <span class="title">提高效率神器</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/">
-                                <img src="https://ww4.sinaimg.cn/large/006tNc79jw1fcnsgixnjyj30hs0b4mz5.jpg" alt="I am MUJI.">
-                                <span class="title">科技众筹产品</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="more">
-                    <a href="/">更多</a>
-                </div>
-
-            </section>
-
-            <section id="newItem">
-                <h1>新到商品</h1>
-
-                <div class="more">
-                    <a href="/">更多</a>
-                </div>
-
-                <div class="wrap">
-                    <ul>
-                        <% if  @products.present? %>
-                        <% @products.limit(5).order('created_at DESC').each do |product| %>
-                        <li>
-                            <%= link_to product_path(product) do %>
-                            <% if product.image.present? %>
-                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                            <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
-                            </span>
-                            <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <span class="name">￥
-                                <%=product.price%></span>
-                            <% end %>
-                        </li>
-                        <% end %>
-                        <% end %>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="newItem">
-                <h1>神器</h1>
-
-                <div class="more">
-                    <a href="/">更多</a>
-                </div>
-
-                <div class="wrap">
-                    <ul>
-                        <% if  @products.present? %>
-                        <% @products.order('created_at DESC').each do |product| %>
-                        <% if  true == product.categories.eql?("神器")%>
-                        <li>
-                            <%= link_to product_path(product) do %>
-                            <% if product.image.present? %>
-                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                        <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
-                            </span>
-                            <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <span class="name">￥
-                                <%=product.price%></span>
-                            <% end %>
-                        </li>
-                        <% end %>
-                        <% end %>
-                        <% end %>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="newItem">
-                <h1>生物科技美食</h1>
-
-                <div class="more">
-                    <a href="/">更多</a>
-                </div>
-
-                <div class="wrap">
-                    <ul>
-                        <% if  @products.present? %>
-                        <% @products.order('created_at DESC').each do |product| %>
-                        <% if  true == product.categories.eql?("生物科技美食")%>
-                        <li>
-                            <%= link_to product_path(product) do %>
-                            <% if product.image.present? %>
-                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                        <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
-                            </span>
-                            <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <span class="name">￥
-                                <%=product.price%></span>
-                            <% end %>
-                        </li>
-                        <% end %>
-                        <% end %>
-                        <% end %>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="topicItem">
-                <h1>科技众筹产品</h1>
-
-                <div class="wrap">
-                    <ul>
-                        <% if  @products.present? %>
-                        <% @products.order('created_at DESC').each do |product| %>
-                        <% if  true == product.categories.eql?("科技众筹产品")%>
-                        <li>
-                            <%= link_to product_path(product) do %>
-                            <% if product.image.present? %>
-                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                        <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
-                            </span>
-                            <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
-                            <span class="name">￥
-                                <%=product.price%></span>
-                            <% end %>
-                        </li>
-                        <% end %>
-                        <% end %>
-                        <% end %>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="event">
-                <h1>大神推荐</h1>
-
-                <div class="wrap">
-                    <ul>
-
-                       <li>
-                          <a href="/">
-                              <img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnwfqwejwj30p00fjmzz.jpg" alt="">
-                              <span class="title">Xdite推荐</span>
-                          </a>
-                       </li>
-
-                        <li>
-                            <a href="/">
-                                <img src="https://ww3.sinaimg.cn/large/006tNc79jw1fcnwewcuyoj30hs0b4t9s.jpg" alt="">
-                                <span class="title">笑来推荐</span>
-                            </a>
-                        </li>
-
-
-
-                        <li>
-                            <a href="/">
-                                <img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnwicejmkj30hs0b4wfp.jpg" alt="">
-                                <span class="title">罗胖推荐</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </section>
-
+    <style type="text/css">
+        .example-animation {
+            color: #FFF;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+<!-- 代码 开始 -->
+<div class="example-animation">
+    <div data-lazy-background="images/banner1.png">
+        <div data-pos="['70%', '50%', '70%', '35%']" data-duration="1700" data-effect="move"
+             style="font-size: 40px;height: 40px; line-height: 40px; overflow: hidden; ">
+            Coffee Box，从一杯咖啡开始。
         </div>
-        <!-- #main -->
+    </div>
+    <div data-lazy-background="images/banner2.png">
+        <div data-pos="['70%', '50%' ,'70%', '35%']" data-duration="1700" data-effect="move"
+             style="font-size: 40px; height: 40px; line-height: 40px; overflow: hidden">
+            微信下单，就近配送，方便快捷。
+        </div>
+    </div>
+    <div data-lazy-background="images/banner3.png">
+        <div data-pos="['70%', '50%', '70%', '35%']" data-duration="1700" data-effect="move"
+             style="font-size: 40px; height: 40px; line-height: 40px; overflow: hidden">
+            烈日酷暑，风寒雨雪，传递温馨服务。
+        </div>
+    </div>
+    <div data-lazy-background="images/banner4.png">
+        <div data-pos="['70%', '50%', '70%', '35%']" data-duration="1700" data-effect="move"
+             style="font-size: 40px; height: 40px; line-height: 40px; overflow: hidden">
+            品味新鲜，体验快捷，分享你的快乐。
+        </div>
+    </div>
+</div>
 
-        <aside id="misc">
-            <div class="content">
-                <ul class="sns">
+<!-- 代码 结束 -->
+<div class="content">
 
-                    <li class="weibo">
-                        <a href="/" target="_blank"><img src="/images/misc_weibo.png" alt="weibo"></a>
-                    </li>
+    <div class="nav">
 
-                    <li class="wechat">
-                        <a href="/" target="_blank"><img src="/images/misc_wechat.png" alt="wechat"></a>
-                    </li>
+        <img src="images/log.png">
+        <ul>
+            <div class="row"></div>
+            <li><a class="nav_activity"> 活动信息</a></li>
+            <li><a class="nav_coffee">咖啡饮品</a></li>
+            <li><a class="nav_order">下单流程</a></li>
+            <li><a class="nav_service">服务区域</a></li>
+            <li><a class="nav_about">关于Coffee Box</a></li>
+            <li><a class="nav_contact">联系我们</a></li>
+        </ul>
 
-                    <li class="douban">
-                        <a href="/" target="_blank"><img src="/images/misc_douban.png" alt="douban"></a>
-                    </li>
 
-                </ul>
+    </div>
+
+    <div class="main activity ">
+        <div class="mianleft">
+            <div class="top">
+                <div class="t3leftcontent" style="color: #402d27; background: url(images/1.png) no-repeat center center; background-size: 100%;">
+                    <h3>活动信息</h3>
+                    <h4>
+                        Information
+                    </h4>
+                </div>
+            </div>
+            <div class="bottom">
 
             </div>
-        </aside>
+        </div>
 
-        <script src="/cn/store/js/lib/modernizr.custom.47384.js"></script>
-        <script src="/cn/store/js/lib/cssua.js"></script>
-        <script src="/cn/store/js/lib/fastclick.js"></script>
+        <div class="mianright">
+         <div class="focusBox" style="margin:0 auto">
+			<ul class="pic">
+					<li>
+						<div class="loactionitem ta1 ">
+                         <div class="top" style="background: url(images/co2.png) no-repeat center center; background-size: 100%"></div>
+                         <div class="bottom">
+                            <div class="location">
+                               <div class="word">
 
-        <script src="/cn/store/js/muji-1.0.js"></script>
-        <script src="/cn/store/js/portal-2.0.js"></script>
-        <script src="/cn/store/js/portal_cn.js"></script>
+                                  <h4>酷暑难挡  冰咖来袭</h4>
 
-        <script>
-            //FastClick
-            if (cssua.ua.mobile) {
-                $(function () {
-                    var selectors = [
-                        $("#hGlobalNav h1").get(0),
-                        $("#hSearch h1").get(0),
-                        $(".cancel").get(0),
-                        $(".prev").get(0),
-                        $(".next").get(0),
-                        $(".avater").get(0)
-                    ];
+                                  <p>咖啡雪昔  单杯售价28元</p>
 
-                    for (var i = 0, sLen = selectors.length; i < sLen; i++) {
-                        if (selectors[i] != undefined) {
-                            FastClick.attach(selectors[i]);
-                        }
-                    }
-                });
-            }
-        </script>
+                                  <p> 冰焦糖拿铁  单杯售价31元</p>
+                                  <p> 芒果雪昔  单杯售价28元</p>
 
-        <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=18c2abab0deabc84cf240d2e1123f5a1"></script>
-        <!--[if !IE]><!-->
-        <script src="/cn/store/js/lib/map_cn.js"></script>
-        <!--<![endif]-->
+                               </div>
+                            </div>
+                        </div>
+                      </div>
+					</li>
+					<li>
+						<div class="loactionitem ta2">
+                    <div class="top"
+                         style="background: url(images/co1.png) no-repeat center center; background-size: 100%"></div>
+                    <div class="bottom">
+                        <div class="location">
+                            <div class="word">
+                                <p> Coffee Box牵手戴军、李静</p>
 
-        <script>
-            MAP_LIMIT_SHOPLIST = 10;/* Maximum number of stores list */
-            MAP_LIMIT_MARKER = 100;/* Maximum number of stores placed on the map */
-            MAP_IMG_MARKER = "/images/marker_red_default.png";
-            MAP_IMG_SELF_POS = "/images/self_position.png";
+                                <p> 压轴亮相极客公园2016创新大会</p>
 
-            MAP_MARKER_LINK_URL = "http://www.muji.com/storelocator/?c=cn";
-            MAP_SHOPLIST_JSON_URL = "http://www.muji.com/storelocator/?c=cn&lang=LC&baidu_flag=1&_ACTION=_SEARCH";
+                            </div>
+                        </div>
+                    </div>
+                </div>
+					</li>
+					<li>
+						<div class="loactionitem ta3">
+                    <div class="top"
+                         style="background: url(images/co3.png) no-repeat center center; background-size: 100%"></div>
+                    <div class="bottom">
+                        <div class="location">
+                            <div class="word">
+                                <p style="text-align:left;"><b>北京：</b>中关村店、金融街店、西二旗店、宣武门店、双井店</p>
+                                <p style="text-align:left;"><b>上海：</b>弘基广场店、长泰广场店、正大广场店、武宁南路店、科技馆站店、汇暻广场店、上海湾店</p>
+                                <p style="text-align:left;"><b>广州：</b>龙口西路店、中大店、江南中路店、荔枝湾店、科韵路店、芳村店、黄花岗店、北京路店</p>
+                                <p style="margin-top:20px;">现已新增开通服务</p>
 
-            MAP_DEFAULT_ZOOM = 8;
-            MAP_DEFAULT_LAT = 39.921783;
-            MAP_DEFAULT_LON = 116.440247;
-            MAP_LOAD_DIV_ID = "map";
-        </script>
 
-        <script type="text/javascript">
-            _satellite.pageBottom();
-        </script>
+                                <p>服务时间：</p>
 
-    </body>
+                                <p>周一至周六：09:00-17:30</p>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+					</li>
+
+			</ul>
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+			<ul class="hd">
+				<li></li>
+				<li></li>
+				<li></li>
+
+			</ul>
+	 </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.js"></script>
+	<script type="text/javascript">
+		jQuery(".focusBox").slide({ mainCell:".pic",effect:"left", autoPlay:true, delayTime:300});
+	</script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+        <!--<div class="mianright " id="slide ">
+            <div class="locationwreap ">
+                <div class="loactionitem ta1 ">
+                    <div class="top"
+                         style="background: url(images/co2.png) no-repeat center center; background-size: 100%"></div>
+                    <div class="bottom">
+                        <div class="location">
+                            <div class="word">
+
+                                <h4>酷暑难挡  冰咖来袭</h4>
+
+                                <p>咖啡雪昔  单杯售价28元</p>
+
+                                <p> 冰焦糖拿铁  单杯售价31元</p>
+                                <p> 芒果雪昔  单杯售价28元</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loactionitem ta2">
+                    <div class="top"
+                         style="background: url(images/co1.png) no-repeat center center; background-size: 100%"></div>
+                    <div class="bottom">
+                        <div class="location">
+                            <div class="word">
+                                <p> Coffee Box牵手戴军、李静</p>
+
+                                <p> 压轴亮相极客公园2016创新大会</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loactionitem ta3">
+                    <div class="top"
+                         style="background: url(images/co3.png) no-repeat center center; background-size: 100%"></div>
+                    <div class="bottom">
+                        <div class="location">
+                            <div class="word">
+                                <p style="text-align:left;"><b>北京：</b>中关村店、金融街店、西二旗店、宣武门店、双井店</p>
+                                <p style="text-align:left;"><b>上海：</b>弘基广场店、长泰广场店、正大广场店、武宁南路店、科技馆站店、汇暻广场店、上海湾店</p>
+                                <p style="text-align:left;"><b>广州：</b>龙口西路店、中大店、江南中路店、荔枝湾店、科韵路店、芳村店、黄花岗店、北京路店</p>
+                                <p style="margin-top:20px;">现已新增开通服务</p>
+
+
+                                <p>服务时间：</p>
+
+                                <p>周一至周六：09:00-17:30</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="selectrow" >
+                <a href="javascript:;" class="prev1"></a>
+                <a href="javascript:;" class="next1"></a>
+            </div>
+            <div class="location-index " >
+                <ul>
+                    <li class="down"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>-->
+    </div>
+
+    <div class="t1 coffee">
+        <div class="t3leftcontent" style="color: #f6efed; background: url(images/2.png) no-repeat center center; background-size: 100%;">
+            <h3>咖啡饮品</h3>
+            <h4>
+                Coffee Drink
+            </h4>
+        </div>
+    </div>
+    <div class="t2">
+        <div class="t2left">
+            <div class="top">
+                <div class="cof">
+                    <div class="nt">经典咖啡</div>
+                    <span style="color:#402d27; font-size:12px; display:block; margin-top:5px;">美式／拿铁／摩卡</span>
+                    <p class="cof1"> 总有那些人那些事，虽历经沧桑，唯钟情经典。</p>
+
+                    <p>不忘初心，方得始终，</p>
+
+                    <p>可能活着，是一种修行，</p>
+
+                    <p>而每一杯经典咖啡，都会是你修行途中，心灵的停机坪。</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="cof h2">
+                    <div class="nt">雪昔</div>
+                     <span style="color:#402d27; font-size:12px; display:block; margin-top:5px;">咖啡雪昔／焦糖咖啡雪昔／摩卡奥利奥雪昔／抹茶雪昔／芒果雪昔</span>
+                    <p class="cof1"> "连雨不知春去，一晴方觉夏深"</p>
+
+                    <p> 却有耳语呢喃：</p>
+
+                    <p>"你尝过雪的味道么？"</p>
+
+                    <p>凉凉的，一下子就能透到心里。</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="t2right">
+            <div class="top">
+                <div class="cof h1">
+                    <div class="nt">风味拿铁</div>
+                    <span style="color:#402d27; font-size:12px; display:block; margin-top:5px;">焦糖拿铁／香草拿铁／爱尔兰橙香拿铁／太妃榛果拿铁</span>
+                    <p class="cof1">1份浓醇、7份丝滑或许还缺2份感觉……</p>
+
+                    <p>这里你会邂逅各种风情的咖啡，</p>
+
+                    <p>而你又是否是那个驻足的人？</p>
+
+                    <p>让懂你的咖啡来体味你此时的心情。</p>
+
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="cof h3">
+                    <div class="nt">饮品</div>
+                     <span style="color:#402d27; font-size:12px; display:block; margin-top:5px;">热巧克力／抹茶拿铁</span>
+                    <p class="cof1">给自己一分钟聆听生命的慢摇，</p>
+
+                    <p>没有心悸，也不用担心失眠，</p>
+
+                    <p> 只有如恒河般亘古的传情达意，</p>
+                    <p>与你一起享受生活的纯粹。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="t3 order">
+        <div class="t3left">
+            <div class="t3leftcontent">
+               <h3>下单流程</h3>
+                <h4>
+                    Shopping Process
+                </h4>
+            </div>
+        </div>
+        <div class="t3right">
+            <div class="wei">
+                <p class="wei1">搜索添加微信公众号：连咖啡微服务（LyanCafe）或直接扫描上面二维码</p>
+
+                <p> 点击左下方"订咖啡"菜单</p>
+            </div>
+        </div>
+    </div>
+    <div class="t4">
+        <ul>
+            <li>
+                <p class="p1">微信扫码</p>
+
+                <p>Scan WeChat Code</p>
+            </li>
+            <li>
+                <p class="p1">自助下单</p>
+
+                <p>Create Order</p>
+            </li>
+            <li>
+                <p class="p1">微信支付</p>
+
+                <p>WeChat Payment</p>
+            </li>
+            <li>
+                <p class="p1">咖啡配送</p>
+
+                <p>Coffee Distribution</p>
+            </li>
+            <li>
+                <p class="p1">签收确认</p>
+
+                <p>Confirm</p>
+            </li>
+            <li class="over">
+                <p class="p1">评价分享</p>
+
+                <p>Evaluation and Share</p>
+            </li>
+        </ul>
+    </div>
+    <div class="f5 service">
+        <div class="area">
+            <p class="ptitle">服务区域</p>
+
+            <p>Service Area</p>
+        </div>
+        <div class="ser_p" style="width:666px;">
+            <p> 北京：中关村，西单，金融街，宣武门，望京，三元桥，亮马桥，三里屯，朝阳门，团结湖，呼家楼，四惠，八里庄，双井，劲松，西二旗，上地</p>
+
+            <p >
+               上海：黄浦区，静安区，虹口区，徐家汇区，长宁区，五角场，漕河泾开发区，陆家嘴，塘桥，浦东大道，上海科技馆，金桥，张江
+            </p>
+
+            <p>广州：海珠区，荔湾区，越秀区，天河区；白云区部分区域 </p>
+
+        </div>
+        <div class="f5date">
+            服务时间：周一至周六 09:00-17:30
+        </div>
+    </div>
+    <div class="f6 about">
+        <div class="f6left">
+          <div class="fk">
+              <h5>关于Coffee Box</h5>
+              <p>
+                  About Coffee Box
+              </p>
+          </div>
+        </div>
+        <div class="f6right">
+            <img src="images/bei.png" class="f6img">
+
+            <div class="f6right_word">
+                <p>Coffee Box，在你最需要的时刻，最适合的场所，从一杯咖啡开始。</p>
+
+                <p>无论大街还是小巷，烈日还是寒风，职场还是社区，</p>
+
+                <p> 由我们来分担你的需求，节约你的时间，分享你的快乐，连结你的真诚。</p>
+
+                <div class="hr1"></div>
+                <p>传承咖啡文化，传递温暖服务，传播时尚资讯，传送美味咖啡。</p>
+
+                <p> Coffee Box，从一杯咖啡开始。</p>
+            </div>
+        </div>
+    </div>
+    <div class="f7 contact">
+        <div class="f7_content">
+            <p>上海连隽商务咨询有限公司</p>
+
+            <p> 电话：021-33565800 传真：021-33565900</p>
+
+            <p>上海市徐汇区古美路1515号19号楼 凤凰大厦1805室</p>
+        </div>
+    </div>
+    <div class="foot">
+        <p>沪ICP备16008688号-1   &nbsp;&nbsp;&nbsp;&nbsp;
+© Copyright 2015. Coffee Box.<a style="color:#000;" href="http://www.alsovalue.com/" target="_blank">All rights reserved.</a></p>
+    </div>
+</div>
+</body>
 </html>

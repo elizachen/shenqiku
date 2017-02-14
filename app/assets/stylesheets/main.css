@@ -1,0 +1,669 @@
+@font-face {
+    font-family: hel;
+    src: url("../font/helveticaneue-light-webfont.woff") format('woff'), url("../font/helveticaneue-light-webfont.eot") format('eot'), url("../font/helveticaneue-light-webfont.ttf") format('ttf');
+}
+
+
+
+
+
+body {
+    background-color: #1c150f;
+    overflow-x: hidden;
+
+}
+
+.nav {
+    height: 70px;
+    background-color: #f6efed;
+    width: 1200px;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+.nav li {
+    float: left;
+    font-size: 14px;
+    color: #402d27;
+    line-height: 70px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav li a {
+    color: #402d27;
+    margin: 0 17px;
+}
+
+.nav ul {
+    float: right;
+    position: relative;
+    margin-right: 10px;
+}
+
+.nav img {
+    float: left;
+    margin-left: 57px;
+    margin-top: 12px;
+}
+
+.row {
+    width: 86px;
+    height: 10px;
+    background-color: #f38a00;
+    position: absolute;
+    top: 0;
+    margin-left: -3px;
+}
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+    height: 668px;
+}
+
+.mianleft {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.mianright {
+    width: 50%;
+    float: right;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.mianleft .top {
+    width: 100%;
+    height: 50%;
+    background-color: #f38a00;
+    overflow: hidden;
+}
+
+.mianleft .bottom {
+    width: 100%;
+    height: 50%;
+    background: url("../images/p.png") no-repeat center center;
+    background-size: 100%;
+    background-color: #442922;
+}
+
+.mianright .top {
+    width: 100%;
+    height: 50%;
+    background: url("../images/address.png") no-repeat top left;
+}
+
+.mianright .bottom {
+    width: 100%;
+    height: 50%;
+    background-color: #d7bfa9;
+    overflow: hidden;
+}
+
+.example-animation {
+    color: #fff;
+    font-size: 40px;
+
+}
+
+.location {
+    width: 435px;
+    margin: 0px auto;
+    color: #402d27;
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.location p {
+    font-size: 15px;
+}
+
+.location h3 {
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.location .word {
+    margin-top: 50px;
+}
+
+.location .word h3 {
+    margin-top: 100px;
+}
+
+.location .word p {
+    line-height: 25px;
+}
+
+.ta2 .word {
+    margin-top: 125px;
+}
+
+.ta1 .word {
+    margin-top: 100px;
+}
+
+.ta3 .word {
+    margin-top: 70px;
+}
+
+.ta1 h4 {
+    line-height: 43px;
+}
+
+.ta3 h4 {
+    line-height: 40px;
+}
+
+.hr3 {
+    height: 30px;
+    overflow: hidden
+}
+
+.t1 {
+    height: 333px;
+    background: url("../images/t1.png") no-repeat center center;
+    width:1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.t2 {
+    height: 666px;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.t2 .t2left {
+    width: 50%;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+}
+
+.t2 .t2right {
+    width: 50%;
+    float: right;
+    height: 100%;
+    overflow: hidden;
+}
+
+.t2 .t2left .top {
+    width: 100%;
+    height: 50%;
+    background-color: #f6efed;
+
+    overflow: hidden;
+}
+
+.t2 .t2left .top:hover {
+    background: url("../images/coff1.png") no-repeat center center;
+	background-size:100%;
+}
+
+/*.t2 .t2left .top:hover {
+    background-color: #e7dfdc;
+}*/
+
+.t2 .t2left .bottom {
+    width: 100%;
+    height: 50%;
+    background-color: #e7dfdc;
+    overflow: hidden;
+
+}
+
+.t2 .t2left .bottom:hover {
+    background: url("../images/coff3.png") no-repeat center center;
+	background-size:100%;
+}
+
+/*
+.t2 .t2left .bottom:hover {
+    background-color: #f6efed;
+}*/
+
+.t2 .t2right .top {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background-color: #e7dfdc;
+
+}
+
+.t2 .t2right .top:hover {
+    background: url("../images/coff2.png") no-repeat center center;
+	background-size:100%;
+}
+
+/*.t2 .t2right .top:hover {
+    background-color: #f6efed;
+}*/
+
+.t2 .t2right .bottom {
+    width: 100%;
+    height: 50%;
+    background-color: #f6efed;
+    overflow: hidden;
+}
+
+.t2 .t2right .bottom:hover {
+    background: url("../images/coff4.png") no-repeat center center;
+	background-size:100%;
+}
+
+/*.t2 .t2right .bottom:hover {
+    background-color: #e7dfdc;
+}*/
+
+.cof {
+    width: 350px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 78px;
+    overflow: hidden;
+    color: #402d27;
+    text-align: center;
+}
+
+.cof .cof1 {
+    margin-top: 30px;
+}
+
+.cof p {
+    line-height: 25px;
+    font-size: 14px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.t3 {
+    height: 334px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.t3left {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #442922;
+}
+
+.t3right {
+    width: 50%;
+    height: 100%;
+    float: right;
+    background-color: #e7dfdc;
+}
+
+.wei {
+    width: 500px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 58px;
+    background: url("../images/wei.png") no-repeat top center;
+    overflow: hidden;
+}
+
+.wei p {
+    font-size: 14px;
+    color: #402d27;
+    text-align: center;
+}
+
+.wei1 {
+    margin-top: 176px;
+    line-height: 40px;
+}
+
+.t4 {
+    width: 1200px;
+    margin: 0 auto;
+    height: 336px;
+    background-color: #442922;
+}
+
+.t4 ul {
+    overflow: hidden;
+    margin-left: 40px;
+}
+
+.t4 li {
+    width: 150px;
+    height: 130px;
+    background: url("../images/orderlist.png") no-repeat center center;
+    float: left;
+    color: #fff;
+    text-align: center;
+    margin: 94px 20px;
+}
+
+.t4 .over {
+    background: url("../images/orderlist1.png") no-repeat center center;
+}
+
+.t4 li p {
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    margin-right: 22px;
+    line-height: 28px;
+}
+
+.t4 .over p {
+    margin-right: -4px;
+}
+
+.t4 .p1 {
+    margin-top: 32px;
+    font-size: 14px;
+}
+
+.f5 {
+    height: 499px;
+    width: 1200px;
+    margin: 0 auto;
+    background: url("../images/servicebg.png") left top;
+    overflow: hidden;
+    color: #fff;
+}
+
+.f5 .area {
+    width: 206px;
+    height: 206px;
+    background: url("../images/service.png") no-repeat top left;
+    overflow: hidden;
+}
+
+.f6 {
+    height: 500px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.f6 .f6left {
+    width: 50%;
+    float: left;
+    height: 100%;
+    background-color: #e7dfdc;
+    background-color: #e7dfdc;
+}
+
+.f6 .f6right {
+    width: 50%;
+    float: right;
+    height: 100%;
+    background-color: #f6efed;
+    position: relative;
+    font-size: 18px;
+    color: #402d27;
+    text-align: center;
+}
+
+.f6 .f6right p {
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.hr1 {
+    height: 30px;
+    overflow: hidden;
+}
+
+.f6right_word {
+    margin-top: 256px;
+}
+
+.f6img {
+    position: absolute;
+    top: -146px;
+    left: 50%;
+    margin-left: -164px;
+}
+
+.f7 {
+    height: 232px;
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #442922;
+    overflow: hidden;
+}
+
+.f7_content {
+    width: 500px;
+    height: 130px;
+    font-size: 18px;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 54px;
+}
+
+.f7_content p {
+    line-height: 42px;
+    text-align: center;
+}
+
+.foot {
+    height: 98px;
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #f6efed;
+    font-size: 18px;
+    color: #000;
+    overflow: hidden;
+}
+
+.foot p {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.loactionitem {
+    width: 600px;
+    height: 668px;
+    overflow: hidden;
+    float: left;
+}
+
+.locationwreap {
+    width: 1000000px;
+    height: 800px;
+    overflow: hidden;
+}
+
+.prev1, .next1 {
+
+    width: 21px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    z-index: 100;
+    line-height: 45px;
+    text-align: center;
+
+}
+
+.selectrow {
+    display: none;
+}
+
+.prev1 {
+    left: 20px;
+    background: url("../images/prsmall1.png") no-repeat;
+}
+
+.next1 {
+    right: 20px;
+    background: url("../images/prsmall2.png") no-repeat;
+}
+
+.current {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    margin-left: -600px;
+}
+
+.location-index {
+    position: absolute;
+    left: 50%;
+    margin-left: -66px;
+    bottom: 23px;
+}
+
+.location-index li {
+    width: 32px;
+    height: 2px;
+    float: left;
+    margin: 0 6px;
+    background-color: #402d27;
+}
+
+.location-index .lic {
+    background-color: #f38a00;
+}
+
+.nt {
+    width: 184px;
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+    border: 2px solid #402d27;
+    color: #402d27;
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.area {
+    float: left;
+    margin-left: 210px;
+    margin-top: 134px;
+}
+
+.area p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.area .ptitle {
+    margin-top: 22px;
+    margin-bottom: 38px;
+
+}
+
+.ser_p {
+    width: 700px;
+    overflow: hidden;
+    font-size: 15px;
+    margin-left: 75px;
+    margin-top: 126px;
+    float: left
+}
+
+.ser_p p {
+    line-height: 32px;
+}
+
+.f5date {
+    width: 350px;
+    height: 60px;
+    border: 2px solid #fff;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    overflow: hidden;
+    margin-top: 56px;
+    float: left;
+}
+
+.serw {
+    margin-left: 50px;
+}
+
+.fk {
+    width: 189px;
+    height: 107px;
+    background: url("../images/kuang.png") no-repeat top center;
+    background-size: 98%;
+    color: #402d27;
+    font-size: 40px !important;
+    margin-top: 202px;
+    margin-left: 198px;
+    overflow: hidden;
+}
+
+.fk h5, .fk p {
+    font-weight: normal;
+    font-size: 22px;
+    text-align: center
+}
+
+.fk h5 {
+    margin-top: 12px;
+}
+
+.fk p {
+    margin-top: 34px;
+}
+
+.t3leftcontent {
+    width: 190px;
+    height: 140px;
+    background: url("../images/3.png") no-repeat center center;
+    background-size: 100%;
+    color: #f38a00;
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    overflow: hidden;
+    margin-top: 85px;
+    margin-left: 205px;
+}
+.t3leftcontent h3{ margin-top: 46px; font-weight: normal}
+.t3leftcontent h4{font-weight: normal; margin-top: 36px;}
+
+
+
+
+	.focusBox .hd { position: absolute;
+    left: 50%;
+    margin-left: -66px;
+    bottom: 23px;}
+	.focusBox .hd li{width: 32px;
+    height: 2px;
+    float: left;
+    margin: 0 6px;
+    background-color: #402d27;}
+	.focusBox .hd .on{ background-color: #f38a00;   }
+
+	.focusBox .prev,
+	.focusBox .next { width: 21px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    z-index: 100;
+    line-height: 45px;
+    text-align:center;}
+	.focusBox .prev { left: 20px;
+    background: url("../images/prsmall1.png") no-repeat; filter:alpha(opacity=30); -moz-opacity:.3; opacity: .3}
+	.focusBox .next { right: 20px;
+    background: url("../images/prsmall2.png") no-repeat; filter:alpha(opacity=30); -moz-opacity:.3; opacity:.3 }
+	.focusBox .prev:hover{background: url("../images/prsmall1.png") no-repeat; filter:alpha(opacity=100); -moz-opacity:1; opacity: 1}
+	.focusBox .next:hover { background: url("../images/prsmall2.png") no-repeat; filter:alpha(opacity=100); -moz-opacity:1; opacity: 1}
+	
+	
+	
+	
