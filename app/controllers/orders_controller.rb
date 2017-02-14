@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   end
 
 
-    def pay_with_alipy
+    def pay_with_alipay
       @order = Order.find_by_token(params[:id])
       @order.set_payment_with!("alipy")
       @order.pay!

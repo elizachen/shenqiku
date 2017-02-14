@@ -8,12 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :orders do
-      member do
-        post :pay_with_alipy
-        post :pay_with_wechat
-      end
-    end
+    resources :orders
   end
 
 
@@ -31,7 +26,12 @@ Rails.application.routes.draw do
   end
 
   resources :cart_items
-  resources :orders
+  resources :orders  do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end
 
   #root 'welcome#index'
   root 'products#index'
