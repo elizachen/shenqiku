@@ -39,6 +39,7 @@ class Order < ApplicationRecord
     event :cancell_order do
       transitions from: [:order_placed, :paid], to: :order_cancelled
     end
+    
 
   end
 
