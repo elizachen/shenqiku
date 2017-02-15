@@ -6,7 +6,6 @@ class OrderMailer < ApplicationMailer
 
     mail(to: @user.email , subject: "[shenqiku] 感谢您完成本次的下单，以下是您这次购物明细 #{order.token}")
   end
-<<<<<<< HEAD
 
   def apply_cancel(order)
     @order = order
@@ -15,6 +14,8 @@ class OrderMailer < ApplicationMailer
 
     mail(to: "admin@test.com", subject: "[shenqiku] 用户#{order.user.email}申请取消订单 #{order.token}")
   end
+
+  
 
   def notify_ship(order)
     @order = order
@@ -33,6 +34,4 @@ class OrderMailer < ApplicationMailer
 
   end
 
-=======
->>>>>>> 5f0c1fe6c28320d2e893e691b5f1ecef53089db9
 end

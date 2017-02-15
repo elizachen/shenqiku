@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
       end
 
       current_cart.clean!
-      OrderMailer.notify_order_placed(@order).deliver!                  
+      OrderMailer.notify_order_placed(@order).deliver!
 
       # redirect_to order_path(@order)
       redirect_to order_path(@order.token)
@@ -49,6 +49,13 @@ class OrdersController < ApplicationController
       @order.make_payment!
 
       redirect_to order_path(@order.token), notice: "使用微信完成付款！我们会尽快确认！谢谢！"
+    end
+
+    def apply_to_cancel
+      @order = Order.find(params[:id])
+      OrderMailer.apply_cancel(@order).deliver!
+      flash[:notice] = "已提交申請"
+      redirect_to :back
     end
 
 
