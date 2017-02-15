@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit]
-  before_action :require_is_admin
+  before_action :admin_required
 
  layout "admin"
 
