@@ -1,25 +1,13 @@
-<!-- <div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥<%= product.price %>
-    </div>
-  <% end %>
-</div> -->
 
+<!doctype html>
+<html lang="en">
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
         <meta property="og:url" content="http://www.muji.com/cn/">
         <meta property="og:image" content="http://www.muji.com/cn/img/ogimage.png">
-        <meta name="description" content="在神器库，我们精心搜集了，那些流行于硅谷的生物黑科技食品、神器、科技众筹产品，以帮助您，提工作效率和生活品质。">
+        <meta name="description" content="在防霾库，我们精心搜集了，高品质、专业、安全的产品。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="robots" content="noydir,noodp">
@@ -43,18 +31,195 @@
 
     </head>
 
-    <body>
+<body>
+<div class="indoor_page_wrap">
+
+
+<div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+<!-- Indicators -->
+<ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="3"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="4"></li>
+</ol>
+
+<!-- Wrapper For Slides -->
+<div class="carousel-inner" role="listbox">
+
+                <!-- Third Slide -->
+<div class="item active">
+  <section class="tabs indoor-page">
+      <ul class="clearfix tabs-list">
+          <li class="design">
+              <img src="images/air-indoor-design.jpg" class="bg"/>
+              <em class="slideInDown animated">
+                  <img src="images/air-indoor-design-text.png" width="349" height="279" />
+              </em>
+          </li>
+        </ul>
+      </section>
+      <a class="prev" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+      </a>
+      <a class="next" href="#bootstrap-touch-slider" role="button" data-slide="next">
+      </a>
+</div>
+
+
+<div class="item">
+<section class="tabs indoor-page">
+    <ul class="clearfix tabs-list">
+        <li class="test">
+            <img src="images/air-indoor-test.jpg" class="bg" />
+            <dl class="rollIn animated">
+                <dt>
+                    <img src="images/air-indoor-test-slogin.png" alt="" width="330" height="168" />
+                </dt>
+                <dd class="line">&nbsp;</dd>
+                <dd class="t">
+                    <img src="images/air-indoor-test-t.png" alt="" width="330" height="65" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+
+    <div class="num">
+        <ul class="clearfix"></ul>
+    </div>
+    <a class="prev" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+    </a>
+    <a class="next" href="#bootstrap-touch-slider" role="button" data-slide="next">
+    </a>
+</section>
+</div>
+
+<!-- Third Slide -->
+<div class="item">
+<section class="tabs indoor-page">
+    <ul class="clearfix tabs-list">
+      <li class="look">
+          <img src="images/air-indoor-look.jpg" class="bg" />
+          <dl class="bounceInRight animated">
+              <dt>
+                  <img src="images/air-indoor-look-slogin.png" alt="" width="265" height="136" />
+              </dt>
+              <dd class="line">&nbsp;</dd>
+              <dd class="text">
+                  <img src="images/air-indoor-look-text.png" alt=""  width="265" height="62"/>
+              </dd>
+          </dl>
+          <div class="bounceInLeft animated">
+              <img src="images/air-indoor-look-m.png" alt="" width="235" height="417" />
+          </div>
+      </li>
+    </ul>
+
+    <div class="num">
+        <ul class="clearfix"></ul>
+    </div>
+    <a class="prev" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+    </a>
+    <a class="next" href="#bootstrap-touch-slider" role="button" data-slide="next">
+    </a>
+</section>
+</div>
+
+
+<!-- Third Slide -->
+<div class="item">
+<section class="tabs indoor-page">
+    <ul class="clearfix tabs-list">
+        <li class="warmth">
+            <img src="images/air-indoor-warmth.jpg" class="bg" />
+            <dl class="swing animated">
+                <dt>
+                    <img src="images/air-indoor-warmth-air.png" alt="" />
+                </dt>
+                <dd class="slogin">
+                    <img src="images/air-indoor-warmth-slogin.png" alt="" />
+                </dd>
+                <dd class="line">&nbsp;</dd>
+                <dd class="text">
+                    <img src="images/air-indoor-warmth-text.png" alt="" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+
+    <div class="num">
+        <ul class="clearfix"></ul>
+    </div>
+    <a class="prev" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+    </a>
+    <a class="next" href="#bootstrap-touch-slider" role="button" data-slide="next">
+    </a>
+</section>
+</div>
+
+
+<!-- Forth Slide -->
+<div class="item">
+<section class="tabs indoor-page">
+    <ul class="clearfix tabs-list">
+        <li class="machine">
+            <img src="images/air-indoor-machine.jpg" class="bg" />
+            <dl class="bounceIn animated">
+                <dt>
+                    <img src="images/air-indoor-machine-slogin.png" alt="" width="419" height="46" />
+                </dt>
+                <dd class="line">&nbsp;</dd>
+                <dd class="text">
+                    <img src="images/air-indoor-machine-text.png" alt="" width="419" height="58" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+
+    <div class="num">
+        <ul class="clearfix"></ul>
+    </div>
+    <a class="prev" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+    </a>
+    <a class="next" href="#bootstrap-touch-slider" role="button" data-slide="next">
+    </a>
+</section>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- <div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥<%= product.price %>
+    </div>
+  <% end %>
+</div> -->
+
+
 
         <div id="main">
 
-            <section id="mainCampaign">
+            <section id="mainCampaign" >
                 <div class="wrap">
-                    <div class="mainPanel">
+                    <div class="mainPanel" style="margin-bottom:200px;">
                         <a href="/">
-                            <img src="https://ww3.sinaimg.cn/large/006tNc79gy1fcspzv3z5uj30xp0l2gqi.jpg" alt="科技改变生活" class="pc">
-                            <img src="https://ww4.sinaimg.cn/large/006tNc79ly1fcrhn6u42ej30qo0wzn9e.jpg" alt="科技改变生活" class="mobile">
-                            <!--  <span class="title">屏息之美 净致之选</span> -->
+                            <img src="images/bg.png" class="pc">
+                            <img src="images/bg.png" class="mobile">
 
+                            <!--  <span class="title">屏息之美 净致之选</span> -->
                         </a>
                     </div>
 
@@ -97,17 +262,13 @@
 
             </section>
 
-            <section id="newItem">
-                <h1>新到商品</h1>
-
-                <div class="more">
-                    <a href="/">更多</a>
-                </div>
+              <section id="mainCampaign" >
+                <h1>防霾口罩</h1>
 
                 <div class="wrap">
-                    <ul>
+                    <ul class="fourPanels">
                         <% if  @products.present? %>
-                        <% @products.limit(5).order('created_at DESC').each do |product| %>
+                        <% @products.limit(4).order('created_at DESC').each do |product| %>
                         <li>
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
@@ -116,27 +277,29 @@
                             <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
                             </span>
                             <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <span class="name">￥
-                                <%=product.price%></span>
+                            <span class="name"><%=   product.title%></span>
+                            <br>
+                            <span class="name">   推荐指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <br>
+                            <span class="name">   ￥
+                            <%=product.price%></span>
                             <% end %>
                         </li>
                         <% end %>
                         <% end %>
                     </ul>
                 </div>
-            </section>
-
-            <section id="newItem">
-                <h1>神器</h1>
 
                 <div class="more">
                     <a href="/">更多</a>
                 </div>
+            </section>
+
+            <section id="mainCampaign" >
+                <h1>霾表</h1>
 
                 <div class="wrap">
-                    <ul>
+                    <ul class="fourPanels">
                         <% if  @products.present? %>
                         <% @products.order('created_at DESC').each do |product| %>
                         <% if  true == product.categories.eql?("神器")%>
@@ -149,7 +312,9 @@
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>
+                            <br>
                             <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <br>
                             <span class="name">￥
                                 <%=product.price%></span>
                             <% end %>
@@ -159,17 +324,17 @@
                         <% end %>
                     </ul>
                 </div>
-            </section>
-
-            <section id="newItem">
-                <h1>生物科技美食</h1>
 
                 <div class="more">
                     <a href="/">更多</a>
                 </div>
 
+            </section>
+
+            <section id="mainCampaign">
+                <h1>空气净化器</h1>
                 <div class="wrap">
-                    <ul>
+                    <ul  class="fourPanels" >
                         <% if  @products.present? %>
                         <% @products.order('created_at DESC').each do |product| %>
                         <% if  true == product.categories.eql?("生物科技美食")%>
@@ -192,13 +357,18 @@
                         <% end %>
                     </ul>
                 </div>
+
+                <div class="more">
+                    <a href="/">更多</a>
+                </div>
+
             </section>
 
-            <section id="topicItem">
-                <h1>科技众筹产品</h1>
+            <section id="mainCampaign" >
+                <h1>科技众筹</h1>
 
                 <div class="wrap">
-                    <ul>
+                    <ul class="fourPanels">
                         <% if  @products.present? %>
                         <% @products.order('created_at DESC').each do |product| %>
                         <% if  true == product.categories.eql?("科技众筹产品")%>
@@ -334,6 +504,26 @@
             _satellite.pageBottom();
         </script>
 
-    </body>
+
+<!-- jQuery -->
+   <!-- Script to Activate the Carousel -->
+   <script>
+   $('.carousel').carousel({
+       interval: 5000 //changes the speed
+   })
+   $('#bootstrap-touch-slider').bsTouchSlider();
+   </script>
+
+  <script>å
+   $(document).ready(function () {
+   $('.material-button-toggle').click(function () {
+       $(this).toggleClass('open');
+       $('.option').toggleClass('scale-on');
+   });
+  });
+ </script>
+</body>
+
+
 
 </html>

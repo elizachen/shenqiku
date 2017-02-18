@@ -1,83 +1,65 @@
 
-<header id="globalHeader">
-    <div class="headerWrap">
-
-        <h3 id="siteName">
-          <a href="/" ><img src="/images/favicon-leaf.ico" style="margin-bottom:20px;width:30px;"/> 防霾库</a>
-        </h3>
-
-        <nav id="hGlobalNav">
-            <h1>菜单</h1>
-            <div class="wrapper">
-                <div class="cancel"></div>
-                <ul>
-                    <li class="home">
-                        <a href="/">首页</a>
-                    </li>
-
-                    <li>
-                        <%= link_to("所有商品", products_path) %>
-                    </li>
-
-                    <li>
-                        <%= link_to("关于我们", about_path) %>
-                    </li>
-
-                    <li>
-                        <%= link_to carts_path do  %>
+<header id="globalHeader" style="margin-right:-15px; margin-left:-15px; padding:0px;">
+  <!-- <h3 id="siteName">
+          <a href="/" ><img src="/images/favicon-leaf.ico" style="margin-left:20px;margin-bottom:0px;width:30px;"/> 防霾库</a>
+  </h3> -->
+  <nav>
+    <a href="/" class="logo" style="float: left; margin-top:5px">
+              <img src="images/air-logo.png" alt="空气果" width="55" height="34"/>
+    </a>
+    <div class="nav-list">
+          <a href="/">下载APP</a>
+          <!--<a href="/airwall">空气果墙</a>-->
+          <%= link_to("关于我们", about_path) %>
+          <%= link_to carts_path do  %>
                         购物车
                         <i class="fa fa-shopping-cart"></i>
                         (
                         <%= current_cart.products.count %>
                         )
                         <% end %>
-                    </li>
-                    <li>
                         <% if !current_user %>
-                    <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %>
-                    </li>
-                    <!-- <li><%= link_to("登入", new_user_session_path) %></li> -->
-                    <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-                <% else %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hi!,
-                            <%= current_user.email %>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- <li> <%= link_to("Admin Panel", admin_products_path) %> </li> -->
-                            <% if current_user.admin? %>
-                            <li>
-                                <%= link_to("Admin 选单", admin_products_path ) %>
-                            </li>
-                            <% end %>
-                            <li>
-                                <%= link_to("个人订单列表", account_orders_path ) %>
-                            </li>
-                            <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
-                            <li>
-                                <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                            </li>
-                        </ul>
-                    </li>
-                    <% end %>
-                </li>
-            </ul>
+                                 <%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %>
+                                 <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %>
+                             <% else %>
+                                 <li class="dropdown">
+                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                         Hi!,
+                                         <%= current_user.email %>
+                                         <b class="caret"></b>
+                                     </a>
+                                     <ul class="dropdown-menu">
+                                         <!-- <li> <%= link_to("Admin Panel", admin_products_path) %> </li> -->
+                                         <% if current_user.admin? %>
+                                         <li>
+                                             <%= link_to("Admin 选单", admin_products_path ) %>
+                                         </li>
+                                         <% end %>
+                                         <li>
+                                             <%= link_to("个人订单列表", account_orders_path ) %>
+                                         </li>
+                                         <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
+                                         <li>
+                                             <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                                         </li>
+                                     </ul>
+                                 </li>
+                                 <% end %>
+          <!-- <a class ="buy" href="http://webmall.moji.com/appmall/product/1?appshare=1" target="_blank">立即购买</a> -->
+          <!--<a href="http://bbs.mojichina.com/forum.php?mod=forumdisplay&fid=44">论坛</a>-->
+         <!-- <a href="/preorder?airbanner" class="obt">我要预约</a>-->
+              <section id="hSearch" style="margin-top:20px;margin-right:43px;">
+                      <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext=" id="headerSearch" method="get">
+                          <h1>产品搜索</h1>
+                          <div class="wrapper">
+                              <div class="cancel"></div>
+                              <input type="search" placeholder="产品搜索" name="qtext" value="">
+                          </div>
+                      </form>
+                  </section>
+
 
         </div>
     </nav>
-
-    <section id="hSearch">
-        <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext=" id="headerSearch" method="get">
-            <h1>产品搜索</h1>
-            <div class="wrapper">
-                <div class="cancel"></div>
-                <input type="search" placeholder="产品搜索" name="qtext" value="">
-            </div>
-        </form>
-    </section>
-
-</div>
 <!-- .headerWrap -->
 </header>
