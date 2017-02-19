@@ -28,7 +28,13 @@
         <script src="//assets.adobedtm.com/a6e9b8b912d51aecbc12256558ef49a48670b2e5/satelliteLib-9fa8fa56b87f6d219078e5bd7ee860df5977511f.js"></script>
         <meta name="google-site-verification" content="uuJ36II6toGyemYG32iDkK7S5iwki-LVe0XJytvliUA"/>
         <meta name="baidu-site-verification" content="IzCrHv6BWr"/>
+<style>
+  .ititle{
+    text-align: center;
 
+  }
+
+</style>
     </head>
 
 <body>
@@ -273,26 +279,24 @@
             </section>
 
               <section id="mainCampaign" >
-                <h1>新到商品</h1>
+                <h1 style="padding-top:30px;">新到商品</h1>
 
                 <div class="wrap">
                     <ul class="fourPanels">
                         <% if  @products.present? %>
                         <% @products.limit(4).order('created_at DESC').each do |product| %>
-                        <li>
+                        <li style="">
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                             <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
+                            <span class=""><%= image_tag(product.image_path, class: "thumb") %>
                             </span>
                             <% end %>
-                            <span class="name"><%=   product.title%></span>
-                            <br>
+                            <div class="" style="text-align:center;"><%=   product.title%> ￥<%=product.price%></div>
+                            <!-- <br>
                             <span class="name">   防霾指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <br>
-                            <span class="name">   ￥
-                            <%=product.price%></span>
+                            <br> -->
                             <% end %>
                         </li>
                         <% end %>
@@ -318,15 +322,10 @@
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                         <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "") %>
                             </span>
                             <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <br>
-                            <span class="name">防霾指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <br>
-                            <span class="name">￥
-                                <%=product.price%></span>
+                            <div class="" style="text-align:center;"><%=   product.title%> ￥<%=product.price%></div>
                             <% end %>
                         </li>
                         <% end %>
@@ -353,15 +352,10 @@
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                         <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "") %>
                             </span>
                             <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <br>
-                            <span class="name">防霾指数：⭐️⭐️⭐️⭐️⭐️</span>
-                            <br>
-                            <span class="name">￥
-                                <%=product.price%></span>
+                            <div class="" style="text-align:center;"><%=   product.title%> ￥<%=product.price%></div>
                             <% end %>
                         </li>
                         <% end %>
@@ -389,15 +383,10 @@
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                         <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "") %>
                             </span>
                             <% end %>
-                            <span class="name"><%=product.title%></span>
-                            <br>
-                            <span class="name">防霾指数：⭐️⭐️⭐️⭐️</span>
-                            <br>
-                            <span class="name">￥
-                                <%=product.price%></span>
+                            <div class="" style="text-align:center;"><%=   product.title%> ￥<%=product.price%></div>
                             <% end %>
                         </li>
                         <% end %>
@@ -411,7 +400,7 @@
                 </div>
             </section>
 
-            <section id="mainCampaign" >
+            <!-- <section id="mainCampaign" >
                 <h1>科技众筹</h1>
 
                 <div class="wrap">
@@ -444,7 +433,7 @@
                 <div class="more">
                     <a href="/">更多</a>
                 </div>
-            </section>
+            </section> -->
 
 
             <section id="event">
