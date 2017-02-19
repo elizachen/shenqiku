@@ -233,7 +233,7 @@
                         </a>
                     </div>
 
-                    <ul class="fourPanels">
+                    <!-- <ul class="fourPanels">
 
                         <li>
                             <a href="/">
@@ -268,12 +268,12 @@
 
                 <div class="more">
                     <a href="/">更多</a>
-                </div>
+                </div> -->
 
             </section>
 
               <section id="mainCampaign" >
-                <h1>防霾口罩</h1>
+                <h1>新到商品</h1>
 
                 <div class="wrap">
                     <ul class="fourPanels">
@@ -289,7 +289,7 @@
                             <% end %>
                             <span class="name"><%=   product.title%></span>
                             <br>
-                            <span class="name">   推荐指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <span class="name">   防霾指数：⭐️⭐️⭐️⭐️⭐️</span>
                             <br>
                             <span class="name">   ￥
                             <%=product.price%></span>
@@ -306,13 +306,13 @@
             </section>
 
             <section id="mainCampaign" >
-                <h1>霾表</h1>
+                <h1>防霾口罩</h1>
 
                 <div class="wrap">
                     <ul class="fourPanels">
                         <% if  @products.present? %>
                         <% @products.order('created_at DESC').each do |product| %>
-                        <% if  true == product.categories.eql?("神器")%>
+                        <% if  true == product.categories.eql?("防霾口罩")%>
                         <li>
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
@@ -323,7 +323,7 @@
                             <% end %>
                             <span class="name"><%=product.title%></span>
                             <br>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <span class="name">防霾指数：⭐️⭐️⭐️⭐️⭐️</span>
                             <br>
                             <span class="name">￥
                                 <%=product.price%></span>
@@ -342,12 +342,12 @@
             </section>
 
             <section id="mainCampaign">
-                <h1>空气净化器</h1>
+                <h1>霾表</h1>
                 <div class="wrap">
                     <ul  class="fourPanels" >
                         <% if  @products.present? %>
                         <% @products.order('created_at DESC').each do |product| %>
-                        <% if  true == product.categories.eql?("生物科技美食")%>
+                        <% if  true == product.categories.eql?("霾表")%>
                         <li>
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
@@ -357,7 +357,9 @@
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <br>
+                            <span class="name">防霾指数：⭐️⭐️⭐️⭐️⭐️</span>
+                            <br>
                             <span class="name">￥
                                 <%=product.price%></span>
                             <% end %>
@@ -375,13 +377,13 @@
             </section>
 
             <section id="mainCampaign" >
-                <h1>科技众筹</h1>
+                <h1>空气净化</h1>
 
                 <div class="wrap">
                     <ul class="fourPanels">
                         <% if  @products.present? %>
                         <% @products.order('created_at DESC').each do |product| %>
-                        <% if  true == product.categories.eql?("科技众筹产品")%>
+                        <% if  true == product.categories.eql?("空气净化器")%>
                         <li>
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
@@ -391,7 +393,9 @@
                             </span>
                             <% end %>
                             <span class="name"><%=product.title%></span>
-                            <span class="name">神器指数：⭐️⭐️⭐️⭐️</span>
+                            <br>
+                            <span class="name">防霾指数：⭐️⭐️⭐️⭐️</span>
+                            <br>
                             <span class="name">￥
                                 <%=product.price%></span>
                             <% end %>
@@ -401,25 +405,65 @@
                         <% end %>
                     </ul>
                 </div>
+
+                <div class="more">
+                    <a href="/">更多</a>
+                </div>
             </section>
 
+            <section id="mainCampaign" >
+                <h1>科技众筹</h1>
+
+                <div class="wrap">
+                    <ul class="fourPanels">
+                        <% if  @products.present? %>
+                        <% @products.order('created_at DESC').each do |product| %>
+                        <% if  true == product.categories.eql?("科技众筹")%>
+                        <li>
+                            <%= link_to product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                        <% else %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "thumbnail") %>
+                            </span>
+                            <% end %>
+                            <span class="name"><%=product.title%></span>
+                            <br>
+                            <span class="name">防霾指数：⭐️⭐️⭐️⭐️</span>
+                            <br>
+                            <span class="name">￥
+                                <%=product.price%></span>
+                            <% end %>
+                        </li>
+                        <% end %>
+                        <% end %>
+                        <% end %>
+                    </ul>
+                </div>
+
+                <div class="more">
+                    <a href="/">更多</a>
+                </div>
+            </section>
+
+
             <section id="event">
-                <h1>大神推荐</h1>
+                <h1>活动一览</h1>
 
                 <div class="wrap">
                     <ul>
 
                        <li>
                           <a href="/">
-                              <img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnwfqwejwj30p00fjmzz.jpg" alt="">
-                              <span class="title">Xdite推荐</span>
+                              <img src="images/panel/openmuji-sh755_640.jpg">
+                              <span class="title">促销活动</span>
                           </a>
                        </li>
 
                         <li>
                             <a href="/">
-                                <img src="https://ww3.sinaimg.cn/large/006tNc79jw1fcnwewcuyoj30hs0b4t9s.jpg" alt="">
-                                <span class="title">笑来推荐</span>
+                                <img src="images/panel/lab_140430_01.jpg">
+                                <span class="title">使用攻略</span>
                             </a>
                         </li>
 
@@ -427,8 +471,8 @@
 
                         <li>
                             <a href="/">
-                                <img src="https://ww1.sinaimg.cn/large/006tNc79jw1fcnwicejmkj30hs0b4wfp.jpg" alt="">
-                                <span class="title">罗胖推荐</span>
+                                <img src="images/panel/lab_140521_01.jpg">
+                                <span class="title">健康贴士</span>
                             </a>
                         </li>
 
