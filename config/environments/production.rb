@@ -84,6 +84,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+
   config.action_mailer.default_url_options = { :host => 'http://fangmaiku.herokuapp.com/'}
 
   config.action_mailer.delivery_method = :smtp
@@ -93,10 +94,8 @@ Rails.application.configure do
     domain: "heroku.com",
     authentication: "login",
     enable_starttls_auto: true,
-    user_name: ENV["SEND_CLOUD_USER_NAME"],    #api_user
-
-    password: ENV["SEND_CLOUD_USER_KEY"]       #api_key
-
-      }
+    user_name: ENV["SEND_CLOUD_USER_NAME"],
+    password: ENV["SEND_CLOUD_USER_KEY"]
+    }
 
 end
