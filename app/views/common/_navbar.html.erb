@@ -5,11 +5,10 @@
   </h3> -->
   <nav>
     <a href="/" class="logo" style="float: left; margin-top:5px">
-              <img src="images/air-logo.png" alt="空气果"/>
+      <!-- <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fcuu6m92pkj308c033jru.jpg" alt="防霾库"/> -->
+                <img src="/images/air-logo.png" alt="防霾库"/>
     </a>
     <div class="nav-list">
-          <a href="/">下载APP</a>
-          <!--<a href="/airwall">空气果墙</a>-->
           <%= link_to("关于我们", about_path) %>
           <%= link_to carts_path do  %>
                         购物车
@@ -22,13 +21,13 @@
                                  <%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %>
                                  <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %>
                              <% else %>
+
                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                         Hi!,
-                                         <%= current_user.email %>
+                                         Hi!,<%= current_user.email %>
                                          <b class="caret"></b>
                                      </a>
                                      <ul class="dropdown-menu">
-                                         <!-- <li> <%= link_to("Admin Panel", admin_products_path) %> </li> -->
+
                                          <% if current_user.admin? %>
                                          <li>
                                              <%= link_to("Admin 选单", admin_products_path ) %>
@@ -42,7 +41,9 @@
                                              <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
                                          </li>
                                      </ul>
+
                                  <% end %>
+
           <!-- <a class ="buy" href="http://webmall.moji.com/appmall/product/1?appshare=1" target="_blank">立即购买</a> -->
           <!--<a href="http://bbs.mojichina.com/forum.php?mod=forumdisplay&fid=44">论坛</a>-->
          <!-- <a href="/preorder?airbanner" class="obt">我要预约</a>-->
