@@ -3597,7 +3597,8 @@ tbody.collapse.in {
 }
 .dropdown-menu-left {
   right: auto;
-  left: 0;
+  left: 58%;
+  margin-top:-30px;
 }
 .dropdown-header {
   display: block;
