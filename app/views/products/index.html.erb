@@ -305,7 +305,7 @@
                 </div>
 
                 <div class="more">
-                    <a href="/">更多</a>
+                    <%= link_to("更多", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
                 </div>
             </section>
 
@@ -335,7 +335,7 @@
                 </div>
 
                 <div class="more">
-                    <a href="/">更多</a>
+                  <%= link_to("更多", search_products_path(:order => "created_at", :query_string => "防霾口罩"), method: :get) %>
                 </div>
 
             </section>
@@ -365,7 +365,7 @@
                 </div>
 
                 <div class="more">
-                    <a href="/">更多</a>
+                  <%= link_to("更多", search_products_path(:order => "created_at", :query_string => "霾表"), method: :get) %>
                 </div>
 
             </section>
@@ -396,7 +396,37 @@
                 </div>
 
                 <div class="more">
-                    <a href="/">更多</a>
+                  <%= link_to("更多", search_products_path(:order => "created_at", :query_string => "空气净化器"), method: :get) %>
+                </div>
+            </section>
+
+            <section id="mainCampaign" >
+                <h1>科技众筹</h1>
+
+                <div class="wrap">
+                    <ul class="fourPanels">
+                        <% if  @products.present? %>
+                        <% @products.order('created_at DESC').each do |product| %>
+                        <% if  true == product.categories.eql?("科技众筹")%>
+                        <li>
+                            <%= link_to product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                        <% else %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "") %>
+                            </span>
+                            <% end %>
+                            <div class="" style="text-align:center;"><%=   product.title%> ￥<%=product.price%></div>
+                            <% end %>
+                        </li>
+                        <% end %>
+                        <% end %>
+                        <% end %>
+                    </ul>
+                </div>
+
+                <div class="more">
+                  <%= link_to("更多", search_products_path(:order => "created_at", :query_string => "科技众筹"), method: :get) %>
                 </div>
             </section>
 
@@ -445,7 +475,7 @@
                        <li>
                           <a href="/">
                               <img src="images/panel/openmuji-sh755_640.jpg">
-                              <span class="title">促销活动</span>
+                              <span class="title">优惠活动</span>
                           </a>
                        </li>
 
