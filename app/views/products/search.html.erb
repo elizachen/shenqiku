@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" xml:lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Description" content="">
+<meta charset="utf-8" />
+<link rel="contents" href="/" title="Home">
+<script type="text/javascript" src="//www.muji.com.cn/cn/store/js/FSC02210.js" charset="utf-8"></script>
+<link href="//www.muji.com.cn/cn/store/css/muji.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="//www.muji.com.cn/cn/store/js/html5.js"></script><![endif]-->
+<script type="text/javascript" src="//www.muji.com.cn/cn/store/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="//www.muji.com.cn/cn/store/js/jquery.lazyload.mini.js"></script>
+<script type="text/javascript" src="//www.muji.com.cn/cn/store/js/muji.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="//www.muji.com.cn/cn/store/js/mj-productListView_search.js" charset="utf-8"></script>
+
+
+<title>
+
+商品搜寻
+| 防霾库
+</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+function showBag(flg){
+    if(flg == "1"){
+        document.getElementById("gnav_cart_target").style.display = 'block';
+    }else{
+        document.getElementById("gnav_cart_target").style.display = 'none';
+    }
+
+}
+</script>
+
+    <div class="content">
+        <nav id="sideNav"  style="float: left; width: 150px; margin-left: 30px; margin-right: 30px; margin-top: 113px;">
+           <h2>进阶搜索</h2>
+            <div id="snCategory">
+       <ul class="snCategoryL1">
+						           <li><h3 class="contentClose">选择类别</h3>
+							<ul class="snCategoryL2">
+						<li>
+              <%= link_to("防霾口罩", search_products_path(:order => "created_at", :query_string => "防霾口罩"), method: :get) %>
+						</li>
+						<li>
+              <%= link_to("霾表", search_products_path(:order => "created_at", :query_string => "霾表"), method: :get) %>
+						</li>
+						<li>
+              <%= link_to("空气净化", search_products_path(:order => "created_at", :query_string => "空气净化器"), method: :get) %>
+						</li>
+            <li>
+							<%= link_to("所有商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
+						</li>
+          </ul>
+				</li>
+       <!-- <li><h3 class="contentClose">选择价格</h3>
+   				<ul class="snCategoryL2">
+   					<li>
+								<a href="FSC02210E01.do?qtext=%E7%81%AF&amp;qstart=0&amp;sort=goods_disp_priority&amp;qrow=50&qrange=49%E5%85%83%E4%BB%A5%E4%B8%8B">
+									99元以下
+								</a>
+							</li>
+		         <li>
+								<a href="FSC02210E01.do?qtext=%E7%81%AF&amp;qstart=0&amp;sort=goods_disp_priority&amp;qrow=50&qrange=50%E5%85%83%EF%BD%9E99%E5%85%83">
+									99元～999元
+								</a>
+							</li>
+							<li>
+								<a href="FSC02210E01.do?qtext=%E7%81%AF&amp;qstart=0&amp;sort=goods_disp_priority&amp;qrow=50&qrange=100%E5%85%83%EF%BD%9E199%E5%85%83">
+									1000元～9999元
+								</a>
+							</li>
+					</ul>
+				</li> TBD  later do it-->
+	</ul>
+	   <ul class="snCategoryL1">
+<li class="D00010">
+	<h3 id="features">精选・新到商品</h3>
+	<ul class="snCategoryL2">
+		<li><a href="/">优惠活动</a></li>
+    <li><%= link_to("科技众筹", search_products_path(:order => "created_at", :query_string => "科技众筹"), method: :get) %></li>
+  	<li><%= link_to("新到商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %></li>
+	</ul>
+</li>
+	   	</ul>
+            </div>
+        </nav>
+        <!-- start FSC-02-210-1 // -->
+<script>
+$("head").append('<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport">');
+$("body").attr("id", "search");
+</script>
+<link href="/cn/store/css/muji_cn.css" rel="stylesheet" type="text/css"/>
+<link href="/cn/store/css/store/store.css" rel="stylesheet" type="text/css"/>
+<link href="/cn/store/css/store/store_cn.css" rel="stylesheet" type="text/css"/>
+<link href="/cn/store/css/mobile.css" rel="stylesheet" type="text/css" media="only screen and (min-device-width : 320px) and (max-device-width : 767px)"/>
+<link href="/cn/store/css/mobile_cn.css" rel="stylesheet" type="text/css" media="only screen and (min-device-width : 320px) and (max-device-width : 767px)"/>
+<!-- //end FSC-02-210-1 -->
+
+
+
+        <div id="main" style="min-height: 440px; padding:20px,60px,30px,60px;">
+                <div class="productlistPager">
+                    <div class="totalItems">
+                        <span class="itemnum">10 </span>商品中
+                                <span class="itemnum"> 1-10 </span>商品
+                    </div>
+
+                    <table class="pagerControl">
+                        <tbody>
+                            <tr>
+                                <td class="prev"><span>上一页</span></td><td class="num"><strong>1</strong></td><td class="next"><span>下一页</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <section id="mainCampaign" >
+                    <div class="wrap">
+                        <ul class="fourPanels">
+                <% if  @products.present? %>
+                  <% @products.order('created_at DESC').each do |product| %>
+                  <li>
+                              <dl class="info">
+                                     <%= link_to product_path(product) do %>
+                                     <% if product.image.present? %>
+                                      <dt class="thumb">
+                                      <%= image_tag(product.image.thumb.url)%>
+                                      </dt>
+                                      <% else %>
+                                      <dt class="thumb">
+                                      <%= image_tag(product.image_path, class: "thumb") %>
+                                      </dt>
+                                      <% end %>
+                                      <br>
+                                      <dd class="name"><%=product.title%></dd>
+                                      <% end %>
+                                      <%= link_to product_path(product) do %>
+                                        <dd class="tag">
+                                                <div class="tag sale">限时特价商品</div>
+                                        </dd>
+                                        <dd class="price">
+                                            <del>
+                                                <span class="num">￥<%=product.price%></span>
+                                            </del>
+                                            <ins>
+                                                <span class="num">￥<%=product.price%></span>
+                                            </ins>
+                                        </dd>
+                                      <% end %>
+                                </dl>
+                              </li>
+                            <% end %>
+                            <% end %>
+                          </ul>
+                </div>
+
+        </section>
+    </div>
+
+
+
+<script language="JavaScript" type="text/javascript">
+var _sctag = new Object();
+
+_sctag.eVar1  = '灯';
+_sctag.prop21 = '灯';
+
+_sctag.products = ';';
+
+_sctag.pagegrp="Sr";
+</script>
+<!-- End SiteCatalyst code version: H.17. -->
+
+
+<script type="text/javascript">
+<!--
+var name = "mm_id";
+
+if ("" != '') {
+	setCookie(name, '', '.muji.com.cn', '/cn/store/', 1825);
+}
+
+var cookieValue = getCookie(name);
+
+if (cookieValue) {
+	if(window._sctag){
+		_sctag.eVar38 = cookieValue;
+	}else{
+		var _sctag = new Object();
+		_sctag.eVar38 = cookieValue;
+	}
+}
+
+function getCookie(name) {
+	if (!name || !document.cookie) return;
+
+	var cookies = document.cookie.split("; ");
+	for (var i = 0; i < cookies.length; i++) {
+		var str = cookies[i].split("=");
+		if (str[0] != name) continue;
+		return str[1];
+	}
+	return;
+}
+
+function setCookie(name, value, domain, path, expires) {
+	if (!name) return;
+
+	var cookie = name + "=" + value;
+
+	if (domain) {
+		cookie += "; domain=" + domain;
+	}
+
+	if (path) {
+		cookie += "; path=" + path;
+	}
+	if (expires) {
+		var nowtime = new Date().getTime();
+		expires = new Date(nowtime + (60 * 60 * 24 * 1000 * expires));
+		cookie += "; expires=" + expires.toGMTString();
+	}
+
+	document.cookie = cookie;
+}
+//-->
+</script>
+
+<script type="text/javascript">
+<!--
+
+if(window._sctag){
+	if(window._sctag.pagegrp){
+	scData.pageName="["+_sctag.pagegrp+"]"+document.title;
+	}
+}else{
+	scData.pageName=document.title;
+}
+//-->
+</script>
+
+<script>_satellite.pageBottom();</script>
+
+
+</body>
+
+</html>
