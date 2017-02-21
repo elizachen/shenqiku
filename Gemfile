@@ -28,6 +28,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use sqlite3 as the database for Active Record
+# gem 'sqlite3'
+#
+# gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
@@ -35,7 +41,11 @@ gem 'font-awesome-rails'
 gem 'awesome_rails_console'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'letter_opener', group: :development
+gem 'aasm'
+gem 'figaro'
+gem 'fog'
+#gem 'fog-aws'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -58,4 +68,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
-end 
+end
