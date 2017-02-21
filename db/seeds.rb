@@ -89,19 +89,18 @@ products_categories = ["霾表"]
   puts "3 products created."
 
 
-products = ["防霾口罩", "霾表","空气净化器"]
-products_categories = ["科技众筹", "科技众筹","科技众筹"]
-products_prices = [49,599,2999]
+products = ["air口罩", "智能霾表"]
+products_categories = ["科技众筹", "科技众筹"]
+products_prices = [49,599]
 # products_images = ["public/images/panel/shoes.jpg",
 #   "public/images/panel/chair.jpg",
 #   "public/images/panel/coffee.jpg"]
 
   products_image_paths = ["https://ww4.sinaimg.cn/large/006tNc79ly1fcuxm4mu7wj30by0by3yn.jpg",
-    "https://ww2.sinaimg.cn/large/006tNc79ly1fcuxm6dhudj3104106ata.jpg",
-    "https://ww2.sinaimg.cn/large/006tNc79ly1fcv32gddnmj30m80m8q6a.jpg"]
+    "https://ww2.sinaimg.cn/large/006tNc79ly1fcuxm6dhudj3104106ata.jpg"]
 
 
-  create_products = for i in 1..3 do
+  create_products = for i in 1..2 do
     Product.create!([title: products[i - 1],
      description: products_description[i - 1],
      quantity: rand(0..10),

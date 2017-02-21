@@ -9,6 +9,7 @@
                 <img src="/images/air-logo.png" alt="防霾库"/>
     </a>
     <div class="nav-list">
+          <%= link_to("所有商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
           <%= link_to("关于我们", about_path) %>
           <%= link_to carts_path do  %>
                         购物车
@@ -48,14 +49,20 @@
           <!--<a href="http://bbs.mojichina.com/forum.php?mod=forumdisplay&fid=44">论坛</a>-->
          <!-- <a href="/preorder?airbanner" class="obt">我要预约</a>-->
               <section id="hSearch" style="margin-top:20px;margin-right:43px;">
-                      <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext=" id="headerSearch" method="get">
+                      <!-- <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext="
+                      id="headerSearch" method="get"> -->
+                      <%= form_tag search_products_path, method: :get, class: 'questions-search-form'  do %>
                           <h1>产品搜索</h1>
                           <div class="wrapper">
                               <div class="cancel"></div>
-                              <input type="search" placeholder="产品搜索" name="qtext" value="">
+                              <!-- <input type="text" class="form-control" name="query_string" value="<%= params[:query_string] %>" placeholder="职位 种类 城市 区域..."> -->
+                              <input type="search" placeholder="产品搜索" name="query_string" value="<%= params[:query_string] %>">
                           </div>
-                      </form>
+                      <!-- </form> -->
+                      <% end %>
                   </section>
+
+
 
 
         </div>
