@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit]
-  before_action :admin_required
+  before_action :require_is_admin
 
  layout "admin"
 
@@ -54,7 +54,7 @@ class Admin::ProductsController < ApplicationController
 
   def product_params
     # params.require(:product).permit(:title, :description, :quantity, :price)
-    params.require(:product).permit(:title, :description, :quantity, :price, :image, :categories, :image_path, )
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
 
   end
 end
