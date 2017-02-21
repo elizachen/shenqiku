@@ -116,10 +116,10 @@
                 <dt>
                     <img src="images/air-indoor-machine-slogin.png" alt="" width="419" height="46" />
                 </dt>
-                <dd class="line">&nbsp;</dd>
-                <dd class="text">
+                <!-- <dd class="line">&nbsp;</dd> -->
+                <!-- <dd class="text">
                     <img src="images/air-indoor-machine-text.png" alt="" width="419" height="58" />
-                </dd>
+                </dd> -->
             </dl>
         </li>
     </ul>
@@ -315,7 +315,7 @@
                 <div class="wrap">
                     <ul class="fourPanels">
                         <% if  @products.present? %>
-                        <% @products.order('created_at DESC').each do |product| %>
+                        <% @products.order('price DESC').each do |product| %>
                         <% if  true == product.categories.eql?("防霾口罩")%>
                         <li>
                             <%= link_to product_path(product) do %>
@@ -345,7 +345,7 @@
                 <div class="wrap">
                     <ul  class="fourPanels" >
                         <% if  @products.present? %>
-                        <% @products.order('created_at DESC').each do |product| %>
+                        <% @products.order('price DESC').each do |product| %>
                         <% if  true == product.categories.eql?("霾表")%>
                         <li>
                             <%= link_to product_path(product) do %>
@@ -376,7 +376,7 @@
                 <div class="wrap">
                     <ul class="fourPanels">
                         <% if  @products.present? %>
-                        <% @products.order('created_at DESC').each do |product| %>
+                        <% @products.order('price DESC').each do |product| %>
                         <% if  true == product.categories.eql?("空气净化器")%>
                         <li>
                             <%= link_to product_path(product) do %>
