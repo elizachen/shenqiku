@@ -5,30 +5,35 @@
             <div class="wrap">
                 <section id="newItem">
                     <div class="content">
-<h2>订单列表 </h2>
+                        <h2>订单列表
+                        </h2>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>生成时间</th>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>生成时间</th>
 
-    </tr>
-  </thead>
-  <tbody>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-    <% @orders.each do |order| %>
-    <tr>
-      <td> <%= link_to(order.id, order_path(order.token)) %> </td>
-      <td> <%= order.created_at.to_s(:long) %> </td>
-    </tr>
-    <% end %>
+                                <% @orders.each do |order| %>
+                                <tr>
+                                    <td>
+                                        <%= link_to(order.id, order_path(order.token)) %>
+                                    </td>
+                                    <td>
+                                        <%= order.created_at.to_s(:long) %>
+                                    </td>
+                                </tr>
+                                <% end %>
 
-  </tbody>
-</table>
-</div>
-</section>
-</div>
-</section>
-</div>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
 </body>
