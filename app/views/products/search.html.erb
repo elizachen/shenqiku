@@ -7,11 +7,6 @@
         <link rel="contents" href="/" title="Home">
         <script type="text/javascript" src="//www.muji.com.cn/cn/store/js/FSC02210.js" charset="utf-8"></script>
         <link href="//www.muji.com.cn/cn/store/css/muji.css" rel="stylesheet" type="text/css">
-        <!--[if lt IE 9]><script src="//www.muji.com.cn/cn/store/js/html5.js"></script><![endif]-->
-        <script type="text/javascript" src="//www.muji.com.cn/cn/store/js/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="//www.muji.com.cn/cn/store/js/jquery.lazyload.mini.js"></script>
-        <script type="text/javascript" src="//www.muji.com.cn/cn/store/js/muji.js" charset="utf-8"></script>
-
         <script type="text/javascript" src="//www.muji.com.cn/cn/store/js/mj-productListView_search.js" charset="utf-8"></script>
 
         <title>
@@ -112,9 +107,9 @@
                     </div>
                 </div>
 
-                <section id="mainCampaign">
+                <section id="newItem">
                     <div class="wrap">
-                        <ul class="fourPanels" >
+                        <ul>
                             <% if  @products.present? %>
                             <% @products.order('created_at DESC').each do |product| %>
                             <li style="width: 22%">

@@ -7,61 +7,75 @@
             <!-- <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fcuu6m92pkj308c033jru.jpg" alt="防霾库"/> -->
             <img src="/images/air-logo.png" alt="防霾库"/>
         </a>
-        <div class="nav-list">
-            <%= link_to("所有商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
-            <%= link_to("关于我们", about_path) %>
-            <%= link_to carts_path do  %>
-            购物车
-            <i class="fa fa-shopping-cart"></i>
-            (
-            <%= current_cart.products.count %>
-            )
-            <% end %>
-            <% if !current_user %>
-            <%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %>
-            <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %>
-        <% else %>
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Hi!,<%= current_user.email %>
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-left">
+        <nav id="hGlobalNav" style="margin-top:-25px; width:80%; height:70px; margin-left:150px; margin-right:auto;">
+            <h1>菜单</h1>
+            <div class="wrapper">
+                <div class="cancel"></div>
+                <ul>
+                    <li>
+                        <%= link_to("所有商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
+                    </li>
+                    <li>
+                        <%= link_to("关于我们", about_path) %>
+                    </li>
+                    <li><%= link_to carts_path do  %>
+                        购物车
+                        <i class="fa fa-shopping-cart"></i>
+                        (
+                        <%= current_cart.products.count %>
+                        )
+                        <% end %>
+                    <li>
+                        <% if !current_user %>
+                    <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %></li>
+                    <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <% else %>
 
-                <% if current_user.admin? %>
-                <li>
-                    <%= link_to("Admin 选单", admin_products_path ) %>
-                </li>
-                <% end %>
-                <li>
-                    <%= link_to("个人订单列表", account_orders_path ) %>
-                </li>
-                <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
-                <li>
-                    <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                </li>
-            </ul>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hi!,<%= current_user.email %>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
 
-            <% end %>
+                            <% if current_user.admin? %>
+                            <li>
+                                <%= link_to("Admin 选单", admin_products_path ) %>
+                            </li>
+                            <% end %>
+                            <li>
+                                <%= link_to("个人订单列表", account_orders_path ) %>
+                            </li>
+                            <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
+                            <li>
+                                <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                            </li>
+                        </ul>
+                    </li>
+                    <% end %>
 
-            <!-- <a class ="buy" href="http://webmall.moji.com/appmall/product/1?appshare=1" target="_blank">立即购买</a> -->
-            <!--<a href="http://bbs.mojichina.com/forum.php?mod=forumdisplay&fid=44">论坛</a>-->
-            <!-- <a href="/preorder?airbanner" class="obt">我要预约</a>-->
-            <section id="hSearch" style="margin-top:20px;margin-right:43px;">
-                <!-- <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext="
+                </ul>
+            </div>
+        </nav>
+
+        <!-- <a class ="buy" href="http://webmall.moji.com/appmall/product/1?appshare=1" target="_blank">立即购买</a> -->
+        <!--<a href="http://bbs.mojichina.com/forum.php?mod=forumdisplay&fid=44">论坛</a>-->
+        <!-- <a href="/preorder?airbanner" class="obt">我要预约</a>-->
+        <section id="hSearch" style="margin-top:20px;margin-right:43px;">
+            <!-- <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext="
                       id="headerSearch" method="get"> -->
-                <%= form_tag search_products_path, method: :get, class: 'questions-search-form'  do %>
-                <h1>产品搜索</h1>
-                <div class="wrapper">
-                    <div class="cancel"></div>
-                    <!-- <input type="text" class="form-control" name="query_string" value="<%= params[:query_string] %>" placeholder="职位 种类 城市 区域..."> -->
-                    <input type="search" placeholder="产品搜索" name="query_string" value="<%= params[:query_string] %>">
-                </div>
-                <!-- </form> -->
-                <% end %>
-            </section>
+            <%= form_tag search_products_path, method: :get, class: 'questions-search-form'  do %>
+            <h1>产品搜索</h1>
+            <div class="wrapper">
+                <div class="cancel"></div>
+                <!-- <input type="text" class="form-control" name="query_string" value="<%= params[:query_string] %>" placeholder="职位 种类 城市 区域..."> -->
+                <input type="search" placeholder="产品搜索" name="query_string" value="<%= params[:query_string] %>">
+            </div>
+            <!-- </form> -->
+            <% end %>
+        </section>
 
-        </div>
     </nav>
     <!-- .headerWrap -->
 </header>

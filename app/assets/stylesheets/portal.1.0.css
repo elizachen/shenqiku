@@ -209,7 +209,8 @@ aside#misc .content {width: 90%; margin: 0 auto; max-width: 1024px;}
 
 #main #newItem li,
 #main #topicItem li {width: 15%; margin-right: 2%;}
-#main #newItem li:last-child,
+/*#main #newItem li:last-child,*/
+#main #newItem li {width: 22%; max-width: 245px; height: auto;}
 #main #topicItem li:last-child {margin-right: 0;}
 #main #newItem img,
 #main #topicItem img {width: 100%; height: auto;}
