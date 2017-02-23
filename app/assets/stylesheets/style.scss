@@ -206,8 +206,11 @@ section {
 
 .indoor_page_wrap .indoor-page {
     position: relative;
+    width: 100%;
     height: 100%;
     /*background: #16171b;*/
+    max-width: 3200px;
+    max-height: 2000px;
     overflow: hidden;
 }
 
