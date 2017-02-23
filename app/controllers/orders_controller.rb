@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
       end
 
       current_cart.clean!
-      OrderMailer.notify_order_placed(@order).deliver!
+      #TBD  TBDOrderMailer.notify_order_placed(@order).deliver!
 
       # redirect_to order_path(@order)
       redirect_to order_path(@order.token)
