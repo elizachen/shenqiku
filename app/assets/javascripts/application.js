@@ -14,15 +14,51 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/alert
+//= require_tree .
 //= require bootstrap-sprockets
 //= require bootstrap/dropdown
-//= require_tree .
-$(document).ready(function() {
-  $('.productDecription-menuList-item').click(function () {
-    var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
-    $('.productDecription-content-item').hide() //所有的内容都隐藏
-    $('.productDecription-content-item').eq(index).show() //只显示对于index的内容
-  })
+
+
+
+
+alert($);
+// 就是这句，执行不了
+$(document).ready(function(){
+alert(111);
+});
+
+
+// 原来在body的onload的事件中
+function test(){
+
+
+  var ht=$('h3').text();
+  if(ht=="布梨口罩"){
+    alert(ht);
+    $('.productDecription-content-item').eq(0).addClass('blkz');
+  }else if (ht=="小米口罩") {
+    $('.productDecription-content-item').eq(0).addClass('xmkz');
+  }
+}
+
+
+$(document).on('click', '.productDecription-menuList-item', function () {
+  var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
+  $('.productDecription-menuList-item').removeClass('white')
+  $(this).addClass('white')
+  $('.productDecription-content-item').hide() //所有的内容都隐藏
+  $('.productDecription-content-item').eq(index).show() //只显示对于index的内容
+
+})
+
+$(document).on('click', 'ul.menu-items > li', function(){
+	var index=$(this).index();
+
+	$('ul.menu-items > li').removeClass('active');
+  $(this).addClass('active');
+// $(this).hide();
+	// $(this).addClass("active");
+
 })
 
 function addOne(){
@@ -31,6 +67,7 @@ function addOne(){
 		if (parseInt(pn.value)<pg.innerHTML) {
 			pn.value=parseInt(pn.value)+1
 		}
+    // alert(window.location.href);
 }
 
 function deleteOne(){
