@@ -75,8 +75,7 @@ body {
 
 header_mobile
 
-@media screen and (min-width: 769px) {
-.header_mobile }
+/*@media screen and (min-width: 769px) { .header_mobile }*/
 #header_mobile{display:none}
 
 

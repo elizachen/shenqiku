@@ -14,17 +14,49 @@
 
     <meta name="description" content="防霾库是一款外观时尚、操控方便、交互智能的空气检测设备，可以实现PM2.5、CO2、温湿度数据的一键检测，并可联网语音播报天气预报。防霾库1S在原基础上大大提升了产品性能和用户体验。" />
     <meta name="keywords" content="墨迹天气,防霾库,空气检测,防霾库·室外版,智能硬件、PM2.5" />
-    </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            /*background-color: #f4511e;*/
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+        .navbar .navbar-brand,
+        .navbar li a {
+            /*color: #fff !important;*/
+        }
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #1D79B5 !important;
+            /*#f4511e*/
+            background-color: #fff !important;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
 
-  </head>
+    </style>
+ </head>
 
   <body>
 
-      <div class="container-fluid">
-          <%= render "common/navbar" %>
+      <!-- <div class="container-fluid"> -->
           <%= render "common/flashes" %>
           <%= yield %>
-      </div>
+      <!-- </div> -->
 
       <%= render "common/footer" %>
 
