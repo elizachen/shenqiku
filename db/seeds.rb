@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 u = User.new
 u.email = "elizachen34@gmail.com"           # 可以改成自己的 email
-u.password = "testelzcoco"                # 最少要六码
-u.password_confirmation = "testelzcoco"   # 最少要六码
+u.password = "111111"                # 最少要六码
+u.password_confirmation = "111111"   # 最少要六码
 u.is_admin = true
 u.save
 puts "1 admin account created."

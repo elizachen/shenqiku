@@ -2,80 +2,91 @@
     <!-- <h3 id="siteName">
           <a href="/" ><img src="/images/favicon-leaf.ico" style="margin-left:20px;margin-bottom:0px;width:30px;"/> 防霾库</a>
   </h3> -->
-    <nav style="padding: 15px 0 0 0; height:70px;">
-        <a href="/" class="logo" style="float: left; margin-top:5px">
-            <!-- <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fcuu6m92pkj308c033jru.jpg" alt="防霾库"/> -->
-            <img src="/images/air-logo.png" alt="防霾库"/>
-        </a>
+  <nav class="navbar navbar-default navbar-fixed-top" style="padding:0">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <!-- <a class="navbar-brand" href="#myPage">防霾库</a> -->
+              <a href="/" class="navbar-brand">
+                  <!-- <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fcuu6m92pkj308c033jru.jpg" alt="防霾库"/> -->
+                  <img src="/images/air-logo.png" style="margin-top:-5px; width:70px;" alt="防霾库"/>
+              </a>
+          </div>
 
-        <nav id="hGlobalNav" style="width:auto; height:70px; margin-left:150px; margin-right:150px; margin-top:-20px ">
-            <h1 style="margin-top:15px; margin-left:0; margin-right:auto; width:10%;">菜单</h1>
-            <div class="wrapper" style="margin:atuo;">
-                <div class="cancel"></div>
-                <ul style="margin-top:0px; margin-left:auto; margin-right:auto; min-width:700px; height:70px;">
-                    <li>
-                        <%= link_to("所有商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
-                    </li>
-                    <li>
-                        <%= link_to("关于我们", about_path) %>
-                    </li>
-                    <li><%= link_to carts_path do  %>
-                        购物车
-                        <i class="fa fa-shopping-cart"></i>
-                        (
-                        <%= current_cart.products.count %>
-                        )
-                        <% end %>
-                    <li>
-                        <% if !current_user %>
-                    <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %></li>
-                    <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-                <% else %>
-
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hi!,<%= current_user.email %>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-left">
-
-                            <% if current_user.admin? %>
-                            <li>
-                                <%= link_to("Admin 选单", admin_products_path ) %>
-                            </li>
-                            <% end %>
-                            <li>
-                                <%= link_to("个人订单列表", account_orders_path ) %>
-                            </li>
-                            <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
-                            <li>
-                                <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                            </li>
-                        </ul>
-                    </li>
+          <div class="collapse navbar-collapse " id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li>
+                    <%= link_to("精选商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
+                </li>
+                <li>
+                    <a href="/#event">所有活动</a>
+                </li>
+                <li>
+                   <a href="/#about">关于我们</a>
+                </li>
+                <li><%= link_to carts_path do  %>
+                    购物车
+                    <i class="fa fa-shopping-cart"></i>
+                    (
+                    <%= current_cart.products.count %>
+                    )
                     <% end %>
+                <li>
+                    <% if !current_user %>
+                <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %></li>
+                <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+            <% else %>
 
-                </ul>
-            </div>
-        </nav>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Hi!,<%= current_user.email %>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-left">
 
-        <!-- <a class ="buy" href="http://webmall.moji.com/appmall/product/1?appshare=1" target="_blank">立即购买</a> -->
-        <!--<a href="http://bbs.mojichina.com/forum.php?mod=forumdisplay&fid=44">论坛</a>-->
-        <!-- <a href="/preorder?airbanner" class="obt">我要预约</a>-->
-        <section id="hSearch" style="height:25px;margin-top:25px;margin-right:20px;">
-            <!-- <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext="
-                      id="headerSearch" method="get"> -->
-            <%= form_tag search_products_path, method: :get, class: 'questions-search-form'  do %>
-            <h1>产品搜索</h1>
-            <div class="wrapper">
-                <div class="cancel"></div>
-                <!-- <input type="text" class="form-control" name="query_string" value="<%= params[:query_string] %>" placeholder="职位 种类 城市 区域..."> -->
-                <input type="search" placeholder="产品搜索" name="query_string" value="<%= params[:query_string] %>">
-            </div>
-            <!-- </form> -->
-            <% end %>
-        </section>
+                        <% if current_user.admin? %>
+                        <li>
+                            <%= link_to("Admin 选单", admin_products_path ) %>
+                        </li>
+                        <% end %>
+                        <li>
+                            <%= link_to("个人订单列表", account_orders_path ) %>
+                        </li>
+                        <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
+                        <li>
+                            <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                        </li>
+                    </ul>
+                </li>
+                <% end %>
 
-    </nav>
+          </ul>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+          <li id="hSearch" style="margin-top:10px; ">
+              <!-- <form action="/cn/store/FSC02210E01.do?qcategory=all&qicon=&qstart=0&sort=goods_disp_priority&fid=header_search&qtext="
+                  id="headerSearch" method="get"> -->
+              <%= form_tag search_products_path, method: :get, class: 'questions-search-form'  do %>
+              <h1>产品搜索</h1>
+              <div class="wrapper">
+                  <div class="cancel" style="text-align: left;">取消</div>
+                  <!-- <input type="text" class="form-control" name="query_string" value="<%= params[:query_string] %>" placeholder="职位 种类 城市 区域..."> -->
+                  <input type="search" placeholder="产品搜索" name="query_string" value="<%= params[:query_string] %>">
+              </div>
+              <!-- </form> -->
+              <% end %>
+
+          </li>
+      </ul>
+
+  </div>
+
+</nav>
+
     <!-- .headerWrap -->
 </header>
