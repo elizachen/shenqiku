@@ -66,51 +66,72 @@
 
 	.productDecription-content {
 		width: auto;
-	  height: 1000px;
+	  height: 100%;
 		/*margin: 50px auto;*/
 	}
 
 		.productDecription-content-item {
 		  display: none;
 		  width: auto;
-		  height: 750px;
+		  height: 1000px;
 		}
 	.blkz{
-		  background-image: url("https://ww4.sinaimg.cn/large/006tNc79ly1fcttsjyrucj318g0rswnn.jpg");
-			background-repeat:round;
+		  background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd1yoik0cbj30so0hsdmg.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
 	}
 	.xmkz{
-			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd1yoik0cbj30so0hsdmg.jpg");
-			background-repeat:round;
+			background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1yn2j26aj30xp0l2gqi.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
 	}
 	.ldkz{
-			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd0tawug6hj31kw0v4e82.jpg");
-			background-repeat:round;
+			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcly1fd3y8gabg9j30ly0hx0wz.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
 	}
 	.kqg{
-			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd0tawug6hj31kw0v4e82.jpg");
-			background-repeat:round;
+			background-image: url("https://ww1.sinaimg.cn/large/006tKfTcly1fd3xvsy36aj30ly0dqgmr.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
 	}
 	.hjb{
-			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd0tawug6hj31kw0v4e82.jpg");
-			background-repeat:round;
+			background-image: url("https://ww2.sinaimg.cn/large/006tKfTcly1fd3xukumx1j30ly0b479l.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
 	}
 	.ld{
-			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd0tawug6hj31kw0v4e82.jpg");
-			background-repeat:round;
+			background-image: url("https://ww4.sinaimg.cn/large/006tKfTcly1fd3xt28dbuj30i20bon0r.jpg");
+			background-size: cover;
+			background-repeat:no-repeat;
 	}
 	.blueair{
 			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd1yqdswfuj30ri0dctd8.jpg");
-			background-repeat:round;
+			background-size: cover;
+			background-repeat:no-repeat;
 	}
 	.dyson{
 	  background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1ytqp39uj30ly0i010u.jpg");
-		background-repeat:round;
+		background-repeat:no-repeat;
+		background-size: cover;
 	}
 	.sl{
 	  background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1yxchwt5j30ku0ewq8j.jpg");
-		background-repeat:round;
+		background-repeat:no-repeat;
+		background-size: cover;
 	}
+	.nosuchpro{
+	  background-image: url("https://ww4.sinaimg.cn/large/006tKfTcgy1fd30i57vlsj31er0rr123.jpg");width:inherit;
+		background-repeat:no-repeat;
+		background-size: cover;
+
+	}
+
+
+
+
+
+
 	</style>
 
 </head>
@@ -198,3 +219,33 @@
 
 
 </body>
+<script>
+
+$(document).ready(function(){
+	var ht=$('h3').text();
+	if(ht=="布梨口罩"){
+		$('.productDecription-content-item').eq(0).addClass('blkz');
+	}else if (ht=="小米口罩") {
+		$('.productDecription-content-item').eq(0).addClass('xmkz');
+	}else if (ht=="绿盾口罩"){
+		$('.productDecription-content-item').eq(0).addClass('ldkz');
+	}else if (ht=="空气果"){
+		$('.productDecription-content-item').eq(0).addClass('kqg');
+	}else if (ht=="环境宝"){
+		$('.productDecription-content-item').eq(0).addClass('hjb');
+	}else if (ht=="镭豆"){
+		$('.productDecription-content-item').eq(0).addClass('ld');
+	}else if (ht=="Blueair"){
+		$('.productDecription-content-item').eq(0).addClass('blueair');
+	}else if (ht=="戴森"){
+		$('.productDecription-content-item').eq(0).addClass('dyson');
+	}else if (ht=="三菱"){
+		$('.productDecription-content-item').eq(0).addClass('sl');
+	}else{
+    $('.productDecription-content-item').eq(0).addClass('nosuchpro');
+	}
+});
+
+
+
+</script>

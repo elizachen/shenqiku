@@ -18,30 +18,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap/dropdown
 
-
-
-
-alert($);
-// 就是这句，执行不了
-$(document).ready(function(){
-alert(111);
-});
-
-
-// 原来在body的onload的事件中
-function test(){
-
-
-  var ht=$('h3').text();
-  if(ht=="布梨口罩"){
-    alert(ht);
-    $('.productDecription-content-item').eq(0).addClass('blkz');
-  }else if (ht=="小米口罩") {
-    $('.productDecription-content-item').eq(0).addClass('xmkz');
-  }
-}
-
-
 $(document).on('click', '.productDecription-menuList-item', function () {
   var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
   $('.productDecription-menuList-item').removeClass('white')
