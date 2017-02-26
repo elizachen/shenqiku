@@ -10,11 +10,12 @@ $(window).on("load resize", function(){
 			$("#hAccount .cancel").on("click", function(e){
 				$("#hAccount .wrapper").slideUp();
 			});
-		
-		
+
+
 		});
-		
-		} else {			
+    $("#hSearch .wrapper").show();
+
+		} else {
 			$("#main, #hGlobalNav h1, #siteName img, #hSearch h1").removeClass("blur");
 			$("#hAccount .avater").on("click", function(){
 				$("#hAccount .wrapper").show();
@@ -32,7 +33,7 @@ $(window).on("load resize", function(){
 				$("#hGlobalNav .wrapper").hide();
 				$("#main, #hGlobalNav h1, #siteName img, #hSearch h1").removeClass("blur");
 			});
-	
+
 			$("#hSearch h1").on("click", function(){
 				$("#hSearch .wrapper").show();
 				$("#hSearch input[type='search']").focus();
@@ -42,7 +43,11 @@ $(window).on("load resize", function(){
 				$("#hSearch .wrapper").hide();
 				$("#main, #hGlobalNav h1, #siteName img, #hSearch h1").removeClass("blur");
 			});
-    }	
+
+      $("#hSearch .wrapper").hide();
+
+
+    }
 
 
 });

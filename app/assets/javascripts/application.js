@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/alert
-//= require_tree .
-//= require bootstrap-sprockets
 //= require bootstrap/dropdown
+//= require_tree .
+
 
 $(document).on('click', '.productDecription-menuList-item', function () {
   var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
