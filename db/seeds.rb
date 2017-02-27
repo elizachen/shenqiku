@@ -23,9 +23,9 @@ products_categories = ["防霾口罩", "防霾口罩","防霾口罩"]
 #   "public/images/panel/cloth2.jpg",
 #   "public/images/panel/smell.jpg",
 #   "public/images/panel/earphone.jpg"]
-  products_image_paths = ["https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_1.jpg",
-        "https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_2.jpg",
-        "https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_3.jpg",]
+  products_image_paths = ["/images/thumb_1.jpg",
+        "/images/thumb_2.jpg",
+        "/images/thumb_3.jpg",]
 
   create_products = for i in 1..3 do
     Product.create!([title: products[i - 1],
@@ -49,9 +49,9 @@ products_categories = ["防霾口罩", "防霾口罩","防霾口罩"]
 #     "public/images/panel/beef.jpg",
 #     "public/images/panel/coffee.jpg"]
 
-    products_image_paths = ["https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_4.jpg",
-      "https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_8.jpg",
-      "https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_9.jpg",]
+    products_image_paths = ["/images/thumb_4.jpg",
+      "/images/thumb_8.jpg",
+      "/images/thumb_9.jpg",]
 
   # create_products = for i in 1 do
   create_products = for i in 1..3 do
@@ -75,9 +75,9 @@ products_categories = ["防霾口罩", "防霾口罩","防霾口罩"]
   #   "public/images/panel/jiazi.jpg",
   #   "public/images/panel/dell.jpg",]
   products_categories = ["空气净化器", "空气净化器","空气净化器"]
-    products_image_paths = ["https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_4.jpg",
-        "https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_5.jpg",
-        "https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_6.jpg",]
+    products_image_paths = ["/images/thumb_5.jpg",
+        "/images/thumb_6.jpg",
+        "/images/thumb_7.jpg",]
 
 
   create_products = for i in 1..3 do
@@ -100,7 +100,7 @@ products_prices = [49,599]
 #   "public/images/panel/chair.jpg",
 #   "public/images/panel/coffee.jpg"]
 
-  products_image_paths = ["https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_2.jpg", "https://s3-ap-northeast-1.amazonaws.com/fangmaiku/seeds/thumb_4.jpg",]
+  products_image_paths = ["/images/thumb_2.jpg", "/images/thumb_4.jpg",]
 
 
   create_products = for i in 1..2 do
