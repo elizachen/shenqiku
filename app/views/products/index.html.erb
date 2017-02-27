@@ -19,6 +19,18 @@
 
                 }
 
+                .carousel-indicators { background: none !important; }
+
+                .carousel-indicators li {
+                    border-color: #f4511e;
+                    background: none !important;
+
+                }
+                .carousel-indicators li.active {
+                    background-color: #f4511e;
+                    background: none !important;
+                }
+
             </style>
 
         </head>
@@ -153,7 +165,7 @@
                                     <ul class="clearfix tabs-list" style="margin-bottom:0">
                                         <li class="test">
                                             <!-- <img src="images/air-indoor-design.jpg" class="bg"/> -->
-                                            <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fd30i57vlsj31er0rr123.jpg" alt="科技改变生活" class="pc">
+                                            <img src="/images/home_1.jpg" alt="科技改变生活" class="pc">
                                             <!-- <em class="slideInDown animated">
                                 <img src="images/air-indoor-design-text.png" width="349" height="279" />
                             </em> -->
@@ -171,7 +183,7 @@
                                     <ul class="clearfix tabs-list" style="margin-bottom:0">
                                         <li class="test">
                                             <!-- <img src="images/air-indoor-test.jpg" class="pc" /> -->
-                                            <img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fcuwhutj6gj31kw0v44jg.jpg" class="pc"/>
+                                            <img src="/images/home_2.jpg" class="pc"/>
                                             <dl class="rollIn animated">
                                                 <dt>
                                                     <img src="images/air-indoor-test-slogin.png" alt="" width="330" height="168"/>
@@ -321,27 +333,54 @@
                     <%= link_to("更多", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
                 </div>
 
-                <div class="wrap">
-                    <ul>
-                        <% if  @products.present? %>
-                        <% @products.limit(4).order('created_at DESC').each do |product| %>
-                        <li style="">
-                            <%= link_to product_path(product) do %>
-                            <% if product.image.present? %>
-                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                        <% else %>
-                            <span class=""><%= image_tag(product.image_path, class: "thumb") %>
-                            </span>
+
+
+                    <div class="wrap">
+                        <ul>
+                            <% if  @products.present? %>
+                            <% @products.limit(4).order('created_at DESC').each do |product| %>
+                            <li>
+                                <dl class="info">
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.image.present? %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image.thumb.url)%>
+                                    </dt>
+                                <% else %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image_path, class: "thumb") %>
+                                    </dt>
+                                    <% end %>
+                                    <br>
+                                    <dd class="name" style="text-align:center;"><%=product.title%></dd>
+                                    <% end %>
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.is_discounted %>
+                                    <dd class="tag">
+                                        <div class="tag sale" style="font-size: 11px; color:#7f0019; text-align:center;">限时特价商品</div>
+                                    </dd>
+                                    <dd class="price" style="text-align:center;">
+                                        <del>
+                                            <span class="num">￥<%=product.original_price%></span>
+                                        </del>
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% else %>
+                                    <dd class="price" style="text-align:center;">
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% end %>
+                                    <% end %>
+                                </dl>
+                            </li>
                             <% end %>
-                            <br>
-                            <div class="" style="text-align:center;"><%=product.title%></div>
-                            <div class="" style="text-align:center;">￥<%=product.price%></div>
                             <% end %>
-                        </li>
-                        <% end %>
-                        <% end %>
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
 
             </section>
 
@@ -358,17 +397,42 @@
                         <% @products.order('created_at DESC').each do |product| %>
                         <% if  true == product.categories.eql?("防霾口罩")%>
                         <li>
-                            <%= link_to product_path(product) do %>
-                            <% if product.image.present? %>
-                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                        <% else %>
-                            <span class="thumb"><%= image_tag(product.image_path, class: "") %>
-                            </span>
-                            <% end %>
-                            <br>
-                            <div class="" style="text-align:center;"><%=product.title%></div>
-                            <div class="" style="text-align:center;">￥<%=product.price%></div>
-                            <% end %>
+                            <dl class="info">
+                                <%= link_to product_path(product) do %>
+                                <% if product.image.present? %>
+                                <dt class="thumb">
+                                    <%= image_tag(product.image.thumb.url)%>
+                                </dt>
+                            <% else %>
+                                <dt class="thumb">
+                                    <%= image_tag(product.image_path, class: "thumb") %>
+                                </dt>
+                                <% end %>
+                                <br>
+                                <dd class="name" style="text-align:center;"><%=product.title%></dd>
+                                <% end %>
+                                <%= link_to product_path(product) do %>
+                                <% if product.is_discounted %>
+                                <dd class="tag">
+                                    <div class="tag sale" style="font-size: 11px; color:#7f0019; text-align:center;">限时特价商品</div>
+                                </dd>
+                                <dd class="price" style="text-align:center;">
+                                    <del>
+                                        <span class="num">￥<%=product.original_price%></span>
+                                    </del>
+                                    <ins>
+                                        <span class="num">￥<%=product.price%></span>
+                                    </ins>
+                                </dd>
+                                <% else %>
+                                <dd class="price" style="text-align:center;">
+                                    <ins>
+                                        <span class="num">￥<%=product.price%></span>
+                                    </ins>
+                                </dd>
+                                <% end %>
+                                <% end %>
+                            </dl>
                         </li>
                         <% end %>
                         <% end %>
@@ -392,18 +456,42 @@
                             <% @products.order('created_at DESC').each do |product| %>
                             <% if  true == product.categories.eql?("霾表")%>
                             <li>
-                                <%= link_to product_path(product) do %>
-                                <% if product.image.present? %>
-                                <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                            <% else %>
-                                <span class="thumb"><%= image_tag(product.image_path, class: "") %>
-                                </span>
-                                <% end %>
-                                <br>
-                                <div class="" style="text-align:center;"><%=product.title%></div>
-                                <div class="" style="text-align:center;">￥<%=product.price%></div>
-
-                                <% end %>
+                                <dl class="info">
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.image.present? %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image.thumb.url)%>
+                                    </dt>
+                                <% else %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image_path, class: "thumb") %>
+                                    </dt>
+                                    <% end %>
+                                    <br>
+                                    <dd class="name" style="text-align:center;"><%=product.title%></dd>
+                                    <% end %>
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.is_discounted %>
+                                    <dd class="tag">
+                                        <div class="tag sale" style="font-size: 11px; color:#7f0019; text-align:center;">限时特价商品</div>
+                                    </dd>
+                                    <dd class="price" style="text-align:center;">
+                                        <del>
+                                            <span class="num">￥<%=product.original_price%></span>
+                                        </del>
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% else %>
+                                    <dd class="price" style="text-align:center;">
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% end %>
+                                    <% end %>
+                                </dl>
                             </li>
                             <% end %>
                             <% end %>
@@ -424,17 +512,42 @@
                             <% @products.order('created_at DESC').each do |product| %>
                             <% if  true == product.categories.eql?("空气净化器")%>
                             <li>
-                                <%= link_to product_path(product) do %>
-                                <% if product.image.present? %>
-                                <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                            <% else %>
-                                <span class="thumb"><%= image_tag(product.image_path, class: "") %>
-                                </span>
-                                <% end %>
-                                <br>
-                                <div class="" style="text-align:center;"><%=product.title%></div>
-                                <div class="" style="text-align:center;">￥<%=product.price%></div>
-                                <% end %>
+                                <dl class="info">
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.image.present? %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image.thumb.url)%>
+                                    </dt>
+                                <% else %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image_path, class: "thumb") %>
+                                    </dt>
+                                    <% end %>
+                                    <br>
+                                    <dd class="name" style="text-align:center;"><%=product.title%></dd>
+                                    <% end %>
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.is_discounted %>
+                                    <dd class="tag">
+                                        <div class="tag sale" style="font-size: 11px; color:#7f0019; text-align:center;">限时特价商品</div>
+                                    </dd>
+                                    <dd class="price" style="text-align:center;">
+                                        <del>
+                                            <span class="num">￥<%=product.original_price%></span>
+                                        </del>
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% else %>
+                                    <dd class="price" style="text-align:center;">
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% end %>
+                                    <% end %>
+                                </dl>
                             </li>
                             <% end %>
                             <% end %>
@@ -457,17 +570,42 @@
                             <% @products.order('created_at DESC').each do |product| %>
                             <% if  true == product.categories.eql?("科技众筹")%>
                             <li>
-                                <%= link_to product_path(product) do %>
-                                <% if product.image.present? %>
-                                <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                            <% else %>
-                                <span class="thumb"><%= image_tag(product.image_path, class: "") %>
-                                </span>
-                                <% end %>
-                                <br>
-                                <div class="" style="text-align:center;"><%=product.title%></div>
-                                <div class="" style="text-align:center;">￥<%=product.price%></div>
-                                <% end %>
+                                <dl class="info">
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.image.present? %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image.thumb.url)%>
+                                    </dt>
+                                <% else %>
+                                    <dt class="thumb">
+                                        <%= image_tag(product.image_path, class: "thumb") %>
+                                    </dt>
+                                    <% end %>
+                                    <br>
+                                    <dd class="name" style="text-align:center;"><%=product.title%></dd>
+                                    <% end %>
+                                    <%= link_to product_path(product) do %>
+                                    <% if product.is_discounted %>
+                                    <dd class="tag">
+                                        <div class="tag sale" style="font-size: 11px; color:#7f0019; text-align:center;">限时特价商品</div>
+                                    </dd>
+                                    <dd class="price" style="text-align:center;">
+                                        <del>
+                                            <span class="num">￥<%=product.original_price%></span>
+                                        </del>
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% else %>
+                                    <dd class="price" style="text-align:center;">
+                                        <ins>
+                                            <span class="num">￥<%=product.price%></span>
+                                        </ins>
+                                    </dd>
+                                    <% end %>
+                                    <% end %>
+                                </dl>
                             </li>
                             <% end %>
                             <% end %>
@@ -503,10 +641,10 @@
                             </li>
 
                             <li>
-                                <a href="/">
+                                <%= link_to health_path do %>
                                     <img src="images/panel/lab_140521_01.jpg">
                                     <span class="title">健康贴士</span>
-                                </a>
+                                <% end %>
                             </li>
 
                         </ul>
@@ -546,7 +684,7 @@
                               <br>
                                 <h4 style="text-align: center;  color: #fff;">Eliza：不想离开北上广，防霾库为您提供安全防霾方案</h4>
                                 <p style="color: #fff;">
-                                    十五年前的北京、上海，天空蓝得想蓝色的透明玻璃。而现在，雾霾天常常伸手不见五指。好友的儿子14年冬天出生，雾霾正猛。小朋友双满月，大人抱出去透透气，就患了肺炎。医生说，雾霾是罪魁祸首。看着小朋友做雾化时，各种哭，连我这个阿姨都心疼万分。<strong>我们不想离开北上广广，就要保护好自己和家人。这是我创办防霾库的初衷。为您和家人提供——全套防霾方案，让呼吸更安全，更健康。</strong></p>
+                                    十五年前的北京、上海，天空蓝得像透明的蓝玻璃。而现在，雾霾天常常伸手不见五指。好友的儿子14年冬天出生，雾霾正猛。小朋友双满月，大人抱出去透透气，就患了肺炎。医生说，雾霾是罪魁祸首。看着小朋友做雾化时，各种哭，连我这个阿姨都心疼万分。<strong>我们不想离开北上广，但要保护好自己和家人。这是我创办防霾库的初衷。为您和家人提供——全套防霾方案，让呼吸更安全，更健康。</strong></p>
                                 <h4 style="color: #fff;">微信号：elizaBerylChen</h4>
                                 <h5 style="color: #fff;">微信公众号：爱莉莎的雪月花</h5>
                             </div>

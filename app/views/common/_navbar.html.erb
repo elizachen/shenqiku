@@ -2,7 +2,7 @@
     <!-- <h3 id="siteName">
           <a href="/" ><img src="/images/favicon-leaf.ico" style="margin-left:20px;margin-bottom:0px;width:30px;"/> 防霾库</a>
   </h3> -->
-  <nav class="navbar navbar-default navbar-fixed-top" style="padding:0">
+  <nav class="navbar navbar-default navbar-fixed-top" style="padding:0; height=70px;">
       <div class="container">
           <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -12,12 +12,11 @@
               </button>
               <!-- <a class="navbar-brand" href="#myPage">防霾库</a> -->
               <a href="/" class="navbar-brand">
-                  <!-- <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fcuu6m92pkj308c033jru.jpg" alt="防霾库"/> -->
                   <img src="/images/air-logo.png" style="margin-top:-5px; width:70px;" alt="防霾库"/>
               </a>
           </div>
 
-          <div class="collapse navbar-collapse " id="myNavbar">
+          <div class="collapse navbar-collapse " id="myNavbar" style="70px">
               <ul class="nav navbar-nav">
                 <li>
                     <%= link_to("精选商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>

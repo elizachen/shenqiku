@@ -117,35 +117,43 @@
                             <% if  @products.present? %>
                             <% @products.order('created_at DESC').each do |product| %>
                             <li style="width: 22%">
-                                <dl class="info">
-                                    <%= link_to product_path(product) do %>
-                                    <% if product.image.present? %>
-                                    <dt class="thumb">
-                                        <%= image_tag(product.image.thumb.url)%>
-                                    </dt>
-                                <% else %>
-                                    <dt class="thumb">
-                                        <%= image_tag(product.image_path, class: "thumb") %>
-                                    </dt>
-                                    <% end %>
-                                    <br>
-                                    <dd class="name"><%=product.title%></dd>
-                                    <% end %>
-                                    <%= link_to product_path(product) do %>
-                                    <dd class="tag">
-                                        <div class="tag sale">限时特价商品</div>
-                                    </dd>
-                                    <dd class="price">
-                                        <del>
-                                            <span class="num">￥<%=product.price%></span>
-                                        </del>
-                                        <ins>
-                                            <span class="num">￥<%=product.price%></span>
-                                        </ins>
-                                    </dd>
-                                    <% end %>
-                                </dl>
-                            </li>
+                                  <dl class="info">
+                                      <%= link_to product_path(product) do %>
+                                      <% if product.image.present? %>
+                                      <dt class="thumb">
+                                          <%= image_tag(product.image.thumb.url)%>
+                                      </dt>
+                                  <% else %>
+                                      <dt class="thumb">
+                                          <%= image_tag(product.image_path, class: "thumb") %>
+                                      </dt>
+                                      <% end %>
+                                      <br>
+                                      <dd class="name"><%=product.title%></dd>
+                                      <% end %>
+                                      <%= link_to product_path(product) do %>
+                                      <% if product.is_discounted %>
+                                      <dd class="tag">
+                                          <div class="tag sale">限时特价商品</div>
+                                      </dd>
+                                      <dd class="price" ">
+                                          <del>
+                                              <span class="num">￥<%=product.original_price%></span>
+                                          </del>
+                                          <ins>
+                                              <span class="num">￥<%=product.price%></span>
+                                          </ins>
+                                      </dd>
+                                      <% else %>
+                                      <dd class="price">
+                                          <ins>
+                                              <span class="num">￥<%=product.price%></span>
+                                          </ins>
+                                      </dd>
+                                      <% end %>
+                                      <% end %>
+                                  </dl>
+                              </li>
                             <% end %>
                             <% end %>
                         </ul>

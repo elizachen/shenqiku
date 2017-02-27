@@ -14,8 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/alert
-//= require bootstrap/dropdown
 //= require_tree .
+//= require bootstrap/dropdown
+
 
 
 $(document).on('click', '.productDecription-menuList-item', function () {
