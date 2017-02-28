@@ -79,7 +79,7 @@
                             <h3 id="features">精选・新到商品</h3>
                             <ul class="snCategoryL2">
                                 <li>
-                                    <a href="/">优惠活动</a>
+                                <%= link_to("优惠活动", search_products_path(:order => "created_at", :query_string => "discounted"), method: :get)%>
                                 </li>
                                 <li><%= link_to("科技众筹", search_products_path(:order => "created_at", :query_string => "科技众筹"), method: :get) %></li>
                                 <li><%= link_to("新到商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %></li>
