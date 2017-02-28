@@ -109,11 +109,11 @@ products_is_fund = [false,true,false]
   puts "3 products created."
 
 
-products = ["小米口罩", "智能霾表"]
+products = ["小米口罩", "空气果"]
 products_description = ["纳米过滤，传感控制，自由呼吸","智能控制，精准测量：温度、湿度、CO2、PM2.5等"]
 products_categories = ["科技众筹", "科技众筹"]
 products_prices = [49,599]
-products_is_discounted = [true, true]
+# products_is_discounted = [true, true]
 # products_orignal_price = [79, 719]
 # products_images = ["public/images/panel/shoes.jpg",
 #   "public/images/panel/chair.jpg",

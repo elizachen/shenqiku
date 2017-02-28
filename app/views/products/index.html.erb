@@ -325,6 +325,7 @@
                     <ul>
                         <% if  @products.present? %>
                         <% @products.limit(4).order('created_at DESC').each do |product| %>
+                        <%if !product.is_fund%>
                         <li style="">
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
@@ -338,6 +339,22 @@
                             <div class="" style="text-align:center;">￥<%=product.price%></div>
                             <% end %>
                         </li>
+                        <%else%>
+                        <li style="">
+                            <%= link_to funding_product_product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                        <% else %>
+                            <span class=""><%= image_tag(product.image_path, class: "thumb") %>
+                            </span>
+                            <% end %>
+                            <br>
+                            <div class="" style="text-align:center;"><%=product.title%></div>
+                            <div class="" style="text-align:center;">￥<%=product.price%></div>
+                            <% end %>
+                        </li>
+
+                        <% end %>
                         <% end %>
                         <% end %>
                     </ul>
@@ -356,12 +373,12 @@
                     <ul>
                         <% if  @products.present? %>
                         <% @products.order('created_at DESC').each do |product| %>
-                        <% if  true == product.categories.eql?("防霾口罩")%>
+                        <% if  true == product.categories.eql?("防霾口罩") && !product.is_fund %>
                         <li>
                             <%= link_to product_path(product) do %>
                             <% if product.image.present? %>
                             <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                        <% else %>
+                            <% else %>
                             <span class="thumb"><%= image_tag(product.image_path, class: "") %>
                             </span>
                             <% end %>
@@ -370,6 +387,21 @@
                             <div class="" style="text-align:center;">￥<%=product.price%></div>
                             <% end %>
                         </li>
+                        <% else if  true == product.categories.eql?("防霾口罩") && product.is_fund %>
+                        <li>
+                            <%= link_to funding_product_product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                            <% else %>
+                            <span class="thumb"><%= image_tag(product.image_path, class: "") %>
+                            </span>
+                            <% end %>
+                            <br>
+                            <div class="" style="text-align:center;"><%=product.title%></div>
+                            <div class="" style="text-align:center;">￥<%=product.price%></div>
+                            <% end %>
+                        </li>
+                        <% end %>
                         <% end %>
                         <% end %>
                         <% end %>
@@ -390,21 +422,35 @@
                         <ul class="fourPanels">
                             <% if  @products.present? %>
                             <% @products.order('created_at DESC').each do |product| %>
-                            <% if  true == product.categories.eql?("霾表")%>
+                            <% if  true == product.categories.eql?("霾表") && !product.is_fund%>
                             <li>
-                                <%= link_to product_path(product) do %>
+                                <%= link_to product_path(product) do%>
                                 <% if product.image.present? %>
                                 <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
-                            <% else %>
+                                <% else %>
                                 <span class="thumb"><%= image_tag(product.image_path, class: "") %>
                                 </span>
                                 <% end %>
                                 <br>
                                 <div class="" style="text-align:center;"><%=product.title%></div>
                                 <div class="" style="text-align:center;">￥<%=product.price%></div>
-
                                 <% end %>
                             </li>
+                            <% else if  true == product.categories.eql?("霾表") && product.is_fund%>
+                            <li>
+                                <%= link_to funding_product_product_path(product) do%>
+                                <% if product.image.present? %>
+                                <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                                <% else %>
+                                <span class="thumb"><%= image_tag(product.image_path, class: "") %>
+                                </span>
+                                <% end %>
+                                <br>
+                                <div class="" style="text-align:center;"><%=product.title%></div>
+                                <div class="" style="text-align:center;">￥<%=product.price%></div>
+                                <% end %>
+                            </li>
+                            <% end %>
                             <% end %>
                             <% end %>
                             <% end %>
@@ -496,10 +542,12 @@
                             </li>
 
                             <li>
-                                <a href="/">
-                                    <img src="images/panel/lab_140430_01.jpg">
-                                    <span class="title">使用攻略</span>
-                                </a>
+                                <!-- <a href="/"> -->
+                                  <%= link_to funding_path do %>
+                                    <img src="images/panel/funding.jpeg">
+                                    <span class="title">防霾众筹</span>
+                                    <% end %>
+                                <!-- </a> -->
                             </li>
 
                             <li>
