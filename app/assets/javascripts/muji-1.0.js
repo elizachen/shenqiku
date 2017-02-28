@@ -46,7 +46,7 @@ $(window).on("load resize", function(){
 
       $("#hSearch .wrapper").hide();
 
-
+      $("#hSearch").hide(); 
     }
 
 

@@ -819,8 +819,14 @@
                             }
                         });
                     });
+
+                    var w = $(window).width();
+                    if (w < 1200) {
+                        $("#hSearch").hide();
+                    }
                 })
             </script>
+
 
         </body>
 
