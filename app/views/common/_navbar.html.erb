@@ -1,4 +1,4 @@
-<header id="globalHeader" style="margin-right:-15px; margin-left:-15px; padding:0px;">
+<header id="globalHeader" style=" height:60px; padding:0px;">
     <!-- <h3 id="siteName">
           <a href="/" ><img src="/images/favicon-leaf.ico" style="margin-left:20px;margin-bottom:0px;width:30px;"/> 防霾库</a>
   </h3> -->
@@ -36,8 +36,8 @@
                     <% end %>
                 <li>
                     <% if !current_user %>
-                <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %></li>
-                <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                    <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path, method: :get)  %></li>
+                    <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path, method: :get)  %></li>
             <% else %>
 
                 <li>

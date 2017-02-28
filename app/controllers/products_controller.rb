@@ -23,10 +23,14 @@ class ProductsController < ApplicationController
   def search
     @query = @query_string
      if @query_string.present?
+     if @query_string.casecmp("discounted")
+       search_result = Product.where(is_discounted: true)
+     else
      # search_result = Product.ransack(@search_criteria).result(distinct: true)
      # params.require(:product).permit(:title, :description, :quantity, :price, :image, :categories, :image_path, )
      search_result = Product.ransack({:title_or_categories_cont => @query_string}).result(distinct: true)
      # search_result = Product.ransack({{:title_or_field_or_location_or_company_name_cont => @q}}).result(distinct: true)
+     end
      @products = search_result
      else
     # @jobs = Job.published.recent.paginate(page: params[:page], per_page:5)

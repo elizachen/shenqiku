@@ -37,7 +37,7 @@
 
         <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style:"padding: 0; margin:0;">
 
-            <nav class="navbar navbar-default navbar-fixed-top" style="padding:0">
+            <nav class="navbar navbar-default navbar-fixed-top" style="padding:0; ">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -63,7 +63,7 @@
                             <li>
                                 <a href="#about">关于我们</a>
                             </li>
-                            <li><%= link_to carts_path do  %>
+                            <li><%= link_to(carts_path, method: :get) do  %>
                                 购物车
                                 <i class="fa fa-shopping-cart"></i>
                                 (
@@ -73,8 +73,8 @@
                             </li>
                             <li>
                                 <% if !current_user %>
-                            <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path) %></li>
-                            <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                            <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path, method: :get)  %></li>
+                            <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path, method: :get)  %></li>
                         <% else %>
 
                             <li>
@@ -627,10 +627,10 @@
                         <ul>
 
                             <li>
-                                <a href="/">
+                                <%= link_to search_products_path(:order => "created_at", :query_string => "discounted") do%>
                                     <img src="images/panel/openmuji-sh755_640.jpg">
                                     <span class="title">优惠活动</span>
-                                </a>
+                                <% end %>
                             </li>
 
                             <li>
@@ -684,7 +684,7 @@
                               <br>
                                 <h4 style="text-align: center;  color: #fff;">Eliza：不想离开北上广，防霾库为您提供安全防霾方案</h4>
                                 <p style="color: #fff;">
-                                    十五年前的北京、上海，天空蓝得像透明的蓝玻璃。而现在，雾霾天常常伸手不见五指。好友的儿子14年冬天出生，雾霾正猛。小朋友双满月，大人抱出去透透气，就患了肺炎。医生说，雾霾是罪魁祸首。看着小朋友做雾化时，各种哭，连我这个阿姨都心疼万分。<strong>我们不想离开北上广，但要保护好自己和家人。这是我创办防霾库的初衷。为您和家人提供——全套防霾方案，让呼吸更安全，更健康。</strong></p>
+                                    十五年前的北京、上海，天空像透明的蓝玻璃。而现在，雾霾天常常伸手不见五指。好友的儿子14年冬天出生，雾霾正猛。小朋友双满月，大人抱出去透透气，就患了肺炎。医生说，雾霾是罪魁祸首。看着小朋友做雾化时，各种哭，连我这个阿姨都心疼万分。<strong>我们不想离开北上广，但要保护好自己和家人。这是我创办防霾库的初衷。为您和家人提供——全套防霾方案，让呼吸更安全，更健康。</strong></p>
                                 <h4 style="color: #fff;">微信号：elizaBerylChen</h4>
                                 <h5 style="color: #fff;">微信公众号：爱莉莎的雪月花</h5>
                             </div>
@@ -819,8 +819,15 @@
                             }
                         });
                     });
+
+                    var w = $(window).width();
+                    if (w < 1200) {
+                        $("#hSearch").hide();
+                        $("#hSearch .wrapper").show();
+                    }else{ $("#hSearch").show();}
                 })
             </script>
+
 
         </body>
 

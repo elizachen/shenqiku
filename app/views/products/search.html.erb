@@ -33,7 +33,7 @@
         </script>
 
         <div class="content">
-            <nav id="sideNav" style="float: left; width: 150px; margin-left: 30px; margin-right: 30px; margin-top: 113px;">
+            <nav id="sideNav" style="float: left; width: 150px; margin-left: 50px; margin-right: 30px; margin-top: 113px;">
                 <h2>进阶搜索</h2>
                 <div id="snCategory">
                     <ul class="snCategoryL1">
@@ -79,7 +79,7 @@
                             <h3 id="features">精选・新到商品</h3>
                             <ul class="snCategoryL2">
                                 <li>
-                                    <a href="/">优惠活动</a>
+                                <%= link_to("优惠活动", search_products_path(:order => "created_at", :query_string => "discounted"), method: :get)%>
                                 </li>
                                 <li><%= link_to("科技众筹", search_products_path(:order => "created_at", :query_string => "科技众筹"), method: :get) %></li>
                                 <li><%= link_to("新到商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %></li>
@@ -136,7 +136,7 @@
                                       <dd class="tag">
                                           <div class="tag sale">限时特价商品</div>
                                       </dd>
-                                      <dd class="price" ">
+                                      <dd class="price">
                                           <del>
                                               <span class="num">￥<%=product.original_price%></span>
                                           </del>
@@ -163,95 +163,9 @@
             </div>
           </div>
         </div>
+  </div>
+</body>
 
 
-            <script language="JavaScript" type="text/javascript">
-                var _sctag = new Object();
-
-                _sctag.eVar1 = '灯';
-                _sctag.prop21 = '灯';
-
-                _sctag.products = ';';
-
-                _sctag.pagegrp = "Sr";
-            </script>
-            <!-- End SiteCatalyst code version: H.17. -->
-
-            <script type="text/javascript">
-                <!--
-                var name = "mm_id";
-
-                if ("" != '') {
-                    setCookie(name, '', '.muji.com.cn', '/cn/store/', 1825);
-                }
-
-                var cookieValue = getCookie(name);
-
-                if (cookieValue) {
-                    if (window._sctag) {
-                        _sctag.eVar38 = cookieValue;
-                    } else {
-                        var _sctag = new Object();
-                        _sctag.eVar38 = cookieValue;
-                    }
-                }
-
-                function getCookie(name) {
-                    if (!name || !document.cookie)
-                        return;
-
-                    var cookies = document.cookie.split("; ");
-                    for (var i = 0; i < cookies.length; i++) {
-                        var str = cookies[i].split("=");
-                        if (str[0] != name)
-                            continue;
-                        return str[1];
-                    }
-                    return;
-                }
-
-                function setCookie(name, value, domain, path, expires) {
-                    if (!name)
-                        return;
-
-                    var cookie = name + "=" + value;
-
-                    if (domain) {
-                        cookie += "; domain=" + domain;
-                    }
-
-                    if (path) {
-                        cookie += "; path=" + path;
-                    }
-                    if (expires) {
-                        var nowtime = new Date().getTime();
-                        expires = new Date(nowtime + (60 * 60 * 24 * 1000 * expires));
-                        cookie += "; expires=" + expires.toGMTString();
-                    }
-
-                    document.cookie = cookie;
-                }
-
-                //-->
-            </script>
-
-            <script type="text/javascript">
-                <!--
-                if (window._sctag) {
-                    if (window._sctag.pagegrp) {
-                        scData.pageName = "[" + _sctag.pagegrp + "]" + document.title;
-                    }
-                } else {
-                    scData.pageName = document.title;
-                }
-
-                //-->
-            </script>
-
-            <script>
-                _satellite.pageBottom();
-            </script>
-          </div>
-        </body>
 
     </html>

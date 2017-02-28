@@ -14,6 +14,8 @@ $(window).on("load resize", function(){
 
 		});
     $("#hSearch .wrapper").show();
+    $("#hSearch").show();
+    $("#sideNav").show();
 
 		} else {
 			$("#main, #hGlobalNav h1, #siteName img, #hSearch h1").removeClass("blur");
@@ -46,7 +48,8 @@ $(window).on("load resize", function(){
 
       $("#hSearch .wrapper").hide();
 
-
+      $("#hSearch").hide();
+      $("#sideNav").hide();
     }
 
 
