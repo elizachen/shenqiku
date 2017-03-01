@@ -1,1 +1,360 @@
 
+<head>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+
+	<style>
+	ul > li{margin-right:30px;font-size:14px;cursor:pointer}
+	li.active{border-bottom:3px solid silver;}
+	.item-photo{display:flex;justify-content:center;align-items:center;border-right:1px solid #f6f6f6;}
+	.menu-items{list-style-type:none;font-size:11px;display:inline-flex;margin-bottom:0px;margin-top:20px}
+	.section{width:100%;margin-left:-15px;padding:2px;padding-left:15px;padding-right:15px;background:#f8f9f9}
+	.btn-minus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-right:0px;}
+	.btn-plus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-left:0px;}
+	div.section > div {width:100%;display:inline-flex;}
+	div.section > div > input {margin:0px;padding-left:5px;font-size:10px;padding-right:5px;max-width:18%;text-align:center;}
+
+
+	@media (max-width: 426px) {
+	    .container {margin-top:0px !important;}
+	    .container > .row{padding:0px !important;}
+	    .container > .row > .col-xs-12.col-sm-5{
+	        padding-right:0px ;
+	    }
+	    .container > .row > .col-xs-12.col-sm-9 > div > p{
+	        padding-left:0px !important;
+	        padding-right:0px !important;
+	    }
+	    .container > .row > .col-xs-12.col-sm-9 > div > ul{
+	        padding-left:10px !important;
+
+	    }
+	    .section{width:104%;}
+	    .menu-items{padding-left:0px;}
+	}
+
+
+
+	.blkz{
+		  background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd1yoik0cbj30so0hsdmg.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
+	}
+	.xmkz{
+			background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1yn2j26aj30xp0l2gqi.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
+	}
+	.ldkz{
+			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcly1fd3y8gabg9j30ly0hx0wz.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
+	}
+	.kqg{
+			background-image: url("https://ww1.sinaimg.cn/large/006tKfTcly1fd3xvsy36aj30ly0dqgmr.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
+	}
+	.hjb{
+			background-image: url("https://ww2.sinaimg.cn/large/006tKfTcly1fd3xukumx1j30ly0b479l.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
+	}
+	.ld{
+			background-image: url("https://ww4.sinaimg.cn/large/006tKfTcly1fd3xt28dbuj30i20bon0r.jpg");
+			background-size: cover;
+			background-repeat:no-repeat;
+	}
+	.blueair{
+			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd1yqdswfuj30ri0dctd8.jpg");
+			background-size: cover;
+			background-repeat:no-repeat;
+	}
+	.dyson{
+	  background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1ytqp39uj30ly0i010u.jpg");
+		background-repeat:no-repeat;
+		background-size: cover;
+	}
+	.sl{
+	  background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1yxchwt5j30ku0ewq8j.jpg");
+		background-repeat:no-repeat;
+		background-size: cover;
+	}
+	.nosuchpro{
+	  background-image: url("https://ww4.sinaimg.cn/large/006tKfTcgy1fd30i57vlsj31er0rr123.jpg");width:inherit;
+		background-repeat:no-repeat;
+		background-size: cover;
+
+	}
+	</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+   <div class="col-xs-6 item-photo">
+     <!-- <% if @product.image.present? %>
+             <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+         <% else %>
+             <%= image_tag(@product.image_path, class: "thumbnail") %>
+             <% end %> -->
+		<img src="/images/funding_kqg.jpg	" alt="空气果"/>
+  </div>
+  <div class="col-xs-6" style="border:0px solid gray">
+
+    <h3 id="tt"><%= @product.title %></h3>
+			<p>
+				已筹到
+			</p>
+			<p style="font-size:30px;margin-top:5px;">
+				¥8999
+			</p>
+			<div class="p-line">
+
+			</div>
+			<p>
+				此项目必须在 <span style="color:red;">2017年03月31日 </span>前得到 <span style="color:red;">￥100’000 </span>的支持才可成功！
+			</p>
+      </div>
+
+
+    </div>
+
+                <!-- <div class="col-xs-5">
+                    <ul class="menu-items">
+                        <li class="active">功能</li>
+	                      <li>细节</li>
+                        <li>why me</li>
+
+                    </ul>
+                    <div style="width:100%;border-top:1px solid silver">
+                        <p style="padding:15px;color:gray;">
+
+                            <%= @product.description %>
+
+                   </p>
+
+                    </div>
+                </div> -->
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-8" >
+		<div class="productDecription">
+		  <div class="productDecription-menuList">
+		    <div class="productDecription-menuList-item current-now">功能</div>
+		    <div class="productDecription-menuList-item">细节</div>
+				<div class="productDecription-menuList-item">Why Me</div>
+
+		  </div>
+		  <div class="productDecription-content">
+		    <div class="productDecription-content-item" style="display: block;">
+						<center>
+							<img style="" src="/images/kqg-function.jpg"/>
+						</center>
+				</div>
+		    <div class="productDecription-content-item">
+					<center>
+						<img src="/images/kqg-detail.jpg"/>
+					</center>
+
+				</div>
+				<div class="productDecription-content-item ">
+					<p style="margin:20px;font-size:18px;height:1000px;">
+						<%=@product.description%>
+					</p>
+				</div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-4 ">
+	  <!-- 发起人 -->
+	  <div class="funding-offer-item">
+       <div class="funding-offer-item-title">
+				项目发起人
+			 </div>
+			 <div>
+				 <div style="width:100%;"><img src="/images/air-logo.png" style="padding:10px 100px;"/></div>
+				 <div class="thumbnail text-center" style="margin-left:10px;width:45%;display:inline-block">
+            <img src="/images/elz.jpg" />
+						<p style="margin-top:5px;font-size:10px;">ElizaChen</p>
+				 </div>
+				 <div class="thumbnail text-center" style="margin:5px;width:45%;display:inline-block">
+					 <img src="/images/coco.jpg" />
+					 <p style="margin-top:5px;font-size:10px">Cococardry</p>
+				 </div>
+			 </div>
+
+		</div>
+		<!-- ¥1众筹抽奖 -->
+		<div class="funding-offer-item">
+			<div class="funding-offer-item-title">
+		   ￥1
+			</div>
+			<div style="margin:20px;">
+				<strong>无限额 </strong> | <span class="app-tag">抽奖档</span>
+				<p style="margin-top:20px;">
+					每满100位支持者抽取1位幸运用户。幸运用户将会获得<%= @product.title %>1台。届时防霾库将第一时间通知中奖者。
+				</p>
+				<span style="margin-top:10px;">
+					配送费用： <strong>免运费</strong>
+				</span><br/>
+
+				<span style="margin-top:10px;">
+					预计回报发送时间：<strong>项目众筹成功后30天内</strong>
+				</span>
+			</div>
+
+
+    <div class="text-center">
+			<%= link_to("支持¥1", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger mybtn") %>
+		</div>
+		</div>
+
+		<!-- 优惠众筹 -->
+		<div class="funding-offer-item">
+			<div class="funding-offer-item-title">
+			 ￥899
+			</div>
+			<div style="margin:20px;">
+				<strong>无限额 </strong> | <span class="app-tag">优惠档</span>
+				<p style="margin-top:20px;">
+					感谢您对宜植爱的支持，您将获得远低于市场价的<%= @product.title %>1台。
+				</p>
+				<span style="margin-top:10px;">
+					配送费用： <strong>免运费</strong>
+				</span><br/>
+
+				<span style="margin-top:10px;">
+					预计回报发送时间：<strong>项目众筹成功后30天内</strong>
+				</span>
+			</div>
+
+
+    <div class="text-center">
+			<%= link_to("支持¥899", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger mybtn") %>
+		</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</body>
+<style>
+ .app-tag {
+    padding: 0 7px;
+    height: 18px;
+    color: #fff;
+    background: #ffaa05;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.mybtn{
+  /*margin-left:-90px;*/
+	margin-top:10px;
+	height:40px;
+   width:150px;
+   /*border-radius: 1px;*/
+   letter-spacing: 2px;
+   font-size:18px;
+}
+
+/*商品详情*/
+.productDecription {
+	border: 1px solid #f2f2f2;
+	box-shadow: 0 0 40px rgba(216,216,216,.5);
+	/*width: 810px;*/
+
+}
+
+.productDecription-menuList {
+	margin: 0 20px;
+	height: 60px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.productDecription-menuList-item {
+	width: 192px;
+	height: 56px;
+	float: left;
+	line-height: 56px;
+	text-align: center;
+	color: #323232;
+	font-size: 18px;
+	letter-spacing: 3px;
+	cursor: pointer;
+}
+
+.productDecription-content {
+	width: auto;
+	height: auto;
+	/*margin: 50px auto;*/
+}
+
+	.productDecription-content-item {
+		display: none;
+		width: auto;
+
+	}
+
+
+.funding-offer{
+	width:300px;
+	height:1000px;
+  /*display: inline-block;*/
+	margin-top: -100px;
+	border: 1px solid #f2f2f2;
+	box-shadow: 0 0 40px rgba(216,216,216,.5);
+}
+.funding-offer-item{
+	/*width:inherit;*/
+	border: 1px solid #f2f2f2;
+	box-shadow: 0 0 40px rgba(216,216,216,.5);
+	height:333px;
+  margin-bottom:25px;
+}
+.funding-offer-item-title{
+	text-align: center;
+	line-height: 56px;
+	height: 60px;
+	font-size: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.funding-product-description{
+	border: 1px solid #f2f2f2;
+	box-shadow: 0 0 40px rgba(216,216,216,.5);
+	width: 810px;
+  display: inline-block;
+	/*float: left;*/
+}
+
+.current-now {
+    color: #2fd6a2;
+    font-weight: 700;
+		border-bottom:4px solid #2fd6a2;
+		/*padding: 0px;*/
+}
+.p-line{
+	color: #2fd6a2;
+}
+
+
+</style>
+<script>
+$(document).on('click', '.productDecription-menuList-item', function () {
+  var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
+  $('.productDecription-content-item').hide();
+	$('.productDecription-content-item').eq(index).show();
+	$('.productDecription-menuList-item').removeClass('current-now');
+	$(this).addClass('current-now');
+
+})
+
+
+
+
+</script>

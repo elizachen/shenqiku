@@ -18,6 +18,7 @@
 //= require_tree .
 
 
+
 $(document).on('click', '.productDecription-menuList-item', function () {
   var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
   $('.productDecription-menuList-item').removeClass('white')
@@ -39,8 +40,8 @@ $(document).on('click', 'ul.menu-items > li', function(){
 
 function addOne(){
   var pn=document.getElementById('productNum')
-		var pg=document.getElementById('pq')
-		if (parseInt(pn.value)<pg.innerHTML) {
+		var pq=document.getElementById('pq')
+		if (parseInt(pn.value)<pq.innerHTML) {
 			pn.value=parseInt(pn.value)+1
 		}
     // alert(window.location.href);
@@ -48,10 +49,8 @@ function addOne(){
 
 function deleteOne(){
   var pn=document.getElementById('productNum')
+  if (parseInt(pn.value)>1 ) {
+	  pn.value=parseInt(pn.value)-1
+  }
 
-
-if (parseInt(pn.value)>1 ) {
-	pn.value=parseInt(pn.value)-1
 }
-
-	}
