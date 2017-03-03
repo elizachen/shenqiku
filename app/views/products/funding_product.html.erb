@@ -91,13 +91,10 @@
 <body>
 <div class="container">
 	<div class="row">
-   <div class="col-xs-6 item-photo">
-     <!-- <% if @product.image.present? %>
-             <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-         <% else %>
-             <%= image_tag(@product.image_path, class: "thumbnail") %>
-             <% end %> -->
-		<img src="/images/funding_kqg.jpg	" alt="空气果"/>
+   <div class="col-xs-6 item-photo" id="div1">
+
+
+		<!-- <img src="/images/funding_kqg.jpg	" alt="空气果"/> -->
   </div>
   <div class="col-xs-6" style="border:0px solid gray">
 
@@ -105,7 +102,7 @@
 			<p>
 				已筹到
 			</p>
-			<p style="font-size:30px;margin-top:5px;">
+			<p id="pp" style="font-size:30px;margin-top:5px;">
 				¥8999
 			</p>
 			<div class="p-line">
@@ -137,6 +134,7 @@
                 </div> -->
 	</div>
 </div>
+<!-- 选项卡区 -->
 <div class="row">
 	<div class="col-sm-8" >
 		<div class="productDecription">
@@ -148,37 +146,38 @@
 		  </div>
 		  <div class="productDecription-content">
 		    <div class="productDecription-content-item" style="display: block;">
-						<center>
-							<img style="" src="/images/kqg-function.jpg"/>
+						<center id="pf">
+							<!-- js动态添加img标签 -->
 						</center>
 				</div>
 		    <div class="productDecription-content-item">
-					<center>
-						<img src="/images/kqg-detail.jpg"/>
+					<center id="pd">
+						<!-- js动态添加img标签 -->
 					</center>
 
 				</div>
 				<div class="productDecription-content-item ">
-					<p style="margin:20px;font-size:18px;height:1000px;">
+					<p style="margin:50px;font-size:18px;height:1000px;">
 						<%=@product.description%>
 					</p>
 				</div>
 		  </div>
 		</div>
 	</div>
+	<!-- 众筹区 -->
 	<div class="col-sm-4 ">
 	  <!-- 发起人 -->
 	  <div class="funding-offer-item">
        <div class="funding-offer-item-title">
 				项目发起人
 			 </div>
-			 <div>
-				 <div style="width:100%;"><img src="/images/air-logo.png" style="padding:10px 100px;"/></div>
-				 <div class="thumbnail text-center" style="margin-left:10px;width:45%;display:inline-block">
+			 <div class="text-center">
+				 <div style="width:100%;"><img src="/images/air-logo.png" style="padding:5px 190px;"/></div>
+				 <div class="thumbnail text-center" style="margin:0px 10px 20px 10px;width:38%;display:inline-block">
             <img src="/images/elz.jpg" />
 						<p style="margin-top:5px;font-size:10px;">ElizaChen</p>
 				 </div>
-				 <div class="thumbnail text-center" style="margin:5px;width:45%;display:inline-block">
+				 <div class="thumbnail text-center" style="margin:10px;width:38%;display:inline-block">
 					 <img src="/images/coco.jpg" />
 					 <p style="margin-top:5px;font-size:10px">Cococardry</p>
 				 </div>
@@ -218,7 +217,7 @@
 			<div style="margin:20px;">
 				<strong>无限额 </strong> | <span class="app-tag">优惠档</span>
 				<p style="margin-top:20px;">
-					感谢您对宜植爱的支持，您将获得远低于市场价的<%= @product.title %>1台。
+					感谢您对防霾库的支持，您将获得远低于市场价的<%= @product.title %>1台。
 				</p>
 				<span style="margin-top:10px;">
 					配送费用： <strong>免运费</strong>
@@ -345,12 +344,69 @@
 
 </style>
 <script>
+// 切换选项卡
 $(document).on('click', '.productDecription-menuList-item', function () {
   var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
   $('.productDecription-content-item').hide();
 	$('.productDecription-content-item').eq(index).show();
 	$('.productDecription-menuList-item').removeClass('current-now');
 	$(this).addClass('current-now');
+})
+// 动态加载图片
+$(document).ready(function(){
+
+	var imgtag=document.createElement('img');
+	var div1=document.getElementById('div1');
+	div1.appendChild(imgtag);
+  // 功能
+	var pf=document.getElementById('pf');
+	var imgtag_function = new Array("imgtag_function1","imgtag_function2","imgtag_function3","imgtag_function4");
+	for(var i=0;i<4	;i++){
+		imgtag_function[i]=document.createElement('img');
+	}
+
+  // 细节
+	var pd=document.getElementById('pd');
+	var imgtag_detail = new Array("imgtag_detail1","imgtag_detail2","imgtag_detail3","imgtag_detail4");
+	for(var j=0;j<4;j++){
+		imgtag_detail[j]=document.createElement('img');
+	}
+
+  var tt=$('#tt').text();
+  if(tt=="空气果"){
+		imgtag.setAttribute('src','/images/funding_kqg.jpg');
+		imgtag.setAttribute('alt','空气果');
+		pf.appendChild(imgtag_function[0]);
+		pd.appendChild(imgtag_detail[0]);
+		imgtag_function[0].setAttribute('src','/images/kqg_function.jpg');
+		imgtag_detail[0].setAttribute('src','/images/kqg_detail.jpg');
+	}else if (tt=="小米口罩") {
+		imgtag.setAttribute('src','/images/funding_kz.jpg');
+		imgtag.setAttribute('alt','口罩');
+		// var pp=$('#pp').text();
+		document.getElementById('pp').innerHTML='¥6888';
+    for(var i=0;i<4;i++){
+			pf.appendChild(imgtag_function[i]);
+		}
+		imgtag_function[0].setAttribute('src','/images/kz_function1.jpg');
+    imgtag_function[1].setAttribute('src','/images/kz_function2.jpg');
+		imgtag_function[2].setAttribute('src','/images/kz_function3.jpg');
+		imgtag_function[3].setAttribute('src','/images/kz_function4.jpg');
+		for(var j=0;j<3;j++){
+			pd.appendChild(imgtag_detail[j]);
+		}
+		imgtag_detail[0].setAttribute('src','/images/kz_detail_1.jpg');
+		imgtag_detail[1].setAttribute('src','/images/kz_detail_2.jpg');
+		imgtag_detail[2].setAttribute('src','/images/kz_detail_3.jpg');
+	}else{
+		imgtag.setAttribute('src','/images/panel/funding.jpeg');
+		imgtag.setAttribute('alt','众筹');
+		imgtag_function.setAttribute('src','/images/panel/funding.jpeg');
+		imgtag_function.setAttribute('alt','众筹');
+	}
+
+
+
 
 })
 

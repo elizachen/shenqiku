@@ -15,7 +15,7 @@ puts "1 admin account created."
 
 
 products = ["绿盾口罩","小米口罩","布梨口罩" ]
-products_description = ["绿盾保暖口罩，舒适保暖透气，抗菌防尘防霾","贴合性密闭，柔性立体结构，舒适穿戴", "小米众筹明星产品，纳米驻级过滤呼吸，口罩体验新革命"]
+products_description = ["绿盾保暖口罩，舒适保暖透气，抗菌防尘防霾","外形酷炫，戴上之后呼吸完全无阻力，同时PM2.5高达99.97%。颜值与健康，一样都不少。", "小米众筹明星产品，纳米驻级过滤呼吸，口罩体验新革命"]
 products_prices = [29,62,139]
 products_categories = ["防霾口罩", "防霾口罩","防霾口罩"]
 # products_is_discounted = [false, true, false]
@@ -45,7 +45,8 @@ products_is_fund = [false,true,false]
   puts "3 products created."
 
   products = ["空气果","环境宝","镭豆"]
-  products_description = ["温度、湿度、CO2、PM2.5等","8项检测 居家必备","便携轻巧 测量精准"]
+  products_description = ["空气果是国内最早把空气检测仪的概念引入国内市场的产品。精确检测温度、湿度、CO2、PM2.5等，无论制作工艺、和产品质量、测量精准度上在同类商品中领先。",
+    "8项检测 居家必备","便携轻巧 测量精准"]
   products_prices = [965,599,369]
   products_categories = ["霾表","霾表","霾表"]
   # products_is_discounted = [true, false, false]

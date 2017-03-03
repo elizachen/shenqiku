@@ -503,7 +503,7 @@
                             <% @products.order('created_at DESC').each do |product| %>
                             <% if  true == product.categories.eql?("科技众筹")%>
                             <li>
-                                <%= link_to product_path(product) do %>
+                                <%= link_to funding_product_product_path(product) do %>
                                 <% if product.image.present? %>
                                 <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
                             <% else %>
