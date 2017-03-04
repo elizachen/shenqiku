@@ -1,4 +1,67 @@
 
+<head>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+
+	<style>
+	.menulist-item{margin-right:30px;font-size:14px;cursor:pointer;}
+	li.active{border-bottom:3px solid silver;}
+	.item-photo{display:flex;justify-content:center;align-items:center;border-right:1px solid #f6f6f6;}
+	.menulist{list-style-type:none;font-size:11px;display:inline-flex;margin-bottom:0px;margin-top:20px}
+	.section{width:100%;margin-left:-15px;padding:2px;padding-left:15px;padding-right:15px;background:#f8f9f9}
+	.btn-minus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-right:0px;}
+	.btn-plus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-left:0px;}
+	div.section > div {width:100%;display:inline-flex;}
+	div.section > div > input {margin:0px;padding-left:5px;font-size:10px;padding-right:5px;max-width:18%;text-align:center;}
+  .description{width:100%;border-top:1px solid silver;}
+  .description-item{display: none;}
+	.bg-color1 {
+	  background: #F5F5F5;
+	}
+	.white{
+	  background-color: white;
+	}
+
+	/*商品详情*/
+	.productDecription {
+		width: auto;
+	  text-align: center;
+		/*margin: 20px auto;*/
+		border: 1px solid #F5F5F5;
+	  line-height: 30px;
+	}
+
+	.productDecription-menuList {
+		height: 35px;
+	}
+
+	.productDecription-menuList-item {
+		float: left;
+		width: 175px;
+		height: 35px;
+		cursor: pointer;
+	}
+
+	.productDecription-content {
+		width: auto;
+	  height: 100%;
+		/*margin: 50px auto;*/
+	}
+
+		.productDecription-content-item {
+		  display: none;
+		  width: auto;
+		  height: auto;
+		}
+
+
+	</style>
+
+</head>
+
+<body>
+
+
+
 <div class="container">
 	<div class="row">
    <div class="col-xs-4 item-photo">
@@ -11,7 +74,7 @@
                 </div>
                 <div class="col-xs-5" style="border:0px solid gray">
 
-                    <h3><%= @product.title %></h3>
+                    <h3 id="tt"><%= @product.title %></h3>
 
                     <h4 style="margin-top:20px;">￥
                                 <%= @product.price %></h4>
@@ -44,120 +107,165 @@
                 </div>
 
                 <div class="col-xs-5  ">
-                    <ul class="menu-items">
-                        <li class="active">功能</li>
-	                        <li>细节</li>
-                        <li>why me</li>
-
+                    <ul class="menulist">
+                        <li class="menulist-item active">功能</li>
+	                      <li class="menulist-item">规格</li>
+                        <li class="menulist-item">why me</li>
                     </ul>
-                    <div style="width:100%;border-top:1px solid silver">
-                        <p style="padding:15px;color:gray;">
-
-                            <%= @product.description %>
-
+                    <div class="description">
+											<div class="description-item" style="display:block">
+												<p style="padding:15px 0;color:gray;">
+                          <%= @product.description %>
                         </p>
-
+											</div>
+											<div class="description-item">
+												<p id="type" style="padding:15px 0;color:gray;">
+												</p>
+											</div>
+											<div class="description-item">
+												<p id="why" style="padding:15px 0;color:gray;">
+												</p>
+											</div>
                     </div>
                 </div>
 	</div>
 </div>
-<!-- for test -->
-<!-- <div class="productDecription">
+
+<!-- 选项卡区-->
+<div class="productDecription row">
   <div class="productDecription-menuList bg-color1">
-    <div class="productDecription-menuList-item bg-color2">选项卡1</div>
-    <div class="productDecription-menuList-item bg-color3">选项卡2</div>
+    <div class="productDecription-menuList-item white">展示</div>
+    <div class="productDecription-menuList-item ">评价</div>
   </div>
   <div class="productDecription-content">
-    <div class="productDecription-content-item bg-color4" style="display: block;">内容1</div>
-    <div class="productDecription-content-item bg-color5">内容2</div>
+    <div class="productDecription-content-item" style="display: block;" id="div1"></div>
+    <div class="productDecription-content-item" style="text-align:center;padding-top:15px;">
+
+				防霾：⭐️⭐️⭐️⭐️⭐️<br />
+				外观：⭐️⭐️⭐️⭐️⭐️
+			</div>
   </div>
-</div> -->
 
-<style>
-ul > li{margin-right:30px;font-size:14px;cursor:pointer}
-li.active{border-bottom:3px solid silver;}
+</div>
 
-.item-photo{display:flex;justify-content:center;align-items:center;border-right:1px solid #f6f6f6;}
-.menu-items{list-style-type:none;font-size:11px;display:inline-flex;margin-bottom:0px;margin-top:20px}
-.btn-success{width:100%;border-radius:0px;}
-.section{width:100%;margin-left:-15px;padding:2px;padding-left:15px;padding-right:15px;background:#f8f9f9}
-.title-price{margin-top:30px;margin-bottom:0px;color:black}
-.title-attr{margin-top:0px;margin-bottom:0px;color:black;}
-.btn-minus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-right:0px;}
-.btn-plus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-left:0px;}
-div.section > div {width:100%;display:inline-flex;}
-div.section > div > input {margin:0px;padding-left:5px;font-size:10px;padding-right:5px;max-width:18%;text-align:center;}
-.attr,.attr2{cursor:pointer;margin-right:5px;height:20px;font-size:10px;padding:2px;border:1px solid gray;border-radius:2px;}
-.attr.active,.attr2.active{ border:1px solid orange;}
 
-@media (max-width: 426px) {
-    .container {margin-top:0px !important;}
-    .container > .row{padding:0px !important;}
-    .container > .row > .col-xs-12.col-sm-5{
-        padding-right:0px ;
-    }
-    .container > .row > .col-xs-12.col-sm-9 > div > p{
-        padding-left:0px !important;
-        padding-right:0px !important;
-    }
-    .container > .row > .col-xs-12.col-sm-9 > div > ul{
-        padding-left:10px !important;
+</body>
+<script>
 
-    }
-    .section{width:104%;}
-    .menu-items{padding-left:0px;}
+$(document).ready(function(){
+	var type=document.getElementById('type');
+	var why=document.getElementById('why');
+	var div1=document.getElementById('div1');
+	var imgtag = new Array("imgtag1","imgtag2","imgtag3","imgtag4","imgtag5");
+	for(var i=0;i<5	;i++){
+		imgtag[i]=document.createElement('img');
+	}
+
+  var tt=$('#tt').text();
+
+		if(tt=="空气果"){
+			window.location = "http://localhost:3000/products/4/funding_product"
+		}else if (tt=="小米口罩") {
+			window.location = "http://localhost:3000/products/2/funding_product"
+		}else if (tt=="布梨口罩"){
+			type.innerHTML='防霾成人口罩';
+			why.innerHTML='小米明星产品，日本进口滤材，纳米驻级过滤呼吸，口罩体验新革命。';
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/kz_blxf_1.jpg');
+			imgtag[1].setAttribute('src','/images/kz_blxf_2.jpg');
+		}else if (tt=="绿盾口罩"){
+			type.innerHTML='防霾儿童口罩';
+			why.innerHTML='儿童专用口罩，提供四重保护，全棉布料，可反复清洗。让你的孩子更健康、舒适的选择。';
+			for(var i=0;i<5;i++){
+				div1.appendChild(imgtag[i]);
+			}
+			imgtag[0].setAttribute('src','/images/kz_ld_1.jpg');
+			imgtag[1].setAttribute('src','/images/kz_ld_2.jpg');
+			imgtag[2].setAttribute('src','/images/kz_ld_3.jpg');
+			imgtag[3].setAttribute('src','/images/kz_ld_4.jpg');
+			imgtag[4].setAttribute('src','/images/kz_ld_5.jpg');
+		}else if (tt=="环境宝"){
+			type.innerHTML='智能家居空气检测仪';
+			why.innerHTML='先锋科技，采用英国剑桥TVOC传感器、德州仪器温湿度传感器，测量数据精准可靠，外形小巧、居家必备。';
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/mb_hjb_1.jpg');
+			imgtag[1].setAttribute('src','/images/mb_hjb_2.jpg');
+		}else if (tt=="镭豆"){
+			type.innerHTML='镭豆智能空气质量检测仪';
+			why.innerHTML='测量精准，时尚美观，便携轻巧。';
+			var ldiv=document.createElement('div');
+			div1.appendChild(ldiv);
+			ldiv.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/mb_ld_1.jpg');
+			imgtag[1].setAttribute('src','/images/mb_ld_2.jpg');
+		}else if (tt=="Blueair"){
+			type.innerHTML='Blueair 瑞典家用空气净化器 503';
+			why.innerHTML='高性能、高品质的选择。全球超高的CADR值，节能环保，零臭氧排放，确保高效净化。';
+			for(var i=0;i<5;i++){
+				div1.appendChild(imgtag[i]);
+			}
+			imgtag[0].setAttribute('src','/images/jhq_blueair_1.jpg');
+			imgtag[1].setAttribute('src','/images/jhq_blueair_2.jpg');
+			imgtag[2].setAttribute('src','/images/jhq_blueair_3.jpg');
+			imgtag[3].setAttribute('src','/images/jhq_blueair_4.jpg');
+			imgtag[4].setAttribute('src','/images/jhq_blueair_5.jpg');
+		}else if (tt=="戴森"){
+			type.innerHTML='Dyson戴森 AM11 空气净化风扇';
+			why.innerHTML='有效循环室内空气，让净化的空气在整个房间流通。专注净化率，发明了一种空气净化装置，可以深度去除有害超细颗粒物。';
+			div1.appendChild(imgtag[0]);
+			imgtag[0].setAttribute('src','/images/jhq_dyson.jpg');
+		}else if (tt=="三菱"){
+			type.innerHTML='三菱重工空气净化器SP-CSM22BW';
+			why.innerHTML='日本进口滤材，专利杀菌、除二手烟、除异味、除甲醛、苯。';
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/jhq_sl_1.jpg');
+			imgtag[1].setAttribute('src','/images/jhq_sl_2.jpg');
+		}
+
+})
+// 上方选项卡
+$(document).on('click', '.menulist-item', function () {
+  var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
+  $('.menulist-item').removeClass('active')
+  $(this).addClass('active')
+  $('.description-item').hide() //所有的内容都隐藏
+  $('.description-item').eq(index).show() //只显示对于index的内容
+
+})
+
+// 下方选项卡
+$(document).on('click', '.productDecription-menuList-item', function () {
+  var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
+  $('.productDecription-menuList-item').removeClass('white')
+  $(this).addClass('white')
+  $('.productDecription-content-item').hide() //所有的内容都隐藏
+  $('.productDecription-content-item').eq(index).show() //只显示对于index的内容
+
+})
+
+
+// 购买数量选项
+function addOne(){
+  var pn=document.getElementById('productNum')
+		var pq=document.getElementById('pq')
+		if (parseInt(pn.value)<pq.innerHTML) {
+			pn.value=parseInt(pn.value)+1
+		}
+
 }
 
-/*.bg-color1 {
-  background: #50514F;
+function deleteOne(){
+  var pn=document.getElementById('productNum')
+  if (parseInt(pn.value)>1 ) {
+	  pn.value=parseInt(pn.value)-1
+  }
+
 }
 
-.bg-color2 {
-  background: #F25F5C;
-}
 
-.bg-color3 {
-  background: #FFE066;
-}
 
-.bg-color4 {
-  background: #247BA0;
-}
-
-.bg-color5 {
-  background: #70C1B3;
-}
-
-/*商品详情*/
-/*.productDecription {
-	width: 1200px;
-  text-align: center;
-	margin: 20px auto;
-	border: 1px solid #50514F;
-  line-height: 30px;
-}*/
-
-/*.productDecription-menuList {
-	height: 35px;
-}
-
-.productDecription-menuList-item {
-	float: left;
-	width: 175px;
-	height: 35px;
-	cursor:pointer
-}
-
-.productDecription-content {
-	width: 750px;
-  height: 500px;
-	margin: 50px auto;
-}
-
-.productDecription-content-item {
-  display: none;
-  width: 750px;
-  height: 500px;
-}*/
-
-</style>
+</script>

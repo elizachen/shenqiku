@@ -21,8 +21,12 @@ Rails.application.routes.draw do
 
 
   resources :products do
+    get :funding_product, :on => :member
     member do
       post :add_to_cart
+    end
+    collection do
+       get :search
     end
   end
 
@@ -42,7 +46,8 @@ Rails.application.routes.draw do
     end
   end
 
-  #root 'welcome#index'
+  # root 'welcome#index'
   root 'products#index'
-  get '/about' => 'products#about'
+  get 'funding' => 'products#funding'
+  # get 'funding_product' => 'products#funding_product'
 end

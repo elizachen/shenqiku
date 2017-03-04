@@ -14,31 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/alert
-//= require bootstrap-sprockets
 //= require bootstrap/dropdown
 //= require_tree .
-$(document).ready(function() {
-  $('.productDecription-menuList-item').click(function () {
-    var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
-    $('.productDecription-content-item').hide() //所有的内容都隐藏
-    $('.productDecription-content-item').eq(index).show() //只显示对于index的内容
-  })
-})
-
-function addOne(){
-  var pn=document.getElementById('productNum')
-		var pg=document.getElementById('pq')
-		if (parseInt(pn.value)<pg.innerHTML) {
-			pn.value=parseInt(pn.value)+1
-		}
-}
-
-function deleteOne(){
-  var pn=document.getElementById('productNum')
-
-
-if (parseInt(pn.value)>1 ) {
-	pn.value=parseInt(pn.value)-1
-}
-
-	}
