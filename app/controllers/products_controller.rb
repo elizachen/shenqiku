@@ -38,6 +38,17 @@ class ProductsController < ApplicationController
      end
    end
 
+  def funding_product
+
+      @product = Product.find(params[:id])
+
+  end
+
+
+
+
+
+
    protected
       def validate_search_key
         @query_string = params[:query_string].gsub(/\\|\'|\/|\?/, '') if params[:query_string].present?
