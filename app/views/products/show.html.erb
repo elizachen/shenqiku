@@ -5,19 +5,13 @@
 	<style>
 	ul > li{margin-right:30px;font-size:14px;cursor:pointer}
 	li.active{border-bottom:3px solid silver;}
-
 	.item-photo{display:flex;justify-content:center;align-items:center;border-right:1px solid #f6f6f6;}
 	.menu-items{list-style-type:none;font-size:11px;display:inline-flex;margin-bottom:0px;margin-top:20px}
-	.btn-success{width:100%;border-radius:0px;}
 	.section{width:100%;margin-left:-15px;padding:2px;padding-left:15px;padding-right:15px;background:#f8f9f9}
-	.title-price{margin-top:30px;margin-bottom:0px;color:black}
-	.title-attr{margin-top:0px;margin-bottom:0px;color:black;}
 	.btn-minus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-right:0px;}
 	.btn-plus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-left:0px;}
 	div.section > div {width:100%;display:inline-flex;}
 	div.section > div > input {margin:0px;padding-left:5px;font-size:10px;padding-right:5px;max-width:18%;text-align:center;}
-	.attr,.attr2{cursor:pointer;margin-right:5px;height:20px;font-size:10px;padding:2px;border:1px solid gray;border-radius:2px;}
-	.attr.active,.attr2.active{ border:1px solid orange;}
 
 	@media (max-width: 426px) {
 	    .container {margin-top:0px !important;}
@@ -74,7 +68,7 @@
 		.productDecription-content-item {
 		  display: none;
 		  width: auto;
-		  height: 1000px;
+		  height: auto;
 		}
 	.blkz{
 		  background-image: url("/images/product_1.jpg");
@@ -214,8 +208,8 @@
     <div class="productDecription-menuList-item ">评价</div>
   </div>
   <div class="productDecription-content">
-    <div class="productDecription-content-item" style="display: block;"></div>
-    <div class="productDecription-content-item" style="text-align:center;padding-top:100px;">
+    <div class="productDecription-content-item" style="display: block;" id="div1"></div>
+    <div class="productDecription-content-item" style="text-align:center;padding-top:15px;">
 
 				防霾：⭐️⭐️⭐️⭐️⭐️<br />
 				外观：⭐️⭐️⭐️⭐️⭐️
@@ -227,32 +221,95 @@
 </div>
 </body>
 <script>
-
 $(document).ready(function(){
-	var ht=$('h3').text();
-	if(ht=="布梨口罩"){
-		$('.productDecription-content-item').eq(0).addClass('blkz');
-	}else if (ht=="小米口罩") {
-		$('.productDecription-content-item').eq(0).addClass('xmkz');
-	}else if (ht=="绿盾口罩"){
-		$('.productDecription-content-item').eq(0).addClass('ldkz');
-	}else if (ht=="空气果"){
-		$('.productDecription-content-item').eq(0).addClass('kqg');
-	}else if (ht=="环境宝"){
-		$('.productDecription-content-item').eq(0).addClass('hjb');
-	}else if (ht=="镭豆"){
-		$('.productDecription-content-item').eq(0).addClass('ld');
-	}else if (ht=="Blueair"){
-		$('.productDecription-content-item').eq(0).addClass('blueair');
-	}else if (ht=="戴森"){
-		$('.productDecription-content-item').eq(0).addClass('dyson');
-	}else if (ht=="三菱"){
-		$('.productDecription-content-item').eq(0).addClass('sl');
-	}else{
-    $('.productDecription-content-item').eq(0).addClass('nosuchpro');
+	var imgtag=document.createElement('img');
+	var imgtag1=document.createElement('img');
+	var div1=document.getElementById('div1');
+	var imgtag = new Array("imgtag1","imgtag2","imgtag3","imgtag4","imgtag5");
+	for(var i=0;i<5	;i++){
+		imgtag[i]=document.createElement('img');
 	}
-});
 
+
+  var tt=$('#tt').text();
+
+		if(tt=="空气果"){
+			window.location = "http://localhost:3000/products/4/funding_product"
+		}else if (tt=="小米口罩") {
+			window.location="http://localhost:3000/products/2/funding_product"
+		}else if (tt=="布梨口罩"){
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/kz_blxf_1.jpg');
+			imgtag[1].setAttribute('src','/images/kz_blxf_2.jpg');
+		}else if (tt=="绿盾口罩"){
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/kz_ld_1.jpg');
+			imgtag[1].setAttribute('src','/images/kz_ld_2.jpg');
+		}else if (tt=="环境宝"){
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/mb_hjb_1.jpg');
+			imgtag[1].setAttribute('src','/images/mb_hjb_2.jpg');
+		}else if (tt=="镭豆"){
+			var ldiv=document.createElement('div');
+			div1.appendChild(ldiv);
+			ldiv.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/mb_ld_1.jpg');
+			imgtag[1].setAttribute('src','/images/mb_ld_2.jpg');
+		}else if (tt=="Blueair"){
+			for(var i=0;i<5;i++){
+				div1.appendChild(imgtag[i]);
+			}
+			imgtag[0].setAttribute('src','/images/jhq_blueair_1.jpg');
+			imgtag[1].setAttribute('src','/images/jhq_blueair_2.jpg');
+			imgtag[2].setAttribute('src','/images/jhq_blueair_3.jpg');
+			imgtag[3].setAttribute('src','/images/jhq_blueair_4.jpg');
+			imgtag[4].setAttribute('src','/images/jhq_blueair_5.jpg');
+		}else if (tt=="戴森"){
+			div1.appendChild(imgtag[0]);
+			imgtag[0].setAttribute('src','/images/jhq_dyson.jpg');
+		}else if (tt=="三菱"){
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/jhq_sl_1.jpg');
+			imgtag[1].setAttribute('src','/images/jhq_sl_2.jpg');
+		}
+
+})
+// $(document).ready(function(){
+// 	var ht=$('h3').text();
+// 	if(ht=="布梨口罩"){
+// 		$('.productDecription-content-item').eq(0).addClass('blkz');
+// 	}else if (ht=="小米口罩") {
+// 		$('.productDecription-content-item').eq(0).addClass('xmkz');
+// 	}else if (ht=="绿盾口罩"){
+// 		$('.productDecription-content-item').eq(0).addClass('ldkz');
+// 	}else if (ht=="空气果"){
+// 		$('.productDecription-content-item').eq(0).addClass('kqg');
+// 	}else if (ht=="环境宝"){
+// 		$('.productDecription-content-item').eq(0).addClass('hjb');
+// 	}else if (ht=="镭豆"){
+// 		$('.productDecription-content-item').eq(0).addClass('ld');
+// 	}else if (ht=="Blueair"){
+// 		$('.productDecription-content-item').eq(0).addClass('blueair');
+// 	}else if (ht=="戴森"){
+// 		$('.productDecription-content-item').eq(0).addClass('dyson');
+// 	}else if (ht=="三菱"){
+// 		$('.productDecription-content-item').eq(0).addClass('sl');
+// 	}else{
+//     $('.productDecription-content-item').eq(0).addClass('nosuchpro');
+// 	}
+// });
+// $(document).ready(function(){
+// 	var imgtag=document.createElement('img');
+// 	var div1=document.getElementById('div1');
+// 	div1.appendChild(imgtag);
+// 	imgtag.setAttribute('src','/images/funding_kqg.jpg');
+// 	imgtag.setAttribute('alt','空气果');
+// })
 
 
 </script>

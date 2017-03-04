@@ -3924,6 +3924,7 @@
                         </span>
                     </p>
                 </div>
+
                 <div class="lp-element lp-pom-box" id="lp-pom-box-26">
                     <div id="lp-pom-box-26-color-overlay"></div>
                     <div class="lp-element lp-pom-image" id="lp-pom-image-27">
@@ -3954,11 +3955,12 @@
                 <div class="lp-element lp-pom-box" id="lp-pom-box-29">
                     <div id="lp-pom-box-29-color-overlay"></div>
                     <div class="lp-element lp-pom-text nlh" id="lp-pom-text-31">
+                       <%= link_to funding_path, method: :get do%>
                         <div class="lplh-29">
                             <span style="color:#323233;">
                                 <span style="font-size:18px;">
                                     <span style="font-family:raleway;">
-                                        <strong>众筹活动</strong>
+                                        <strong>防霾众筹/strong>
                                     </span>
                                 </span>
                             </span>
@@ -3966,10 +3968,11 @@
                         <div class="lplh-20">
                             <span style="color: rgb(50, 50, 51); font-family: raleway; font-size: 16px;">定期举办众筹，1000元也能当股东，我们一起改变世界。</span>
                         </div>
+                        <% end %>
                     </div>
                     <div class="lp-element lp-pom-image" id="lp-pom-image-32">
                         <div class="lp-pom-image-container" style="overflow: hidden;">
-                            <img src="//d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/fangmaiku/4567d8c7-openmuji-sh755-640_07b04k07b03w00000c.jpg" alt=""></div>
+                          <img src="//d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/fangmaiku/579f4c1e-funding_07b04k07b03w00000c.jpeg" alt=""></div>
                     </div>
                 </div>
                 <div class="lp-element lp-pom-box" id="lp-pom-box-33">
@@ -4092,6 +4095,7 @@
                             </p>
                         </div>
                     </div>
+
                     <div class="lp-element lp-pom-text nlh" id="lp-pom-text-66">
                         <div class="lplh-29" style="text-align: center;">
                             <div class="lplh-58">
@@ -4154,7 +4158,7 @@
                     <!-- <a class="lp-element lp-pom-button" id="lp-pom-button-68" href="#lp-pom-block-8" target="">
                         <span class="label">立即购买</span>
                     </a> -->
-                    <%= link_to "<span class='label'>立即购买</span>".html_safe, product_path(:id => 10), :class => "lp-element lp-pom-button", :id => "lp-pom-button-68", :style => "font-size: 22px;", method: :get %>
+                    <%= link_to "<span class='label'>立即购买</span>".html_safe, product_path(:id => 3), :class => "lp-element lp-pom-button", :id => "lp-pom-button-68", :style => "font-size: 22px;", method: :get %>
                     <div class="lp-element lp-pom-box" id="lp-pom-box-69">
                         <div id="lp-pom-box-69-color-overlay"></div>
                         <div class="lp-element lp-pom-text nlh" id="lp-pom-text-70">
@@ -4173,7 +4177,7 @@
                                 <span style="color:#323233;">
                                     <strong>
                                         <span style="font-family:raleway;">
-                                            <span style="font-size:36px;">￥49</span>
+                                            <span style="font-size:36px;">￥119</span>
                                         </span>
                                     </strong>
                                 </span>
@@ -4182,7 +4186,7 @@
                             <div class="lplh-20">
                                 <span style="color:#323233;">
                                     <span style="font-family:raleway;">
-                                        <span style="font-size:16px;">众筹Aire口罩</span>
+                                        <span style="font-size:16px;">布梨口罩</span>
                                     </span>
                                 </span>
                             </div>
@@ -4227,7 +4231,7 @@
                     <!-- <a class="lp-element lp-pom-button" id="lp-pom-button-74" href="#lp-pom-block-8" target="">
                         <span class="label">立即购买</span>
                     </a> -->
-                    <%= link_to "<span class='label'>立即购买</span>".html_safe, product_path(:id => 11), :class => "lp-element lp-pom-button", :id => "lp-pom-button-74", :style => "font-size: 22px;", method: :get %>
+                    <%= link_to "<span class='label'>立即购买</span>".html_safe, product_path(:id => 6), :class => "lp-element lp-pom-button", :id => "lp-pom-button-74", :style => "font-size: 22px;", method: :get %>
                     <div class="lp-element lp-pom-box" id="lp-pom-box-75">
                         <div id="lp-pom-box-75-color-overlay"></div>
                         <div class="lp-element lp-pom-text nlh" id="lp-pom-text-76">
@@ -4246,7 +4250,7 @@
                                 <span style="color:#323233;">
                                     <strong>
                                         <span style="font-family:raleway;">
-                                            <span style="font-size:36px;">￥599</span>
+                                            <span style="font-size:36px;">￥309</span>
                                         </span>
                                     </strong>
                                 </span>
@@ -4255,7 +4259,7 @@
                             <div class="lplh-20">
                                 <span style="color:#323233;">
                                     <span style="font-family:raleway;">
-                                        <span style="font-size:16px;">众筹 &nbsp;智能霾表</span>
+                                        <span style="font-size:16px;">智能霾表</span>
                                     </span>
                                 </span>
                             </div>
@@ -4670,7 +4674,10 @@
                     hasPlugins: ('length' in navigator.plugins && navigator.plugins.length > 0)
                 });
 
-            </script>
+                var jevField = $('<input type="hidden" id="ubafs-jev" name="ubafs-jev">').val(info);
+                $('form').append(jevField);
+            });
+           </script>
 
             <script>
                 $(document).ready(function () {
@@ -4713,13 +4720,6 @@
                 })
             </script>
 
-
-        </body>
-
-                var jevField = $('<input type="hidden" id="ubafs-jev" name="ubafs-jev">').val(info);
-                $('form').append(jevField);
-            });
-        </script>
         <!-- lp:insertions end body:after -->
     </body>
 </html>
