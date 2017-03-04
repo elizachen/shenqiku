@@ -80,7 +80,8 @@ products_is_fund = [false,true,false]
 
   products = ["Blueair","戴森","三菱"]
   products_description = ["瑞典馆藏级设计，HEPASilent®专利技术，世界上高效静音的领导性过滤系统之一。节能环保，零臭氧排放，确保了Blueair实现室内空气净化系统的“两低一高”——低风阻 低噪音——高效率。",
-    "HEPA过滤，空气净化风扇", "超静音，除甲醛PM2.5"]
+    "HEPA过滤，空气净化风扇",
+    "有效改善空气质量，增强体质；适用于卧室、客厅、书房、办公室、会议室等等；针对雾霾PM2.5、消除二手烟危害，空气闷，呼吸不舒畅等情况！"]
   products_prices = [7880,4990,3689]
   # products_images = ["public/images/panel/cup.jpg",
   #   "public/images/panel/keyboard.jpg",
