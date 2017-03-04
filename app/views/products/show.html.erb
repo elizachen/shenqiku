@@ -114,16 +114,16 @@
                     </ul>
                     <div class="description">
 											<div class="description-item" style="display:block">
-												<p style="padding:15px;color:gray;">
+												<p style="padding:15px 0;color:gray;">
                           <%= @product.description %>
                         </p>
 											</div>
 											<div class="description-item">
-												<p id="type" style="padding:15px;color:gray;">
+												<p id="type" style="padding:15px 0;color:gray;">
 												</p>
 											</div>
 											<div class="description-item">
-												<p id="why" style="padding:15px;color:gray;">
+												<p id="why" style="padding:15px 0;color:gray;">
 												</p>
 											</div>
                     </div>
@@ -153,8 +153,8 @@
 <script>
 
 $(document).ready(function(){
-	// var type=document.getElementById('type');
-	// var why=document.getElementById('why');
+	var type=document.getElementById('type');
+	var why=document.getElementById('why');
 	var div1=document.getElementById('div1');
 	var imgtag = new Array("imgtag1","imgtag2","imgtag3","imgtag4","imgtag5");
 	for(var i=0;i<5	;i++){
@@ -168,21 +168,33 @@ $(document).ready(function(){
 		}else if (tt=="小米口罩") {
 			window.location = "http://localhost:3000/products/2/funding_product"
 		}else if (tt=="布梨口罩"){
+			type.innerHTML='防霾成人口罩';
+			why.innerHTML='小米明星产品，日本进口滤材，纳米驻级过滤呼吸，口罩体验新革命。';
 			div1.appendChild(imgtag[0]);
 			div1.appendChild(imgtag[1]);
 			imgtag[0].setAttribute('src','/images/kz_blxf_1.jpg');
 			imgtag[1].setAttribute('src','/images/kz_blxf_2.jpg');
 		}else if (tt=="绿盾口罩"){
-			div1.appendChild(imgtag[0]);
-			div1.appendChild(imgtag[1]);
+			type.innerHTML='防霾儿童口罩';
+			why.innerHTML='儿童专用口罩，提供四重保护，全棉布料，可反复清洗。让你的孩子更健康、舒适的选择。';
+			for(var i=0;i<5;i++){
+				div1.appendChild(imgtag[i]);
+			}
 			imgtag[0].setAttribute('src','/images/kz_ld_1.jpg');
 			imgtag[1].setAttribute('src','/images/kz_ld_2.jpg');
+			imgtag[2].setAttribute('src','/images/kz_ld_3.jpg');
+			imgtag[3].setAttribute('src','/images/kz_ld_4.jpg');
+			imgtag[4].setAttribute('src','/images/kz_ld_5.jpg');
 		}else if (tt=="环境宝"){
+			type.innerHTML='智能家居空气检测仪';
+			why.innerHTML='先锋科技，采用英国剑桥TVOC传感器、德州仪器温湿度传感器，测量数据精准可靠，外形小巧、居家必备。';
 			div1.appendChild(imgtag[0]);
 			div1.appendChild(imgtag[1]);
 			imgtag[0].setAttribute('src','/images/mb_hjb_1.jpg');
 			imgtag[1].setAttribute('src','/images/mb_hjb_2.jpg');
 		}else if (tt=="镭豆"){
+			type.innerHTML='镭豆智能空气质量检测仪';
+			why.innerHTML='测量精准，时尚美观，便携轻巧。';
 			var ldiv=document.createElement('div');
 			div1.appendChild(ldiv);
 			ldiv.appendChild(imgtag[0]);
@@ -190,6 +202,8 @@ $(document).ready(function(){
 			imgtag[0].setAttribute('src','/images/mb_ld_1.jpg');
 			imgtag[1].setAttribute('src','/images/mb_ld_2.jpg');
 		}else if (tt=="Blueair"){
+			type.innerHTML='Blueair 瑞典家用空气净化器 503';
+			why.innerHTML='高性能、高品质的选择。全球超高的CADR值，节能环保，零臭氧排放，确保高效净化。';
 			for(var i=0;i<5;i++){
 				div1.appendChild(imgtag[i]);
 			}
@@ -199,11 +213,13 @@ $(document).ready(function(){
 			imgtag[3].setAttribute('src','/images/jhq_blueair_4.jpg');
 			imgtag[4].setAttribute('src','/images/jhq_blueair_5.jpg');
 		}else if (tt=="戴森"){
+			type.innerHTML='Dyson戴森 AM11 空气净化风扇';
+			why.innerHTML='有效循环室内空气，让净化的空气在整个房间流通。专注净化率，发明了一种空气净化装置，可以深度去除有害超细颗粒物。';
 			div1.appendChild(imgtag[0]);
 			imgtag[0].setAttribute('src','/images/jhq_dyson.jpg');
 		}else if (tt=="三菱"){
 			type.innerHTML='三菱重工空气净化器SP-CSM22BW';
-			why.innerHTML='日本进口滤材，专利杀菌、除二手烟、除异味、除甲醛、苯';
+			why.innerHTML='日本进口滤材，专利杀菌、除二手烟、除异味、除甲醛、苯。';
 			div1.appendChild(imgtag[0]);
 			div1.appendChild(imgtag[1]);
 			imgtag[0].setAttribute('src','/images/jhq_sl_1.jpg');
@@ -239,7 +255,7 @@ function addOne(){
 		if (parseInt(pn.value)<pq.innerHTML) {
 			pn.value=parseInt(pn.value)+1
 		}
-    // alert(window.location.href);
+
 }
 
 function deleteOne(){
