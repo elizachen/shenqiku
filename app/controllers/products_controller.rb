@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   def search
     @query = @query_string
      if @query_string.present?
-     if @query_string.casecmp("discounted")
+     if 0 == @query_string.casecmp("discounted")
        search_result = Product.where(is_discounted: true)
      else
      # search_result = Product.ransack(@search_criteria).result(distinct: true)
