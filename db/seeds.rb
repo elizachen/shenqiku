@@ -45,7 +45,7 @@ products_is_fund = [false,true,false]
   puts "3 products created."
 
   products = ["空气果","环境宝","镭豆"]
-  products_description = ["空气果是国内最早把空气检测仪的概念引入国内市场的产品。精确检测温度、湿度、CO2、PM2.5等，无论制作工艺、和产品质量、测量精准度上在同类商品中领先。",
+  products_description = ["空气果是国内最早把空气检测仪的概念引入国内市场的产品。精确检测温度、湿度、CO2、PM2.5等，无论制作工艺、和产品质量、测量精准度上在同类产品中领先。",
     "8项检测 居家必备","便携轻巧 测量精准"]
   products_prices = [965,599,369]
   products_categories = ["霾表","霾表","霾表"]
@@ -79,7 +79,8 @@ products_is_fund = [false,true,false]
 
 
   products = ["Blueair","戴森","三菱"]
-  products_description = ["瑞典馆藏级设计，提供安全、健康、纯净的室内空气","HEPA过滤，空气净化风扇", "超静音，除甲醛PM2.5"]
+  products_description = ["瑞典馆藏级设计，HEPASilent®专利技术，世界上高效静音的领导性过滤系统之一。节能环保，零臭氧排放，确保了Blueair实现室内空气净化系统的“两低一高”——低风阻 低噪音——高效率。",
+    "HEPA过滤，空气净化风扇", "超静音，除甲醛PM2.5"]
   products_prices = [7880,4990,3689]
   # products_images = ["public/images/panel/cup.jpg",
   #   "public/images/panel/keyboard.jpg",

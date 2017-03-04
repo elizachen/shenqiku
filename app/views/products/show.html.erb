@@ -222,57 +222,57 @@ $(document).ready(function(){
 	var imgtag=document.createElement('img');
 	var imgtag1=document.createElement('img');
 	var div1=document.getElementById('div1');
-	div1.appendChild(imgtag);
+	var imgtag = new Array("imgtag1","imgtag2","imgtag3","imgtag4","imgtag5");
+	for(var i=0;i<5	;i++){
+		imgtag[i]=document.createElement('img');
+	}
+
 
   var tt=$('#tt').text();
 
 		if(tt=="空气果"){
-			imgtag.setAttribute('src','/images/funding_kqg.jpg');
-			imgtag.setAttribute('alt','空气果');
+			window.location = "http://localhost:3000/products/4/funding_product"
 		}else if (tt=="小米口罩") {
-			imgtag.setAttribute('src','/images/funding_kz.jpg');
-			imgtag.setAttribute('alt','口罩');
+			window.location="http://localhost:3000/products/2/funding_product"
 		}else if (tt=="布梨口罩"){
-			imgtag.setAttribute('src','/images/kz_blxf_1.jpg');
-			imgtag.setAttribute('alt','布梨口罩');
-			div1.appendChild(imgtag1);
-			imgtag1.setAttribute('src','/images/kz_blxf_2.jpg');
-			imgtag1.setAttribute('alt','布梨口罩');
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/kz_blxf_1.jpg');
+			imgtag[1].setAttribute('src','/images/kz_blxf_2.jpg');
 		}else if (tt=="绿盾口罩"){
-			imgtag.setAttribute('src','/images/kz_ld_1.jpg');
-			imgtag.setAttribute('alt','绿盾口罩');
-			div1.appendChild(imgtag1);
-			imgtag1.setAttribute('src','/images/kz_ld_2.jpg');
-			imgtag1.setAttribute('alt','绿盾口罩');
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/kz_ld_1.jpg');
+			imgtag[1].setAttribute('src','/images/kz_ld_2.jpg');
 		}else if (tt=="环境宝"){
-			imgtag.setAttribute('src','/images/mb_hjb_1.jpg');
-			imgtag.setAttribute('alt','环境宝');
-			div1.appendChild(imgtag1);
-			imgtag1.setAttribute('src','/images/mb_hjb_2.jpg');
-			imgtag1.setAttribute('alt','环境宝');
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/mb_hjb_1.jpg');
+			imgtag[1].setAttribute('src','/images/mb_hjb_2.jpg');
 		}else if (tt=="镭豆"){
-
-			imgtag.setAttribute('src','/images/mb_ld_1.jpg');
-			var d=document.createElement('div')
-			div1.appendChild(d);
-			d.appendChild(imgtag1);
-			imgtag1.setAttribute('src','/images/mb_ld_2.jpg');
-
+			var ldiv=document.createElement('div');
+			div1.appendChild(ldiv);
+			ldiv.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/mb_ld_1.jpg');
+			imgtag[1].setAttribute('src','/images/mb_ld_2.jpg');
 		}else if (tt=="Blueair"){
-			imgtag.setAttribute('src','/images/jhq_blueair_1.jpg');
-			imgtag.setAttribute('alt','Blueair');
-			imgtag1.setAttribute('src','/images/jhq_blueair_2.jpg');
-			imgtag1.setAttribute('alt','Blueair');
+			for(var i=0;i<5;i++){
+				div1.appendChild(imgtag[i]);
+			}
+			imgtag[0].setAttribute('src','/images/jhq_blueair_1.jpg');
+			imgtag[1].setAttribute('src','/images/jhq_blueair_2.jpg');
+			imgtag[2].setAttribute('src','/images/jhq_blueair_3.jpg');
+			imgtag[3].setAttribute('src','/images/jhq_blueair_4.jpg');
+			imgtag[4].setAttribute('src','/images/jhq_blueair_5.jpg');
 		}else if (tt=="戴森"){
-			imgtag.setAttribute('src','/images/jhq_dyson.jpg');
-			imgtag.setAttribute('alt','戴森');
-			// imgtag1.setAttribute('src','/images/jhq_dyson_2.jpg');
-			// imgtag1.setAttribute('alt','戴森');
+			div1.appendChild(imgtag[0]);
+			imgtag[0].setAttribute('src','/images/jhq_dyson.jpg');
 		}else if (tt=="三菱"){
-			imgtag.setAttribute('src','/images/jhq_sl_1.jpg');
-			imgtag.setAttribute('alt','三菱');
-			imgtag1.setAttribute('src','/images/jhq_sl_2.jpg');
-			imgtag1.setAttribute('alt','三菱');
+			div1.appendChild(imgtag[0]);
+			div1.appendChild(imgtag[1]);
+			imgtag[0].setAttribute('src','/images/jhq_sl_1.jpg');
+			imgtag[1].setAttribute('src','/images/jhq_sl_2.jpg');
 		}
 
 })
