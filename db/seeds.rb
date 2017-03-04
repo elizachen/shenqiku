@@ -16,18 +16,18 @@ puts "1 admin account created."
 
 products = ["绿盾口罩","小米口罩","布梨口罩" ]
 products_description = ["绿盾保暖口罩，舒适保暖透气，抗菌防尘防霾","外形酷炫，戴上之后呼吸完全无阻力，同时PM2.5高达99.97%。颜值与健康，一样都不少。", "小米众筹明星产品，纳米驻级过滤呼吸，口罩体验新革命"]
-products_prices = [29,62,139]
+products_prices = [23,62,119]
 products_categories = ["防霾口罩", "防霾口罩","防霾口罩"]
-products_is_discounted = [false, true, false]
-products_orignal_price = [0, 69, 0]
-products_is_fund = [false,false,false]
+products_is_discounted = [true, false, true]
+products_orignal_price = [29, 0, 139]
+products_is_fund = [false,true,false]
 # products_images = ["public/images/panel/jia.jpg",
 #   "public/images/panel/cloth1.jpg",
 #   "public/images/panel/cloth2.jpg",
 #   "public/images/panel/smell.jpg",
 #   "public/images/panel/earphone.jpg"]
   products_image_paths = ["/images/thumb_1.jpg",
-        "/images/thumb_2.jpg",
+        "/images/thumb_z1.jpg",
         "/images/thumb_3.jpg",]
 
   create_products = for i in 1..3 do
@@ -47,18 +47,18 @@ products_is_fund = [false,false,false]
   products = ["空气果","环境宝","镭豆"]
 products_description = ["空气果是国内最早把空气检测仪的概念引入国内市场的产品。精确检测温度、湿度、CO2、PM2.5等，无论制作工艺、和产品质量、测量精准度上在同类产品中领先。",
   "8项检测 居家必备","便携轻巧 测量精准"]
-  products_prices = [965,599,369]
+  products_prices = [965,559,309]
   products_categories = ["霾表","霾表","霾表"]
-  products_is_discounted = [true, false, false]
-  products_orignal_price = [999, 69, 0]
-  products_is_fund = [false,false,false]
+  products_is_discounted = [false, true, true]
+  products_orignal_price = [0, 599, 369]
+  products_is_fund = [true,false,false]
 # products_images = ["public/images/panel/choclate.jpg",
 #     "public/images/panel/beef.jpg",
 #     "public/images/panel/rice.jpg",
 #     "public/images/panel/beef.jpg",
 #     "public/images/panel/coffee.jpg"]
 
-    products_image_paths = ["/images/thumb_4.jpg",
+    products_image_paths = ["/images/thumb_z2.jpg",
       "/images/thumb_8.jpg",
       "/images/thumb_9.jpg",]
 
@@ -110,29 +110,29 @@ products_description = ["空气果是国内最早把空气检测仪的概念引�
   puts "3 products created."
 
 
-products = ["无影口罩", "空气果"]
-products_description = ["纳米过滤，传感控制，自由呼吸","智能控制，精准测量：温度、湿度、CO2、PM2.5等"]
-products_categories = ["防霾口罩", "霾表"]
-products_prices = [49,599]
+# products = ["无影口罩", "防霾果"]
+# products_description = ["纳米过滤，传感控制，自由呼吸","智能控制，精准测量：温度、湿度、CO2、PM2.5等"]
+# products_categories = ["防霾口罩", "霾表"]
+# products_prices = [49,599]
 # products_is_discounted = [true, true]
 # products_orignal_price = [79, 719]
-# products_images = ["public/images/panel/shoes.jpg",
-#   "public/images/panel/chair.jpg",
-#   "public/images/panel/coffee.jpg"]
-products_is_fund = [true,true]
-products_image_paths = ["/images/thumb_z1.jpg", "/images/thumb_z2.jpg",]
-
-
-  create_products = for i in 1..2 do
-    Product.create!([title: products[i - 1],
-     description: products_description[i - 1],
-     quantity: rand(0..10),
-     price: products_prices[i - 1],
-     is_discounted: products_is_discounted[i-1],
-     original_price: products_orignal_price[i-1],
-     #image: File.open(File.join(Rails.root, products_images[i-1])),
-     categories: products_categories[i-1],
-     image_path: products_image_paths[i-1],
-     is_fund: products_is_fund[i-1]  ])
-  end
-  puts "2 products created."
+# # products_images = ["public/images/panel/shoes.jpg",
+# #   "public/images/panel/chair.jpg",
+# #   "public/images/panel/coffee.jpg"]
+# products_is_fund = [true,true]
+# products_image_paths = ["/images/thumb_z1.jpg", "/images/thumb_z2.jpg",]
+#
+#
+#   create_products = for i in 1..2 do
+#     Product.create!([title: products[i - 1],
+#      description: products_description[i - 1],
+#      quantity: rand(0..10),
+#      price: products_prices[i - 1],
+#      is_discounted: products_is_discounted[i-1],
+#      original_price: products_orignal_price[i-1],
+#      #image: File.open(File.join(Rails.root, products_images[i-1])),
+#      categories: products_categories[i-1],
+#      image_path: products_image_paths[i-1],
+#      is_fund: products_is_fund[i-1]  ])
+#   end
+#   puts "2 products created."
