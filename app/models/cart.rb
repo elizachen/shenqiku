@@ -11,11 +11,22 @@ class Cart < ApplicationRecord
 
   def total_price
     sum = 0
+
     cart_items.each do |cart_item|
       if cart_item.product.price.present?
-        sum += cart_item.quantity * cart_item.product.price
+        if cart_item.product.id==2 || cart_item.product.id==4
+          if cart_item.product.fund_price1==0
+            sum += cart_item.quantity * cart_item.product.fund_price2
+          elsif cart_item.product.fund_price2==0
+            sum += cart_item.quantity * cart_item.product.fund_price1
+          end
+        else
+          sum += cart_item.quantity * cart_item.product.price
+        end
       end
     end
+
+
     sum
   end
 

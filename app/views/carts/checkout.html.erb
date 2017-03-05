@@ -29,10 +29,21 @@
                                             <td>
                                                 <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
                                             </td>
+                                            <%if cart_item.product.id==2 || cart_item.product.id==4%>
+                                              <%if cart_item.product.fund_price1==0%>
+                                                <td>
+                                                    <%= cart_item.product.fund_price2 %>
+                                                </td>
+                                              <%elsif cart_item.product.fund_price2==0%>
+                                                <td>
+                                                    <%= cart_item.product.fund_price1 %>
+                                                </td>
+                                              <%end%>
+                                            <%else%>
                                             <td>
                                                 <%= cart_item.product.price %>
                                             </td>
-
+                                            <%end%>
                                             <td>
                                                 <%= cart_item.quantity %>
                                             </td>

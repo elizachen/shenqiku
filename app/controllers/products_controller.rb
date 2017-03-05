@@ -27,7 +27,6 @@ class ProductsController < ApplicationController
 
   def add_to_cart_f
     @product = Product.find(params[:id])
-    binding.pry
     if !current_cart.products.include?(@product)
       if @product.id==2  #小米口罩
         @product.fund_price2=49
