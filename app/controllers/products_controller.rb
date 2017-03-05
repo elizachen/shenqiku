@@ -12,6 +12,31 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     if !current_cart.products.include?(@product)
+      if @product.id==2 || @product.id==4
+        @product.fund_price1=1
+        @product.fund_price2=0
+        @product.save
+      end
+      current_cart.add_product_to_cart(@product)
+      flash[:notice] = "你已成功将 #{@product.title}加入购物车"
+    else
+      flash[:warning]="你的购物车内已有此物品"
+    end
+    redirect_to :back
+  end
+
+  def add_to_cart_f
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      if @product.id==2  #小米口罩
+        @product.fund_price2=49
+        @product.fund_price1=0
+        @product.save
+      elsif @product.id==4  #空气果
+        @product.fund_price2=799
+        @product.fund_price1=0
+        @product.save
+      end
       current_cart.add_product_to_cart(@product)
       flash[:notice] = "你已成功将 #{@product.title}加入购物车"
     else

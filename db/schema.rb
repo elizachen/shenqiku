@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 20170227133841) do
     t.integer  "order_id"
     t.string   "product_name"
     t.integer  "product_price"
+    t.integer  "product_fund_price1"
+    t.integer  "product_fund_price2"
     t.integer  "quantity"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -63,6 +65,8 @@ ActiveRecord::Schema.define(version: 20170227133841) do
     t.boolean  "is_discounted"
     t.integer  "original_price"
     t.boolean  "is_fund",        default: false
+    t.integer  "fund_price1",    default: 0
+    t.integer  "fund_price2",    default: 0
   end
 
   create_table "users", force: :cascade do |t|

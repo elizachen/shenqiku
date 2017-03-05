@@ -14,77 +14,7 @@
 	div.section > div > input {margin:0px;padding-left:5px;font-size:10px;padding-right:5px;max-width:18%;text-align:center;}
 
 
-	@media (max-width: 426px) {
-	    .container {margin-top:0px !important;}
-	    .container > .row{padding:0px !important;}
-	    .container > .row > .col-xs-12.col-sm-5{
-	        padding-right:0px ;
-	    }
-	    .container > .row > .col-xs-12.col-sm-9 > div > p{
-	        padding-left:0px !important;
-	        padding-right:0px !important;
-	    }
-	    .container > .row > .col-xs-12.col-sm-9 > div > ul{
-	        padding-left:10px !important;
 
-	    }
-	    .section{width:104%;}
-	    .menu-items{padding-left:0px;}
-	}
-
-
-
-	.blkz{
-		  background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd1yoik0cbj30so0hsdmg.jpg");
-			background-repeat:no-repeat;
-			background-size: cover;
-	}
-	.xmkz{
-			background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1yn2j26aj30xp0l2gqi.jpg");
-			background-repeat:no-repeat;
-			background-size: cover;
-	}
-	.ldkz{
-			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcly1fd3y8gabg9j30ly0hx0wz.jpg");
-			background-repeat:no-repeat;
-			background-size: cover;
-	}
-	.kqg{
-			background-image: url("https://ww1.sinaimg.cn/large/006tKfTcly1fd3xvsy36aj30ly0dqgmr.jpg");
-			background-repeat:no-repeat;
-			background-size: cover;
-	}
-	.hjb{
-			background-image: url("https://ww2.sinaimg.cn/large/006tKfTcly1fd3xukumx1j30ly0b479l.jpg");
-			background-repeat:no-repeat;
-			background-size: cover;
-	}
-	.ld{
-			background-image: url("https://ww4.sinaimg.cn/large/006tKfTcly1fd3xt28dbuj30i20bon0r.jpg");
-			background-size: cover;
-			background-repeat:no-repeat;
-	}
-	.blueair{
-			background-image: url("https://ww3.sinaimg.cn/large/006tKfTcgy1fd1yqdswfuj30ri0dctd8.jpg");
-			background-size: cover;
-			background-repeat:no-repeat;
-	}
-	.dyson{
-	  background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1ytqp39uj30ly0i010u.jpg");
-		background-repeat:no-repeat;
-		background-size: cover;
-	}
-	.sl{
-	  background-image: url("https://ww2.sinaimg.cn/large/006tKfTcgy1fd1yxchwt5j30ku0ewq8j.jpg");
-		background-repeat:no-repeat;
-		background-size: cover;
-	}
-	.nosuchpro{
-	  background-image: url("https://ww4.sinaimg.cn/large/006tKfTcgy1fd30i57vlsj31er0rr123.jpg");width:inherit;
-		background-repeat:no-repeat;
-		background-size: cover;
-
-	}
 	</style>
 </head>
 
@@ -120,22 +50,7 @@
 
     </div>
 
-                <!-- <div class="col-xs-5">
-                    <ul class="menu-items">
-                        <li class="active">功能</li>
-	                      <li>细节</li>
-                        <li>why me</li>
 
-                    </ul>
-                    <div style="width:100%;border-top:1px solid silver">
-                        <p style="padding:15px;color:gray;">
-
-                            <%= @product.description %>
-
-                   </p>
-
-                    </div>
-                </div> -->
 	</div>
 </div>
 <!-- 选项卡区 -->
@@ -215,8 +130,8 @@
 
 		<!-- 优惠众筹 -->
 		<div class="funding-offer-item">
-			<div class="funding-offer-item-title">
-			 ￥899
+			<div class="funding-offer-item-title" id="fp">
+			 <!-- ￥799 -->
 			</div>
 			<div style="margin:20px;">
 				<strong>无限额 </strong> | <span class="app-tag">优惠档</span>
@@ -234,7 +149,13 @@
 
 
     <div class="text-center">
-			<%= link_to("支持¥899", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger mybtn") %>
+			<%if @product.id==2%>
+			  <a id="btn-fp"class="btn btn-primary btn-danger mybtn" rel="nofollow" data-method="post" href="/products/2/add_to_cart_f">
+			  </a>
+			<%else%>
+			  <a id="btn-fp"class="btn btn-primary btn-danger mybtn" rel="nofollow" data-method="post" href="/products/4/add_to_cart_f">
+			  </a>
+			<%end%>
 		</div>
 		</div>
 	</div>
@@ -356,7 +277,7 @@ $(document).on('click', '.productDecription-menuList-item', function () {
 	$('.productDecription-menuList-item').removeClass('current-now');
 	$(this).addClass('current-now');
 })
-// 动态加载图片
+// 动态加载图片、信息
 $(document).ready(function(){
 
 	var imgtag=document.createElement('img');
@@ -378,6 +299,8 @@ $(document).ready(function(){
 
   var tt=$('#tt').text();
   if(tt=="空气果"){
+		document.getElementById('fp').innerHTML='¥799';
+		document.getElementById('btn-fp').innerHTML='¥799';
 		imgtag.setAttribute('src','/images/funding_kqg.jpg');
 		imgtag.setAttribute('alt','空气果');
 		pf.appendChild(imgtag_function[0]);
@@ -389,6 +312,8 @@ $(document).ready(function(){
 		imgtag.setAttribute('alt','口罩');
 		// var pp=$('#pp').text();
 		document.getElementById('pp').innerHTML='¥6888';
+		document.getElementById('fp').innerHTML='¥49';
+		document.getElementById('btn-fp').innerHTML='¥49';
     for(var i=0;i<4;i++){
 			pf.appendChild(imgtag_function[i]);
 		}
@@ -408,8 +333,6 @@ $(document).ready(function(){
 		imgtag_function.setAttribute('src','/images/panel/funding.jpeg');
 		imgtag_function.setAttribute('alt','众筹');
 	}
-
-
 
 
 })
