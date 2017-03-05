@@ -75,9 +75,22 @@
                               <% end %>
                             <% end %>
                           </td>
+                          <%if cart_item.product.id==2 || cart_item.product.id==4%>
+                            <%if cart_item.product.fund_price1==0%>
+                            <td width="15%">
+                              ￥<%= cart_item.product.fund_price2%>
+                            </td>
+                            <%elsif cart_item.product.fund_price2==0%>
+                            <td width="15%">
+                              ￥<%= cart_item.product.fund_price1%>
+                            </td>
+                            <%end%>
+                          <%else%>
                           <td width="15%">
                             ￥<%= cart_item.product.price %>
                           </td>
+                          <%end%>
+
                           <td width="15%">
                             <!-- <%= cart_item.quantity %> -->
                             <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id) %>

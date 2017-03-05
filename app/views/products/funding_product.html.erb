@@ -149,10 +149,13 @@
 
 
     <div class="text-center">
-			<a id="btn-fp"class="btn btn-primary btn-danger mybtn" rel="nofollow" data-method="post" href="/products/4/add_to_cart">
-			</a>
-
-
+			<%if @product.id==2%>
+			  <a id="btn-fp"class="btn btn-primary btn-danger mybtn" rel="nofollow" data-method="post" href="/products/2/add_to_cart_f">
+			  </a>
+			<%else%>
+			  <a id="btn-fp"class="btn btn-primary btn-danger mybtn" rel="nofollow" data-method="post" href="/products/4/add_to_cart_f">
+			  </a>
+			<%end%>
 		</div>
 		</div>
 	</div>

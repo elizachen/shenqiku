@@ -33,7 +33,9 @@
   <div class="group">
   <%= f.input :image_path %>
  </div>
-
+ <div class="group">
+   <strong>Is_Fund: </strong><%=f.select :is_fund, [true,false]%>
+ </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 

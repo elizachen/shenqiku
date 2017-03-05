@@ -47,6 +47,7 @@ gem 'figaro'
 gem 'fog'
 #gem 'fog-aws'
 gem 'awesome_rails_console'
+gem 'pry'
 
 #add search bar
 gem 'ransack'

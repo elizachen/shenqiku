@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20170227133841) do
     t.boolean  "is_discounted"
     t.integer  "original_price"
     t.boolean  "is_fund",        default: false
+    t.integer  "fund_price1",    default: 0
+    t.integer  "fund_price2",    default: 0
   end
 
   create_table "users", force: :cascade do |t|
