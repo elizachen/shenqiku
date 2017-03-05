@@ -29,9 +29,21 @@
                                             <td>
                                                 <%= product_list.product_name %>
                                             </td>
-                                            <td>
-                                                <%= product_list.product_price %>
-                                            </td>
+                                            <%if product_list.product_name=="小米口罩" || product_list.product_name=="空气果"%>
+                                              <%if product_list.product_fund_price1==0%>
+                                                <td>
+                                                    <%= product_list.product_fund_price2 %>
+                                                </td>
+                                              <%elsif product_list.product_fund_price2==0%>
+                                                <td>
+                                                    <%= product_list.product_fund_price1 %>
+                                                </td>
+                                              <%end%>
+                                            <%else%>
+                                              <td>
+                                                  <%= product_list.product_price %>
+                                              </td>
+                                            <%end%>
                                         </tr>
                                         <% end %>
 

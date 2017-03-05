@@ -12,6 +12,8 @@ class OrdersController < ApplicationController
         product_list.order  = @order
         product_list.product_name  = cart_item.product.title
         product_list.product_price  = cart_item.product.price
+        product_list.product_fund_price1 = cart_item.product.fund_price1
+        product_list.product_fund_price2 = cart_item.product.fund_price2
         product_list.quantity  = cart_item.quantity
         product_list.save
       end
@@ -22,7 +24,7 @@ class OrdersController < ApplicationController
       # redirect_to order_path(@order)
       redirect_to order_path(@order.token)
     else
-      redner 'carts/checkout'
+      render 'carts/checkout'
     end
   end
 
