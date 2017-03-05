@@ -147,11 +147,20 @@
                                           </ins>
                                       </dd>
                                       <% else %>
+                                      <% if product.is_fund %>
+                                      <span class="num">预估市场价</span>
+                                      <dd class="price">
+                                          <ins>
+                                              <span class="num" style="color:#2fd6a2">￥<%=product.price%></span>
+                                          </ins>
+                                      </dd>
+                                      <% else %>
                                       <dd class="price">
                                           <ins>
                                               <span class="num">￥<%=product.price%></span>
                                           </ins>
                                       </dd>
+                                      <% end %>
                                       <% end %>
                                       <% end %>
                                   </dl>
