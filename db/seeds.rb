@@ -15,8 +15,10 @@ puts "1 admin account created."
 
 
 products = ["绿盾口罩","小米口罩","布梨口罩" ]
-products_description = ["绿盾保暖口罩，舒适保暖透气，抗菌防尘防霾","外形酷炫，戴上之后呼吸完全无阻力，同时PM2.5高达99.97%。颜值与健康，一样都不少。", "小米众筹明星产品，纳米驻级过滤呼吸，口罩体验新革命"]
-products_prices = [23,62,119]
+products_description = ["绿盾儿童口罩，舒适保暖透气，抗菌防尘防霾。",
+  "外形酷炫，戴上之后呼吸完全无阻力，同时PM2.5高达99.97%。颜值与健康，一样都不少。",
+  "防晒／防雾霾／防尘／防病菌／防甲醛／防二手烟，新风系统立体风道，提供高度净化的正压新风。"]
+products_prices = [23,69,119]
 products_categories = ["防霾口罩", "防霾口罩","防霾口罩"]
 products_is_discounted = [true, false, true]
 products_orignal_price = [29, 0, 139]
@@ -45,8 +47,9 @@ products_is_fund = [false,true,false]
   puts "3 products created."
 
   products = ["空气果","环境宝","镭豆"]
-products_description = ["空气果是国内最早把空气检测仪的概念引入国内市场的产品。精确检测温度、湿度、CO2、PM2.5等，无论制作工艺、和产品质量、测量精准度上在同类产品中领先。",
-  "8项检测 居家必备","便携轻巧 测量精准"]
+  products_description = ["空气果是国内最早把空气检测仪的概念引入国内市场的产品。精确检测温度、湿度、CO2、PM2.5等，无论制作工艺、和产品质量、测量精准度上在同类产品中领先。",
+      "智能家居空气检测仪，8项检测，实时、精准掌握空气质量。",
+      "随身携带的空气质量检测仪，提供四种空气质量指数。"]
   products_prices = [965,559,309]
   products_categories = ["霾表","霾表","霾表"]
   products_is_discounted = [false, true, true]
@@ -80,7 +83,8 @@ products_description = ["空气果是国内最早把空气检测仪的概念引�
 
   products = ["Blueair","戴森","三菱"]
   products_description = ["瑞典馆藏级设计，HEPASilent®专利技术，世界上高效静音的领导性过滤系统之一。节能环保，零臭氧排放，确保了Blueair实现室内空气净化系统的“两低一高”——低风阻 低噪音——高效率。",
-    "HEPA过滤，空气净化风扇", "超静音，除甲醛PM2.5"]
+    "空气净化+空气循环二合一，采用360°超细玻璃纤维HEPA滤网净化99.95%PM0.1，Air Amplifier气流技术有效循环室内空气。",
+    "有效改善空气质量，增强体质；适用于卧室、客厅、书房、办公室、会议室等等；针对雾霾PM2.5、消除二手烟危害，空气闷，呼吸不舒畅等情况！"]
   products_prices = [7880,4990,3689]
   # products_images = ["public/images/panel/cup.jpg",
   #   "public/images/panel/keyboard.jpg",

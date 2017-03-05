@@ -21,8 +21,8 @@ Rails.application.routes.draw do
 
 
   resources :products do
-    get :funding_product, :on => :member
     member do
+      get :funding_product
       post :add_to_cart
     end
     collection do
