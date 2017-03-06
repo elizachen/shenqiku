@@ -149,6 +149,8 @@
                             <div class="btn-minus" onclick="deleteOne()"><span class="glyphicon glyphicon-minus"></span></div>
 
                             <input id="productNum" type="text" min="1" value="1"/>
+														<!-- <%@cart=current_cart
+														  @cart_item=@cart.cart_items%> -->
 
                             <div class="btn-plus" onclick="addOne()"><span class="glyphicon glyphicon-plus"></span></div>
                         </div>
@@ -224,9 +226,9 @@ $(document).ready(function(){
 	var tt=$('#tt').text();
 
 		if(tt=="空气果"){
-			window.location = "http://localhost:3000/products/4/funding_product"
+			window.location = "/products/4/funding_product"
 		}else if (tt=="小米口罩") {
-			window.location = "http://localhost:3000/products/2/funding_product"
+			window.location = "/products/2/funding_product"
 		}else if (tt=="布梨口罩"){
 			type.innerHTML='防霾成人口罩';
 			why.innerHTML='小米明星产品，日本进口滤材，纳米驻级过滤呼吸，口罩体验新革命。';
