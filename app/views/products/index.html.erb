@@ -3691,16 +3691,16 @@
               <div class="collapse navbar-collapse " id="myNavbar">
                   <ul class="nav navbar-nav">
                       <li>
-                          <%= link_to("精选商品", search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
+                          <%= link_to(t("product_list"), search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
                       </li>
                       <li>
-                          <a href="#event">所有活动</a>
+                          <a href="#event">t("active")</a>
                       </li>
                       <li>
-                          <a href="#about">关于我们</a>
+                          <a href="#about">t("about")</a>
                       </li>
                       <li><%= link_to(carts_path, method: :get) do  %>
-                          购物车
+                          t("cart")
                           <i class="fa fa-shopping-cart"></i>
                           (
                           <%= current_cart.products.count %>
@@ -4379,7 +4379,7 @@
                         <span style="color: rgb(64, 128, 191);">
                             <strong class="">
                                 <span style="font-family:raleway;">
-                                    <span style="font-size:24px;">关于我们</span>
+                                    <span style="font-size:24px;">t("about")</span>
                                 </span>
                             </strong>
                         </span>

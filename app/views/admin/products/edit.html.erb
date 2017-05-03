@@ -6,10 +6,10 @@
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
-<div class="group">
-  <%= f.input :friendly_id %>
-  <p class="help-block">限小写英数字及横线，将作为网址的一部分</p>
-</div>
+ <div class="group">
+   <%= f.input :friendly_id %>
+   <p class="help-block">限小写英数字及横线，将作为网址的一部分</p>
+ </div>
 
   <div class="group">
     <%= f.input :title %>
