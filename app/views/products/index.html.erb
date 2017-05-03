@@ -3694,13 +3694,14 @@
                           <%= link_to(t("product_list"), search_products_path(:order => "created_at", :query_string => ""), method: :get) %>
                       </li>
                       <li>
-                          <a href="#event">t("active")</a>
+                          <!-- <a href="#event">t("active")</a> -->
+                          <%= link_to t("active"), :anchor => "event" %>
                       </li>
                       <li>
-                          <a href="#about">t("about")</a>
+                          <!-- <a href="#about">t("about")</a> -->
+                            <%= link_to t("about"), :anchor => "about" %>
                       </li>
                       <li><%= link_to(carts_path, method: :get) do  %>
-                          t("cart")
                           <i class="fa fa-shopping-cart"></i>
                           (
                           <%= current_cart.products.count %>
@@ -3708,9 +3709,17 @@
                           <% end %>
                       </li>
                       <li>
+                           <% if I18n.locale == I18n.default_locale %>
+                           <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+                           <% else %>
+                           <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+                           <% end %>
+                      </li>
+                      <li>
                           <% if !current_user %>
                       <li><%= link_to(content_tag(:i,'注册',class: 'fa fa-user'), new_user_registration_path, method: :get)  %></li>
                       <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path, method: :get)  %></li>
+                    </li>
                   <% else %>
 
                       <li>

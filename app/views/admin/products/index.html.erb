@@ -39,6 +39,9 @@
           <%= product.price %>
         </td>
         <td>
+          <%= product.created_at.strftime("%Y/%m/%d %I:%M %p") %>
+        </td>
+        <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
         </td>
       </tr>
