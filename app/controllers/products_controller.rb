@@ -6,11 +6,12 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    # @product = Product.find_by_friendly_id!(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
   end
 
   def add_to_cart
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     if !current_cart.products.include?(@product)
       if @product.id==2 || @product.id==4
         @product.fund_price1=1
@@ -26,7 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart_f
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     if !current_cart.products.include?(@product)
       if @product.id==2  #小米口罩
         @product.fund_price2=49
@@ -65,7 +66,7 @@ class ProductsController < ApplicationController
 
   def funding_product
 
-      @product = Product.find(params[:id])
+      @product = Product.find_by_friendly_id!(params[:id])
 
   end
 

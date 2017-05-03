@@ -23,11 +23,11 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
 
     if @product.update(product_params)
       flash[:notice]="update successful"
@@ -38,11 +38,11 @@ class Admin::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
 
     @product.destroy
 
@@ -54,7 +54,7 @@ class Admin::ProductsController < ApplicationController
 
   def product_params
     # params.require(:product).permit(:title, :description, :quantity, :price)
-    params.require(:product).permit(:title, :description, :quantity, :price, :image, :categories, :image_path, :is_discounted, :original_price, :is_fund, :fund_price1, :fund_price2)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :categories, :image_path, :is_discounted, :original_price, :is_fund, :fund_price1, :fund_price2, :friendly_id)
 
   end
 end

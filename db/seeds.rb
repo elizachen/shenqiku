@@ -23,6 +23,7 @@ products_categories = ["防霾口罩", "防霾口罩","防霾口罩"]
 products_is_discounted = [true, false, true]
 products_orignal_price = [29, 0, 139]
 products_is_fund = [false,true,false]
+products_friendly_id = ["ludun","xiaomi","buli" ]
 # products_images = ["public/images/panel/jia.jpg",
 #   "public/images/panel/cloth1.jpg",
 #   "public/images/panel/cloth2.jpg",
@@ -42,7 +43,8 @@ products_is_fund = [false,true,false]
      #image: File.open(File.join(Rails.root, products_images[i-1])),
      categories: products_categories[i-1],
      image_path:products_image_paths[i-1],
-     is_fund:products_is_fund[i-1]   ])
+     is_fund:products_is_fund[i-1],
+     friendly_id:products_friendly_id[i-1] ])
   end
   puts "3 products created."
 
@@ -55,6 +57,8 @@ products_is_fund = [false,true,false]
   products_is_discounted = [false, true, true]
   products_orignal_price = [0, 599, 369]
   products_is_fund = [true,false,false]
+  products_friendly_id =  ["af","env","nut"]
+
 # products_images = ["public/images/panel/choclate.jpg",
 #     "public/images/panel/beef.jpg",
 #     "public/images/panel/rice.jpg",
@@ -76,7 +80,8 @@ products_is_fund = [false,true,false]
            #image: File.open(File.join(Rails.root, products_images[i-1])),
            categories: products_categories[i-1],
            image_path:products_image_paths[i-1],
-           is_fund:products_is_fund[i-1]   ])
+           is_fund:products_is_fund[i-1],
+           friendly_id:products_friendly_id[i-1]] )
         end
         puts "3 products created."
 
@@ -86,6 +91,8 @@ products_is_fund = [false,true,false]
     "空气净化+空气循环二合一，采用360°超细玻璃纤维HEPA滤网净化99.95%PM0.1，Air Amplifier气流技术有效循环室内空气。",
     "有效改善空气质量，增强体质；适用于卧室、客厅、书房、办公室、会议室等等；针对雾霾PM2.5、消除二手烟危害，空气闷，呼吸不舒畅等情况！"]
   products_prices = [7880,4990,3689]
+  products_friendly_id = ["blue","daisen","sanlin"]
+
   # products_images = ["public/images/panel/cup.jpg",
   #   "public/images/panel/keyboard.jpg",
   #   "public/images/panel/ear.jpg",
@@ -109,7 +116,8 @@ products_is_fund = [false,true,false]
      original_price: products_orignal_price[i-1],
      categories: products_categories[i-1],
      image_path:products_image_paths[i-1],
-     is_fund:products_is_fund[i-1] ])
+     is_fund:products_is_fund[i-1],
+     friendly_id:products_friendly_id[i-1]] )
   end
   puts "3 products created."
 
