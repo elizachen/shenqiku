@@ -13,6 +13,43 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.sidebar {
+    display: none;
+    position: fixed;
+    z-index: 998;
+    right: 30px;
+    bottom: 30px;
+    width: 40px;
+    margin-right: 10px;
+    height: auto;
+    line-height: 20px;
+}
+
+.sidebar li:first-child {
+    margin-top: 0;
+}
+
+.sidebar li {
+    position: relative;
+    display: block;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 8px;
+    background: #fbfbfb;
+    line-height: 42px;
+}
+
+.sidebar li.backtop i {
+    font-size: 18px;
+}
+
+.sidebar li i {
+    color: #555;
+}
