@@ -49,6 +49,7 @@ gem 'fog'
 gem 'awesome_rails_console'
 gem 'pry'
 
+
 #add search bar
 gem 'ransack'
 gem "will_paginate"
@@ -76,3 +77,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg'
 end
+
+
+gem 'populator'
+gem 'faker'
