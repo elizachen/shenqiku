@@ -21,7 +21,7 @@ class Admin::OrdersController < ApplicationController
     @data1 = {
         labels: dates,
         datasets: [{
-          label: "# of Orders",
+          label: "# Counts of Orders",
           data: dates.map{ |d| @orders.where( "created_at >= ? AND created_at <= ?", d.beginning_of_day, d.end_of_day).count },
           backgroundColor: colors,
           borderWidth: 1
@@ -31,7 +31,12 @@ class Admin::OrdersController < ApplicationController
     # status_colors = { true => "#FF6384",
     #                false => "#36A2EB"}
 
-    status_colors = {"order_placed" => "#FF6384", "paid","shipping" => "#36A2EB" , "shipped" => "#3BBBBB", "order_cancelled" => "#3EEEEE", "good_returned" =>"#6682EB"}
+    status_colors = {"order_placed" => "#FF6384",
+                    "paid" => "#DFD374",
+                    "shipping" => "#0000FF" ,
+                    "shipped" => "#00EE00",
+                    "order_cancelled" => "#7E00FE",
+                    "good_returned" =>"#FFB6C1"}
 
 
     if @orders.any?
@@ -39,11 +44,11 @@ class Admin::OrdersController < ApplicationController
 
      @data3 = {
         labels: dates,
-        dataset: Order::ASSM.map do |s|
+        datasets: Order::AASM.map do |s|
           {
-            :label => I18n.t(s, :scope => "order.aasm_state"),
+            :label => I18n.t(s,:locale => :en), #:scope => "order.aasm_state"),
             :data => dates.map{ |d|
-              @orders.where( "created_at >= ? AND created_at <= ?", d.beginning_of_day, d.end_of_day).count
+              @orders.by_aasm_state(s).where( "created_at >= ? AND created_at <= ?", d.beginning_of_day, d.end_of_day).count
             },
             borderColor: status_colors[s]
           }

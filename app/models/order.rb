@@ -13,8 +13,10 @@ class Order < ApplicationRecord
 
   IS_PAID = [true, false]
 
-  AASM = ["order_placed", "paid","shipping", "shipped", "order_cancelled"
+  AASM = ["order_placed", "paid","shipping", "shipped", "order_cancelled",
   "good_returned"]
+
+  scope :by_aasm_state, ->(s){ where( :aasm_state => s ) }
 
   aasm do
     state :order_placed, initial: true

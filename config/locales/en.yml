@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  order_placed: "order_placed"
+  paid: "paid"
+  shipping: "shipping"
+  shipped: "shipped"
+  order_cancelled: "cancelled"
+  good_returned: "returned"
