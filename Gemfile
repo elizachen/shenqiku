@@ -48,6 +48,7 @@ gem 'fog'
 #gem 'fog-aws'
 gem 'awesome_rails_console'
 gem 'pry'
+gem "intercom-rails"
 
 #add search bar
 gem 'ransack'
